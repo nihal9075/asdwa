@@ -173,6 +173,14 @@ button {
   box-shadow: 0 16px 40px -10px rgba(0, 0, 0, 0.5), 0 0 0 1px rgba(201, 169, 97, 0.25);
 }
 
+/* On mobile, ticker is hidden so nav should always start at 12px */
+@media (max-width: 600px) {
+  .ds-nav:not(.scrolled),
+  .ds-nav.static:not(.scrolled) {
+    top: 12px;
+  }
+}
+
 .ds-nav:not(.scrolled) .ds-nav-logo,
 .ds-nav.static:not(.scrolled) .ds-nav-logo {
   color: var(--white);
@@ -242,23 +250,23 @@ button {
 }
 
 .ds-nav.scrolled .ds-nav-logo,
-.ds-nav.static .ds-nav-logo {
+.ds-nav.static.scrolled .ds-nav-logo {
   color: var(--primary);
 }
 
 .ds-nav.scrolled .ds-nav-link,
-.ds-nav.static .ds-nav-link {
+.ds-nav.static.scrolled .ds-nav-link {
   color: #3D4A40;
 }
 
 .ds-nav.scrolled .ds-nav-link:hover,
-.ds-nav.static .ds-nav-link:hover {
+.ds-nav.static.scrolled .ds-nav-link:hover {
   color: var(--gold-dark);
   background: rgba(201, 169, 97, 0.12);
 }
 
 .ds-nav.scrolled .ds-nav-link.active,
-.ds-nav.static .ds-nav-link.active {
+.ds-nav.static.scrolled .ds-nav-link.active {
   color: var(--primary);
   background: rgba(201, 169, 97, 0.18);
   font-weight: 600;
@@ -266,23 +274,23 @@ button {
 }
 
 .ds-nav.scrolled .ds-nav-langs,
-.ds-nav.static .ds-nav-langs {
+.ds-nav.static.scrolled .ds-nav-langs {
   background: rgba(0, 0, 0, 0.04);
   border-color: rgba(21, 34, 23, 0.1);
 }
 
 .ds-nav.scrolled .ds-lang-btn,
-.ds-nav.static .ds-lang-btn {
+.ds-nav.static.scrolled .ds-lang-btn {
   color: #556358;
 }
 
 .ds-nav.scrolled .ds-lang-btn:hover,
-.ds-nav.static .ds-lang-btn:hover {
+.ds-nav.static.scrolled .ds-lang-btn:hover {
   color: var(--primary);
 }
 
 .ds-nav.scrolled .ds-lang-btn.active,
-.ds-nav.static .ds-lang-btn.active {
+.ds-nav.static.scrolled .ds-lang-btn.active {
   background: var(--gold);
   color: #152217;
   font-weight: 700;
@@ -290,13 +298,13 @@ button {
 }
 
 .ds-nav.scrolled .ds-hamburger,
-.ds-nav.static .ds-hamburger {
+.ds-nav.static.scrolled .ds-hamburger {
   border-color: rgba(21, 34, 23, 0.15);
   background: rgba(21, 34, 23, 0.04);
 }
 
 .ds-nav.scrolled .ds-hamburger span,
-.ds-nav.static .ds-hamburger span {
+.ds-nav.static.scrolled .ds-hamburger span {
   background: var(--text-primary);
 }
 
@@ -579,7 +587,7 @@ button {
 
 @media (max-width: 768px) {
   .ds-nav {
-    top: 12px;
+    top: 12px !important;
     width: calc(100% - 24px);
     padding: 7px 14px;
     border-radius: 24px;
@@ -797,6 +805,81 @@ button {
 .ds-btn--pill {
   border-radius: var(--radius-pill);
   padding: 13px 32px;
+}
+
+/* ============================================================ */
+/* BUTTON CLASS ALIASES (single-dash variants used in HTML)     */
+/* ============================================================ */
+.ds-btn-gold,
+.ds-btn--gold {
+  background: var(--gold);
+  color: #0d1a0f;
+  border: 1px solid var(--gold);
+  box-shadow: 0 4px 20px rgba(201, 169, 97, 0.25);
+}
+
+.ds-btn-gold:hover,
+.ds-btn--gold:hover {
+  background: var(--gold-light);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 30px rgba(201, 169, 97, 0.4);
+}
+
+.ds-btn-primary,
+.ds-btn--primary {
+  background: var(--primary);
+  color: var(--white);
+  border: 1px solid var(--primary);
+}
+
+.ds-btn-primary:hover,
+.ds-btn--primary:hover {
+  background: var(--primary-light);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
+}
+
+.ds-btn-secondary,
+.ds-btn--secondary {
+  background: transparent;
+  color: var(--text-primary);
+  border: 1px solid var(--border);
+}
+
+.ds-btn-secondary:hover,
+.ds-btn--secondary:hover {
+  border-color: var(--primary);
+  background: var(--white);
+  transform: translateY(-2px);
+}
+
+.ds-btn-ghost,
+.ds-btn--ghost {
+  background: transparent;
+  color: var(--text-primary);
+  border: 1px solid var(--border);
+}
+
+.ds-btn-ghost:hover,
+.ds-btn--ghost:hover {
+  border-color: var(--primary);
+  background: var(--white);
+  transform: translateY(-2px);
+}
+
+.ds-btn-white,
+.ds-btn--white {
+  background: var(--white);
+  color: var(--primary);
+  border: 1px solid var(--white);
+  box-shadow: var(--shadow-sm);
+}
+
+.ds-btn-white:hover,
+.ds-btn--white:hover {
+  background: var(--bg-stone);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
 }
 
 /* ============================================================ */
@@ -1861,3 +1944,113 @@ button {
   display: none !important;
 }
 
+/* ============================================================ */
+/* MISSING UTILITY CLASS ALIASES USED IN HTML                   */
+/* ============================================================ */
+
+/* Section title alias — used widely in index.html and sub-pages */
+.ds-title-lg {
+  font-family: var(--font-display);
+  font-size: clamp(28px, 3.8vw, 48px);
+  font-weight: 400;
+  line-height: 1.18;
+  letter-spacing: -0.01em;
+  color: var(--text-primary);
+  margin-bottom: var(--space-md);
+}
+
+.ds-title-lg em {
+  font-family: var(--font-serif);
+  font-style: italic;
+  color: var(--gold-dark);
+}
+
+/* Badge / pill label — used for product tags, certifications */
+.ds-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 4px 12px;
+  border-radius: 999px;
+  font-family: var(--font-body);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  background: rgba(21, 34, 23, 0.08);
+  color: var(--text-secondary);
+  border: 1px solid var(--border);
+  white-space: nowrap;
+}
+
+.ds-badge-gold {
+  background: rgba(201, 169, 97, 0.15);
+  color: var(--gold-dark);
+  border-color: rgba(201, 169, 97, 0.4);
+}
+
+/* Footer structure aliases (HTML uses different class names than CSS defines) */
+.ds-footer-top {
+  padding: 80px 0 0;
+}
+
+.ds-footer-grid {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr 1.2fr;
+  gap: 48px;
+  margin-bottom: 64px;
+}
+
+@media (max-width: 992px) {
+  .ds-footer-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 36px;
+  }
+}
+
+@media (max-width: 600px) {
+  .ds-footer-grid {
+    grid-template-columns: 1fr;
+    gap: 28px;
+  }
+}
+
+.ds-footer-title {
+  font-family: var(--font-body);
+  font-size: 12px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.16em;
+  color: var(--gold);
+  margin-bottom: 20px;
+}
+
+/* Product filter pill buttons */
+.btn-filter-pill {
+  display: inline-flex;
+  align-items: center;
+  padding: 8px 18px;
+  border-radius: 999px;
+  font-family: var(--font-body);
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  background: var(--bg-stone);
+  color: var(--text-secondary);
+  border: 1px solid var(--border);
+  cursor: pointer;
+  transition: all 0.2s ease;
+  white-space: nowrap;
+}
+
+.btn-filter-pill:hover {
+  background: var(--border);
+  color: var(--text-primary);
+}
+
+.btn-filter-pill.active {
+  background: var(--primary);
+  color: var(--white);
+  border-color: var(--primary);
+}
