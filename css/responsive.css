@@ -1,0 +1,557 @@
+/*
+ * ============================================================
+ * ASDWA FASHION LTD. — COMPREHENSIVE RESPONSIVE SYSTEM
+ * ============================================================
+ *
+ * Breakpoints:
+ *   Desktop+  : 1024px and above    (default layout)
+ *   Tablet    : 768px – 1023px       (@media max-width: 1023px)
+ *   Mobile    : 320px – 767px        (@media max-width: 767px)
+ *   Tiny      : 320px – 479px        (@media max-width: 479px)
+ * ============================================================
+ */
+
+/* ============================================================ */
+/* 1. CSS VARIABLE OVERRIDES PER BREAKPOINT                     */
+/* ============================================================ */
+
+@media (max-width: 1023px) {
+  :root {
+    --content-padding: 28px;
+    --space-3xl: 64px;
+    --space-4xl: 96px;
+  }
+}
+
+@media (max-width: 767px) {
+  :root {
+    --content-padding: 18px;
+    --space-2xl: 40px;
+    --space-3xl: 52px;
+    --space-4xl: 72px;
+  }
+}
+
+@media (max-width: 479px) {
+  :root {
+    --content-padding: 14px;
+    --space-xl: 24px;
+    --space-2xl: 32px;
+    --space-3xl: 44px;
+    --space-4xl: 56px;
+  }
+}
+
+/* ============================================================ */
+/* 2. GLOBAL LAYOUT HELPERS                                     */
+/* ============================================================ */
+
+body { overflow-x: hidden; }
+
+img, svg, video { max-width: 100%; }
+
+@media (max-width: 767px) {
+  .ds-container,
+  .ds-container-narrow {
+    padding-left: var(--content-padding);
+    padding-right: var(--content-padding);
+  }
+  .ds-section {
+    padding: var(--space-3xl) var(--content-padding);
+  }
+  .ds-section--tight {
+    padding: var(--space-2xl) var(--content-padding);
+  }
+}
+
+/* ============================================================ */
+/* 3. DESIGN SYSTEM GRIDS                                       */
+/* ============================================================ */
+
+@media (max-width: 767px) {
+  .ds-grid-2 {
+    grid-template-columns: 1fr !important;
+    gap: var(--space-xl);
+  }
+  .ds-grid-3,
+  .ds-grid-4,
+  .ds-grid-cards {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 1023px) and (min-width: 768px) {
+  .ds-grid-3 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .ds-grid-4 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* ============================================================ */
+/* 4. TYPOGRAPHY SCALE                                          */
+/* ============================================================ */
+
+@media (max-width: 767px) {
+  .ds-h1 { font-size: clamp(28px, 8vw, 46px); }
+  .ds-h2 { font-size: clamp(22px, 6.5vw, 36px); }
+  .ds-h3 { font-size: clamp(18px, 5vw, 26px); }
+  .ds-lead { font-size: clamp(14px, 3.8vw, 17px); }
+  .ds-title-lg { font-size: clamp(22px, 7vw, 38px); }
+}
+
+@media (max-width: 479px) {
+  .ds-h1 { font-size: clamp(24px, 9vw, 36px); }
+  .ds-h2 { font-size: clamp(20px, 7.5vw, 30px); }
+}
+
+/* ============================================================ */
+/* 5. HERO SECTIONS — ALL PAGES                                 */
+/* ============================================================ */
+
+@media (max-width: 1023px) {
+  .hero-editorial,
+  .mfg-hero,
+  .resp-hero {
+    padding: 130px var(--content-padding) 80px;
+    min-height: 70vh;
+  }
+}
+
+@media (max-width: 767px) {
+  .hero-editorial,
+  .mfg-hero,
+  .resp-hero {
+    padding: 104px var(--content-padding) 56px;
+    min-height: auto;
+    text-align: center;
+  }
+  .hero-editorial .hero-inner,
+  .mfg-hero-content,
+  .resp-hero-content {
+    text-align: center;
+  }
+  .hero-actions {
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+  }
+  .hero-actions .ds-btn,
+  .hero-actions a {
+    width: 100%;
+    max-width: 280px;
+    text-align: center;
+    justify-content: center;
+    display: flex;
+  }
+}
+
+/* ============================================================ */
+/* 6. TOP TICKER                                                */
+/* ============================================================ */
+
+@media (max-width: 767px) {
+  .top-ticker {
+    padding: 6px 14px;
+    font-size: 10.5px;
+  }
+  .top-ticker-right {
+    display: none !important;
+  }
+}
+
+@media (max-width: 600px) {
+  .top-ticker {
+    display: none !important;
+  }
+}
+
+/* ============================================================ */
+/* 7. NAVIGATION MOBILE POLISH                                  */
+/* ============================================================ */
+
+@media (max-width: 479px) {
+  .ds-nav-actions a.ds-btn {
+    display: none;
+  }
+}
+
+@media (max-width: 767px) {
+  .ds-nav.menu-open .ds-nav-links {
+    left: 0 !important;
+    right: 0 !important;
+  }
+}
+
+/* ============================================================ */
+/* 8. MANUFACTURING PAGE                                        */
+/* ============================================================ */
+
+/* Stats ribbon */
+@media (max-width: 1023px) {
+  .mfg-stats-ribbon {
+    grid-template-columns: repeat(3, 1fr) !important;
+  }
+}
+@media (max-width: 767px) {
+  .mfg-stats-ribbon {
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 12px !important;
+  }
+}
+@media (max-width: 479px) {
+  .mfg-stats-ribbon {
+    grid-template-columns: 1fr !important;
+  }
+}
+
+/* Department navigator */
+@media (max-width: 1023px) {
+  .dept-content-grid {
+    grid-template-columns: 1fr !important;
+    gap: 24px;
+  }
+  .dept-media-box {
+    max-height: 320px;
+    overflow: hidden;
+  }
+  .dept-media-box img {
+    height: 320px;
+    object-fit: cover;
+  }
+}
+@media (max-width: 767px) {
+  .dept-nav-wrapper {
+    padding: 18px 14px;
+    border-radius: 16px;
+  }
+  .dept-tabs {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+    padding-bottom: 10px;
+    flex-wrap: nowrap;
+  }
+  .dept-tabs::-webkit-scrollbar { display: none; }
+  .dept-tab-btn {
+    flex-shrink: 0;
+    font-size: 12px;
+    padding: 8px 12px;
+  }
+  #dept-title {
+    font-size: 20px !important;
+  }
+}
+
+/* Machine comparison table — horizontally scrollable */
+@media (max-width: 1023px) {
+  .compare-table-wrapper {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    border-radius: 12px;
+  }
+  .compare-table {
+    min-width: 700px;
+  }
+}
+@media (max-width: 767px) {
+  .compare-table,
+  .spec-table-custom {
+    font-size: 13px;
+  }
+  .compare-table th,
+  .compare-table td,
+  .spec-table-custom td {
+    padding: 10px 12px;
+  }
+}
+
+/* Solar dashboard inline grid */
+@media (max-width: 1023px) {
+  .solar-dashboard-box {
+    padding: 32px 28px;
+  }
+  /* The inline-style grid 1.2fr 0.8fr → 1 col */
+  .solar-dashboard-box > div {
+    display: grid !important;
+    grid-template-columns: 1fr !important;
+    gap: 28px !important;
+  }
+}
+@media (max-width: 767px) {
+  .solar-dashboard-box {
+    padding: 22px 16px;
+    border-radius: 16px;
+  }
+  /* Inner 2x2 metrics grid */
+  .solar-dashboard-box > div > div:last-child {
+    grid-template-columns: repeat(2, 1fr) !important;
+  }
+  .solar-metric-card {
+    padding: 14px 10px;
+  }
+  .solar-metric-card > span:first-child {
+    font-size: 24px !important;
+  }
+}
+
+/* Worker welfare CTA section */
+@media (max-width: 767px) {
+  section[style*="background:var(--primary)"] {
+    padding: 60px var(--content-padding) !important;
+  }
+  section[style*="background:var(--primary)"] > .ds-container {
+    max-width: 100% !important;
+  }
+  section[style*="background:var(--primary)"] > .ds-container > div[style*="display:flex;gap:16px"] {
+    flex-direction: column !important;
+    align-items: center !important;
+    gap: 12px !important;
+  }
+  section[style*="background:var(--primary)"] .ds-btn {
+    width: 100%;
+    max-width: 280px;
+    text-align: center;
+    justify-content: center;
+  }
+}
+
+/* ============================================================ */
+/* 9. RESPONSIBILITY PAGE                                       */
+/* ============================================================ */
+
+/* Impact metric grid: 4 col → 2 col → 1 col */
+@media (max-width: 767px) {
+  .impact-metric-grid {
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 14px !important;
+  }
+}
+@media (max-width: 479px) {
+  .impact-metric-grid {
+    grid-template-columns: 1fr !important;
+  }
+}
+
+/* Calculator box */
+@media (max-width: 767px) {
+  .calculator-box {
+    padding: 22px 16px;
+    border-radius: 14px;
+  }
+  .calc-results-grid {
+    grid-template-columns: 1fr !important;
+    gap: 12px;
+  }
+  .calc-res-num { font-size: 26px; }
+}
+
+/* Certification card grid */
+@media (max-width: 767px) {
+  .cert-card-pro {
+    padding: 22px 14px;
+  }
+}
+
+/* CTA compliance section */
+@media (max-width: 767px) {
+  section[style*="background:var(--primary)"][style*="text-align:center"] {
+    padding: 60px var(--content-padding) !important;
+  }
+  section[style*="background:var(--primary)"] .ds-btn {
+    width: 100%;
+    max-width: 280px;
+  }
+}
+
+/* ============================================================ */
+/* 10. PRODUCTS PAGE                                            */
+/* ============================================================ */
+
+@media (max-width: 767px) {
+  .feed-filters-wrap {
+    padding: 4px 0 8px;
+  }
+  .feed-tab,
+  .btn-filter-pill {
+    font-size: 11px;
+    padding: 6px 14px;
+  }
+  .feed-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 14px;
+  }
+}
+
+@media (max-width: 479px) {
+  .feed-grid {
+    grid-template-columns: 1fr;
+  }
+  .product-card { border-radius: 12px; }
+  .product-title { font-size: 14px; }
+  .product-ref { font-size: 10px; }
+  .product-comp { font-size: 12px; }
+}
+
+/* ============================================================ */
+/* 11. CONTACT PAGE                                             */
+/* ============================================================ */
+
+@media (max-width: 1023px) {
+  /* Two-col contact layout → stacked */
+  .contact-split,
+  [class*="contact-grid"] {
+    grid-template-columns: 1fr !important;
+  }
+}
+
+@media (max-width: 767px) {
+  iframe[src*="google.com/maps"],
+  iframe[src*="maps.google"] {
+    height: 260px !important;
+  }
+
+  /* 3-col contact info → 1 col */
+  [style*="grid-template-columns:repeat(3"],
+  [style*="grid-template-columns: repeat(3"] {
+    grid-template-columns: 1fr !important;
+  }
+}
+
+/* ============================================================ */
+/* 12. OUR HISTORY — TIMELINE                                   */
+/* ============================================================ */
+
+@media (max-width: 767px) {
+  .timeline-wrap { margin-top: 28px; }
+  .timeline-card { padding: 18px 16px; }
+  .timeline-year { font-size: 20px; }
+  .timeline-title { font-size: 14px; }
+  .timeline-desc { font-size: 13px; }
+}
+
+/* ============================================================ */
+/* 13. LYK LAB PAGE                                             */
+/* ============================================================ */
+
+@media (max-width: 1023px) {
+  .sim-grid {
+    grid-template-columns: 1fr !important;
+  }
+}
+
+@media (max-width: 767px) {
+  .simulation-box {
+    padding: 22px 16px !important;
+  }
+}
+
+/* ============================================================ */
+/* 14. CARDS & PANELS                                           */
+/* ============================================================ */
+
+@media (max-width: 767px) {
+  .ds-card {
+    padding: 22px 18px;
+  }
+  .ds-card-icon {
+    width: 42px;
+    height: 42px;
+    font-size: 18px;
+  }
+  .ds-stat-card { padding: 22px 14px; }
+  .ds-stat-num { font-size: clamp(28px, 8vw, 42px); }
+}
+
+/* ============================================================ */
+/* 15. SECTION HEADER CENTER ALIGNMENT                          */
+/* ============================================================ */
+
+@media (max-width: 767px) {
+  .ds-section-header {
+    text-align: center;
+    margin-bottom: var(--space-2xl);
+  }
+  .ds-section-header .ds-lead {
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+/* ============================================================ */
+/* 16. BUTTONS — MOBILE SIZING                                  */
+/* ============================================================ */
+
+@media (max-width: 479px) {
+  .ds-btn {
+    padding: 11px 18px;
+    font-size: 12px;
+  }
+}
+
+/* ============================================================ */
+/* 17. CERTIFICATIONS GRID                                      */
+/* ============================================================ */
+
+@media (max-width: 767px) {
+  .cert-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 14px;
+  }
+}
+
+@media (max-width: 479px) {
+  .cert-grid { grid-template-columns: 1fr; }
+  .cert-card { padding: 22px 14px; }
+}
+
+/* ============================================================ */
+/* 18. GENERAL INLINE-STYLE MAX-WIDTH OVERRIDES                 */
+/* ============================================================ */
+
+@media (max-width: 767px) {
+  [style*="max-width:760px"],
+  [style*="max-width: 760px"] { max-width: 100% !important; }
+  [style*="max-width:920px"],
+  [style*="max-width: 920px"] { max-width: 100% !important; }
+  [style*="max-width:960px"],
+  [style*="max-width: 960px"] { max-width: 100% !important; }
+}
+
+/* ============================================================ */
+/* 19. FOOTER — COLUMN STACKING                                 */
+/* ============================================================ */
+
+@media (max-width: 1023px) {
+  .ds-footer {
+    padding: 72px var(--content-padding) 32px;
+  }
+  .ds-footer-inner,
+  .ds-footer-grid {
+    grid-template-columns: 1fr 1fr !important;
+    gap: 32px !important;
+  }
+}
+
+@media (max-width: 767px) {
+  .ds-footer {
+    padding: 52px var(--content-padding) 24px;
+  }
+  .ds-footer-inner,
+  .ds-footer-grid {
+    grid-template-columns: 1fr !important;
+    gap: 28px !important;
+    margin-bottom: 40px;
+  }
+  .ds-footer-bottom .ds-container,
+  .ds-footer-bottom > div[style] {
+    flex-direction: column !important;
+    text-align: center;
+    gap: 8px !important;
+  }
+}
+
+/* ============================================================ */
+/* END — ASDWA RESPONSIVE SYSTEM                                */
+/* ============================================================ */
