@@ -1,0 +1,873 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Manufacturing Facility &amp; High-Precision Machinery | ASDWA Fashion Ltd.</title>
+  <meta name="description" content="Explore ASDWA Fashion Ltd.'s unified 12-acre manufacturing campus in Madhabdi, Narsingdi, Bangladesh. 553 Shima Seiki & Stoll computerized flat knitting machines, 380+ dial linkers, eco-washing, in-house lab, and 450 kWp rooftop solar.">
+  <meta name="keywords" content="ASDWA Fashion Ltd factory, sweater manufacturing Bangladesh, Narsingdi textile plant, Shima Seiki flat knitting, Stoll knitwear machinery, dial linking, GOTS knitwear factory, BSCI Bangladesh">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="ASDWA Fashion Ltd. | Manufacturing Facility &amp; Machinery">
+  <meta property="og:description" content="553 Computerized Flat Knitting Machines, 2,500+ master artisans, and complete vertical integration in Narsingdi, Bangladesh.">
+  <meta property="og:image" content="images/Factory-Interior-Production-floor.jpg">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=Outfit:wght@300;400;500;600;700&family=Cormorant+Garamond:ital,wght@0,500;0,600;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/design-system.css">
+
+  <style>
+    /* ============================================================ */
+    /* MANUFACTURING FLAGSHIP PAGE STYLING                          */
+    /* ============================================================ */
+    :root {
+      --primary: #111D13;
+      --primary-light: #18281B;
+      --primary-surface: #223725;
+      --gold: #C9A961;
+      --gold-light: #E8CC8A;
+      --gold-dark: #A6863C;
+      --bg: #F9F9F7;
+      --bg-stone: #F2EFEB;
+      --white: #FFFFFF;
+      --text-primary: #111D13;
+      --text-secondary: #485249;
+      --text-muted: #79837B;
+      --border: #E2DDD5;
+    }
+
+    /* Hero Section */
+    .mfg-hero {
+      position: relative;
+      min-height: 80vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 160px var(--content-padding) 90px;
+      background: linear-gradient(135deg, rgba(9, 17, 10, 0.88) 0%, rgba(18, 30, 20, 0.82) 100%), url('images/exterior-fabrica.jpg') center/cover no-repeat;
+      color: var(--white);
+      text-align: center;
+      overflow: hidden;
+    }
+
+    .mfg-hero-content {
+      position: relative;
+      z-index: 10;
+      max-width: 980px;
+      margin: 0 auto;
+    }
+
+    .mfg-stats-ribbon {
+      margin-top: 48px;
+      display: grid;
+      grid-template-columns: repeat(6, 1fr);
+      gap: 12px;
+      max-width: 1200px;
+      width: 100%;
+    }
+
+    .mfg-stat-box {
+      background: rgba(20, 34, 23, 0.7);
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+      border: 1px solid rgba(255, 255, 255, 0.14);
+      border-radius: 12px;
+      padding: 18px 10px;
+      text-align: center;
+      transition: all 0.3s ease;
+    }
+
+    .mfg-stat-box:hover {
+      background: rgba(28, 48, 32, 0.9);
+      border-color: var(--gold);
+      transform: translateY(-4px);
+    }
+
+    .mfg-stat-val {
+      font-family: var(--font-display);
+      font-size: clamp(22px, 2.4vw, 32px);
+      font-weight: 600;
+      color: var(--gold-light);
+      line-height: 1.1;
+      margin-bottom: 4px;
+    }
+
+    .mfg-stat-lbl {
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: rgba(255, 255, 255, 0.85);
+      line-height: 1.3;
+    }
+
+    @media (max-width: 992px) {
+      .mfg-stats-ribbon {
+        grid-template-columns: repeat(3, 1fr);
+      }
+    }
+
+    @media (max-width: 600px) {
+      .mfg-stats-ribbon {
+        grid-template-columns: repeat(2, 1fr);
+      }
+      .top-ticker {
+        display: none;
+      }
+    }
+
+    /* Department Navigator */
+    .dept-nav-wrapper {
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      padding: 36px;
+      box-shadow: 0 10px 40px -10px rgba(17, 29, 19, 0.06);
+    }
+
+    .dept-tabs {
+      display: flex;
+      gap: 10px;
+      overflow-x: auto;
+      padding-bottom: 14px;
+      border-bottom: 1px solid var(--border);
+      margin-bottom: 32px;
+      scrollbar-width: thin;
+    }
+
+    .dept-tab-btn {
+      padding: 10px 20px;
+      background: var(--bg-stone);
+      border: 1px solid var(--border);
+      border-radius: 999px;
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--text-secondary);
+      white-space: nowrap;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .dept-tab-btn:hover {
+      background: var(--border);
+      color: var(--text-primary);
+    }
+
+    .dept-tab-btn.active {
+      background: var(--primary);
+      color: var(--white);
+      border-color: var(--primary);
+    }
+
+    .dept-tab-btn.active .dept-num {
+      background: var(--gold);
+      color: #0c150e;
+    }
+
+    .dept-num {
+      background: rgba(0, 0, 0, 0.08);
+      font-size: 10px;
+      padding: 2px 7px;
+      border-radius: 999px;
+      font-weight: 700;
+    }
+
+    .dept-content-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 40px;
+      align-items: center;
+    }
+
+    @media (max-width: 860px) {
+      .dept-content-grid {
+        grid-template-columns: 1fr;
+      }
+      .dept-nav-wrapper {
+        padding: 24px;
+      }
+    }
+
+    .dept-media-box {
+      border-radius: 14px;
+      overflow: hidden;
+      aspect-ratio: 4/3;
+      background: var(--bg-stone);
+      position: relative;
+      border: 1px solid var(--border);
+      box-shadow: 0 8px 24px rgba(0,0,0,0.06);
+    }
+
+    .dept-media-box img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.5s ease;
+    }
+
+    .dept-media-box:hover img {
+      transform: scale(1.04);
+    }
+
+    .dept-spec-pill {
+      position: absolute;
+      bottom: 16px;
+      left: 16px;
+      background: rgba(17, 29, 19, 0.88);
+      backdrop-filter: blur(8px);
+      color: var(--white);
+      padding: 6px 14px;
+      border-radius: 999px;
+      font-size: 12px;
+      font-weight: 500;
+      border: 1px solid rgba(201, 169, 97, 0.4);
+    }
+
+    .spec-table-custom {
+      width: 100%;
+      margin: 20px 0;
+      border-collapse: collapse;
+      font-size: 14px;
+    }
+
+    .spec-table-custom tr {
+      border-bottom: 1px solid var(--border);
+    }
+
+    .spec-table-custom td {
+      padding: 10px 0;
+      color: var(--text-secondary);
+    }
+
+    .spec-table-custom td:first-child {
+      font-weight: 600;
+      color: var(--text-primary);
+      width: 38%;
+    }
+
+    /* Comparison Table */
+    .compare-table-wrapper {
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      overflow-x: auto;
+      box-shadow: 0 6px 24px rgba(0,0,0,0.04);
+    }
+
+    .compare-table {
+      width: 100%;
+      min-width: 650px;
+      border-collapse: collapse;
+      font-size: 14px;
+    }
+
+    .compare-table th {
+      background: var(--primary);
+      color: var(--white);
+      padding: 16px 20px;
+      text-align: left;
+      font-family: var(--font-body);
+      font-weight: 600;
+      letter-spacing: 0.05em;
+    }
+
+    .compare-table th:first-child {
+      background: #0b140d;
+    }
+
+    .compare-table td {
+      padding: 16px 20px;
+      border-bottom: 1px solid var(--border);
+      color: var(--text-secondary);
+    }
+
+    .compare-table tr:nth-child(even) td {
+      background: rgba(0, 0, 0, 0.015);
+    }
+
+    .compare-table tr:hover td {
+      background: rgba(201, 169, 97, 0.06);
+    }
+
+    /* Solar Gauge Box */
+    .solar-dashboard-box {
+      background: linear-gradient(135deg, #111D13 0%, #1c3020 100%);
+      border: 1px solid rgba(201, 169, 97, 0.3);
+      border-radius: 20px;
+      padding: 40px;
+      color: var(--white);
+      box-shadow: 0 16px 40px rgba(0,0,0,0.15);
+    }
+
+    .solar-metric-card {
+      background: rgba(255, 255, 255, 0.06);
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      border-radius: 12px;
+      padding: 20px;
+      text-align: center;
+    }
+  </style>
+</head>
+
+<body data-base-path="">
+
+  <!-- Top Announcement Bar -->
+  <aside class="top-ticker" aria-label="Announcement">
+    <div class="top-ticker-left">
+      <span class="ticker-pulse"></span>
+      <span><strong>PLANT STATUS:</strong> 553 Computerized Machines Operating • 450 kWp Rooftop Solar Active • Narsingdi, Bangladesh</span>
+    </div>
+    <div class="top-ticker-right">
+      <span>GOTS • GRS • RWS • BSCI Audited</span>
+      <span>•</span>
+      <a href="contact.html">Schedule Delegation Visit &rarr;</a>
+    </div>
+  </aside>
+
+  <!-- ============================================================ -->
+  <!-- FLOATING LUXURY NAVIGATION                                   -->
+  <!-- ============================================================ -->
+  <nav class="ds-nav" id="navbar">
+    <div class="ds-nav-inner">
+      <a href="index.html" class="ds-nav-logo" style="display:inline-flex;align-items:center;gap:10px;">
+        <svg width="26" height="26" viewBox="0 0 32 32" fill="none">
+          <rect width="32" height="32" rx="8" fill="url(#goldGradM2)"/>
+          <path d="M16 6L24 22H20L18 17H14L12 22H8L16 6Z" fill="#111D13"/>
+          <path d="M16 11L14.5 15H17.5L16 11Z" fill="#C9A961"/>
+          <defs>
+            <linearGradient id="goldGradM2" x1="0" y1="0" x2="32" y2="32">
+              <stop stop-color="#E8CC8A"/>
+              <stop offset="1" stop-color="#A6863C"/>
+            </linearGradient>
+          </defs>
+        </svg>
+        <span>ASDWA <span style="font-size:11px;font-weight:400;opacity:0.8;letter-spacing:0.1em;">FASHION LTD.</span></span>
+      </a>
+
+      <ul class="ds-nav-links" id="nav-links">
+        <li><a href="index.html#about" class="ds-nav-link" data-i18n="nav.about">About ASDWA</a></li>
+        <li><a href="manufacturing.html" class="ds-nav-link active" data-i18n="nav.manufacturing">Manufacturing</a></li>
+        <li><a href="products.html" class="ds-nav-link" data-i18n="nav.products">Products &amp; Portfolio</a></li>
+        <li><a href="responsibility.html" class="ds-nav-link" data-i18n="nav.responsibility">Sustainability &amp; Solar</a></li>
+        <li><a href="our-history.html" class="ds-nav-link" data-i18n="nav.history">Our History</a></li>
+        <li><a href="lyk.html" class="ds-nav-link" data-i18n="nav.lyk">LYK Lab</a></li>
+        <li><a href="contact.html" class="ds-nav-link" data-i18n="nav.contact">Contact &amp; Visit</a></li>
+      </ul>
+
+      <div class="ds-nav-actions" style="display:flex;align-items:center;gap:12px;">
+        <div class="ds-nav-langs">
+          <button class="ds-lang-btn active" onclick="i18n.switchLanguage('en')" data-lang="en">EN</button>
+          <button class="ds-lang-btn" onclick="i18n.switchLanguage('es')" data-lang="es">ES</button>
+          <button class="ds-lang-btn" onclick="i18n.switchLanguage('ja')" data-lang="ja">JA</button>
+        </div>
+        <a href="contact.html" class="ds-btn ds-btn-gold" style="padding:8px 18px;font-size:12px;border-radius:999px;">Book Tour</a>
+      </div>
+
+      <button class="ds-hamburger" id="nav-toggle" aria-label="Toggle navigation">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- ============================================================ -->
+  <!-- HERO SECTION                                                 -->
+  <!-- ============================================================ -->
+  <header class="mfg-hero">
+    <div class="mfg-hero-content">
+      <div class="ds-eyebrow ds-eyebrow--white" data-i18n="manufacturing.hero_tag">Industrial Infrastructure &bull; Narsingdi Plant</div>
+      <h1 class="ds-h1" style="color:white;">ASDWA Manufacturing Campus<br><em>Engineered for Quality &amp; Scale</em></h1>
+      <p class="ds-lead" style="color:rgba(255,255,255,0.9);margin:0 auto 20px;">
+        Our unified 12-acre industrial facility at Kandai Bus Stand, Madhabdi, Narsingdi represents the operational powerhouse behind world-leading knitwear brands.
+      </p>
+      <p style="font-size:14px;color:rgba(255,255,255,0.75);max-width:760px;margin:0 auto 36px;">
+        Equipped with 553 Japanese and German computerized flat knitting units, dial linking rows, eco-washing bays, and an in-house chemical &amp; physical lab, ASDWA guarantees zero subcontracting variance.
+      </p>
+
+      <div class="mfg-stats-ribbon">
+        <div class="mfg-stat-box">
+          <div class="mfg-stat-val">553+</div>
+          <div class="mfg-stat-lbl">Computerized Units</div>
+        </div>
+        <div class="mfg-stat-box">
+          <div class="mfg-stat-val">2,500+</div>
+          <div class="mfg-stat-lbl">Trained Artisans</div>
+        </div>
+        <div class="mfg-stat-box">
+          <div class="mfg-stat-val">8.5M+</div>
+          <div class="mfg-stat-lbl">Annual Capacity</div>
+        </div>
+        <div class="mfg-stat-box">
+          <div class="mfg-stat-val">1.5 - 14</div>
+          <div class="mfg-stat-lbl">Gauges Covered (GG)</div>
+        </div>
+        <div class="mfg-stat-box">
+          <div class="mfg-stat-val">450 kWp</div>
+          <div class="mfg-stat-lbl">Rooftop Solar Plant</div>
+        </div>
+        <div class="mfg-stat-box">
+          <div class="mfg-stat-val">AQL 1.5</div>
+          <div class="mfg-stat-lbl">European QA Standard</div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- ============================================================ -->
+  <!-- INTEGRATED OVERVIEW WITH REAL FACTORY PHOTOS                 -->
+  <!-- ============================================================ -->
+  <section class="ds-section ds-section--white">
+    <div class="ds-container">
+      <div class="ds-grid-2" style="align-items:center;">
+        <div>
+          <div class="ds-eyebrow" data-i18n="manufacturing.overview_tag">Vertical Oversight</div>
+          <h2 class="ds-h2" data-i18n="manufacturing.overview_title">Vertical Knitwear Operations Under One Roof</h2>
+          <p class="ds-lead" style="margin-bottom:16px;">
+            True luxury knitwear requires absolute technical control over every needle, yarn lot, and wash temperature.
+          </p>
+          <p class="ds-body" style="margin-bottom:20px;">
+            Located in Bangladesh's historic textile manufacturing corridor in Madhabdi, Narsingdi, our facility integrates yarn acclimation, computer-aided programming, flat knitting, automated linking, wet processing, hand finishing, and calibrated metal detection under one roof.
+          </p>
+          
+          <div style="display:flex;gap:12px;flex-wrap:wrap;margin-top:24px;">
+            <span class="ds-badge ds-badge-gold">Zero Subcontracting Policy</span>
+            <span class="ds-badge ds-badge-primary">100% In-House AQL 1.5 QA</span>
+            <span class="ds-badge" style="background:#e8f5e9;color:#2e7d32;">450 kWp Rooftop Solar</span>
+            <span class="ds-badge ds-badge-stone">BGMEA &amp; MiB Registered</span>
+          </div>
+        </div>
+
+        <div style="border-radius:16px;overflow:hidden;box-shadow:0 12px 36px rgba(0,0,0,0.08);aspect-ratio:4/3;background:var(--bg-stone);">
+          <img src="images/Factory-Interior-Production-floor.jpg" alt="ASDWA Fashion Ltd. Main Production Floor" style="width:100%;height:100%;object-fit:cover;">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================ -->
+  <!-- INTERACTIVE DEPARTMENT FLOOR NAVIGATOR                       -->
+  <!-- ============================================================ -->
+  <section class="ds-section ds-section--stone">
+    <div class="ds-container">
+      <div class="ds-section-header" style="text-align:center;max-width:760px;margin:0 auto 48px;">
+        <span class="ds-eyebrow">Virtual Machine Floor</span>
+        <h2 class="ds-h2">Explore ASDWA's Operating Departments</h2>
+        <p class="ds-lead">Step into our 6 core production halls and inspect machine models, daily capacity, and quality protocols.</p>
+      </div>
+
+      <div class="dept-nav-wrapper">
+        <div class="dept-tabs" role="tablist">
+          <button class="dept-tab-btn active" onclick="switchDept('knitting', this)">
+            <span class="dept-num">01</span>
+            <span>Computerized Knitting Hall</span>
+          </button>
+          <button class="dept-tab-btn" onclick="switchDept('linking', this)">
+            <span class="dept-num">02</span>
+            <span>Dial Linking &amp; Assembly</span>
+          </button>
+          <button class="dept-tab-btn" onclick="switchDept('washing', this)">
+            <span class="dept-num">03</span>
+            <span>Eco-Washing &amp; Tumbling</span>
+          </button>
+          <button class="dept-tab-btn" onclick="switchDept('lab', this)">
+            <span class="dept-num">04</span>
+            <span>Testing Laboratory</span>
+          </button>
+          <button class="dept-tab-btn" onclick="switchDept('finishing', this)">
+            <span class="dept-num">05</span>
+            <span>Steam Pressing &amp; Handcraft</span>
+          </button>
+          <button class="dept-tab-btn" onclick="switchDept('detection', this)">
+            <span class="dept-num">06</span>
+            <span>Conveyor Metal Detection</span>
+          </button>
+        </div>
+
+        <div class="dept-content-grid" id="dept-content-grid">
+          <div class="dept-media-box">
+            <img id="dept-img" src="images/Knitting-machines-Close-up detail.jpg" alt="Shima Seiki & Stoll computerized knitting machines at ASDWA Fashion Ltd.">
+            <div class="dept-spec-pill" id="dept-pill">553 Units • 1.5GG to 14GG • Shima Seiki &amp; Stoll</div>
+          </div>
+
+          <div>
+            <span class="ds-badge ds-badge-gold" id="dept-badge">Primary Production Wing</span>
+            <h3 id="dept-title" style="font-family:var(--font-display);font-size:28px;color:var(--primary);margin:12px 0;">553 Computerized Flat Knitting Machines</h3>
+            <p id="dept-desc" style="color:var(--text-secondary);line-height:1.7;">
+              Our expansive main knitting hall houses 553 automated flat knitting machines from world leaders Shima Seiki (Japan) and Stoll (Germany). Running 24/7 under humidity-controlled ambient conditions, these units execute intricate structural jacquards, multi-gauge transitions, and chunky rope cables with micrometric digital tension control.
+            </p>
+
+            <table class="spec-table-custom">
+              <tr>
+                <td>Machine Technology</td>
+                <td id="dept-tech">Shima Seiki SVR/SIR series &amp; Stoll CMS 530/502/ADF</td>
+              </tr>
+              <tr>
+                <td>Gauge Spectrum</td>
+                <td id="dept-gauge">1.5GG, 3GG, 5GG, 7GG, 12GG, 14GG</td>
+              </tr>
+              <tr>
+                <td>Daily Piece Output</td>
+                <td id="dept-output">28,000+ Panels / Day</td>
+              </tr>
+              <tr>
+                <td>Programming Systems</td>
+                <td id="dept-cad">SDS-ONE APEX &amp; Stoll M1plus Digital CAD</td>
+              </tr>
+              <tr>
+                <td>Environmental Drive</td>
+                <td id="dept-power">100% Daytime Solar Powered via 450 kWp Rooftop Array</td>
+              </tr>
+            </table>
+
+            <div style="display:flex;gap:12px;margin-top:24px;">
+              <a href="contact.html" class="ds-btn ds-btn-primary" style="padding:10px 20px;font-size:13px;">Book Machine Floor Tour</a>
+              <a href="products.html" class="ds-btn ds-btn-secondary" style="padding:10px 20px;font-size:13px;">View Knitted Samples</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================ -->
+  <!-- TECHNICAL MACHINE COMPARATOR TABLE                           -->
+  <!-- ============================================================ -->
+  <section class="ds-section ds-section--white">
+    <div class="ds-container">
+      <div class="ds-section-header" style="text-align:center;max-width:760px;margin:0 auto 48px;">
+        <span class="ds-eyebrow">Technical Benchmarks</span>
+        <h2 class="ds-h2">Machinery Capabilities &amp; Gauge Matrix</h2>
+        <p class="ds-lead">A comprehensive comparison of ASDWA's primary flat knitting machine fleets and production capabilities.</p>
+      </div>
+
+      <div class="compare-table-wrapper">
+        <table class="compare-table">
+          <thead>
+            <tr>
+              <th>Machine Category</th>
+              <th>Manufacturer &amp; Origin</th>
+              <th>Gauges Covered</th>
+              <th>Specialty Stitch Capabilities</th>
+              <th>Retail Programs</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Heavy Gauge Flat Knit</strong></td>
+              <td>Stoll (Germany) CMS 530 HP</td>
+              <td>1.5GG, 3GG</td>
+              <td>Chunky rope cables, fisherman ribs, multi-ply roving, mock-necks</td>
+              <td>Winter Over-Knits, Heavy Cardigans (Mango, Zara)</td>
+            </tr>
+            <tr>
+              <td><strong>Mid Gauge Textured Flat Knit</strong></td>
+              <td>Shima Seiki (Japan) SIR 122 / SVR 123</td>
+              <td>5GG, 7GG</td>
+              <td>Waffle structures, intarsia color blocking, horn button plackets</td>
+              <td>Crewnecks, Cardigans (Pull&amp;Bear, Bershka)</td>
+            </tr>
+            <tr>
+              <td><strong>Fine &amp; Superfine Knit</strong></td>
+              <td>Shima Seiki SVR 053 / Stoll ADF 530</td>
+              <td>12GG, 14GG</td>
+              <td>Tubular collars, fully-fashioned armholes, extrafine merino jerseys</td>
+              <td>Business Merinos, Kids Pullovers (Zara Man, Zara Kids)</td>
+            </tr>
+            <tr>
+              <td><strong>Infant &amp; Babywear Knit</strong></td>
+              <td>Shima Seiki SVR 122 (Ultra-Fine)</td>
+              <td>14GG</td>
+              <td>Cashmere-touch seamless rompers, micro-rib beanies, scratch-free hems</td>
+              <td>Oeko-Tex Class I Babywear (Zara Baby)</td>
+            </tr>
+            <tr>
+              <td><strong>Circular Dial Linking</strong></td>
+              <td>Hague &amp; Precise Dial Tables</td>
+              <td>3GG – 18GG</td>
+              <td>Stitch-for-stitch cup-seaming, neckband looping, elastic recovery</td>
+              <td>Universal Assembly across all 8.5M+ annual units</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================ -->
+  <!-- 450 KWP SOLAR DASHBOARD & GREEN MANUFACTURING                -->
+  <!-- ============================================================ -->
+  <section class="ds-section ds-section--stone">
+    <div class="ds-container">
+      <div class="solar-dashboard-box">
+        <div style="display:grid;grid-template-columns:1.2fr 0.8fr;gap:40px;align-items:center;">
+          <div>
+            <span class="ds-eyebrow" style="color:var(--gold);border-color:rgba(201,169,97,0.3);background:rgba(201,169,97,0.1);">Zero-Carbon Initiative</span>
+            <h2 style="font-family:var(--font-display);font-size:clamp(28px, 3.5vw, 42px);color:white;margin:12px 0;">450 kWp Rooftop Solar Installation</h2>
+            <p style="font-size:15px;color:rgba(255,255,255,0.85);line-height:1.7;margin-bottom:24px;">
+              Our Narsingdi factory roof is crowned with a 450 kWp monocrystalline solar array that generates 100% of daytime operational electricity. By harnessing clean solar energy, ASDWA cuts reliance on national fossil fuels, prevents voltage fluctuations, and offsets over 380 metric tons of carbon annually.
+            </p>
+            <div style="display:flex;gap:12px;flex-wrap:wrap;">
+              <span class="ds-badge ds-badge-gold">100% Daytime Clean Solar</span>
+              <span class="ds-badge" style="background:rgba(74,222,128,0.2);color:#4ade80;">380+ Tons CO2 Saved Annually</span>
+              <span class="ds-badge" style="background:rgba(255,255,255,0.1);color:white;">Rainwater Harvesting System</span>
+            </div>
+          </div>
+
+          <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;">
+            <div class="solar-metric-card">
+              <span style="font-family:var(--font-display);font-size:32px;color:var(--gold);display:block;font-weight:600;">450 kWp</span>
+              <span style="font-size:11px;text-transform:uppercase;letter-spacing:0.1em;opacity:0.8;">Installed Capacity</span>
+            </div>
+            <div class="solar-metric-card">
+              <span style="font-family:var(--font-display);font-size:32px;color:var(--gold);display:block;font-weight:600;">100%</span>
+              <span style="font-size:11px;text-transform:uppercase;letter-spacing:0.1em;opacity:0.8;">Daytime Coverage</span>
+            </div>
+            <div class="solar-metric-card">
+              <span style="font-family:var(--font-display);font-size:32px;color:var(--gold);display:block;font-weight:600;">-380 T</span>
+              <span style="font-size:11px;text-transform:uppercase;letter-spacing:0.1em;opacity:0.8;">CO2 Offset / Year</span>
+            </div>
+            <div class="solar-metric-card">
+              <span style="font-family:var(--font-display);font-size:32px;color:var(--gold);display:block;font-weight:600;">ZDHC</span>
+              <span style="font-size:11px;text-transform:uppercase;letter-spacing:0.1em;opacity:0.8;">Zero Discharge</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================ -->
+  <!-- WORKER WELFARE & FACTORY LIFE SPOTLIGHT                      -->
+  <!-- ============================================================ -->
+  <section class="ds-section ds-section--white">
+    <div class="ds-container">
+      <div class="ds-grid-2" style="align-items:center;">
+        <div style="border-radius:16px;overflow:hidden;box-shadow:0 12px 36px rgba(0,0,0,0.08);aspect-ratio:4/3;background:var(--bg-stone);">
+          <img src="images/Production-line-Workers-machinery.jpg" alt="Production workers and technicians at ASDWA Fashion Ltd." style="width:100%;height:100%;object-fit:cover;">
+        </div>
+
+        <div>
+          <div class="ds-eyebrow">Workplace Excellence &amp; Dignity</div>
+          <h2 class="ds-h2">Artisan Welfare, Free Healthcare &amp; On-Site Daycare</h2>
+          <p class="ds-lead" style="margin-bottom:16px;">
+            A world-class knitwear garment is only possible when master craftspeople are healthy, respected, and fully empowered.
+          </p>
+          <p class="ds-body" style="margin-bottom:20px;">
+            Our Madhabdi facility is fully air-ventilated with natural daylighting, ergonomic adjustable chairs, and fair compensation exceeding statutory benchmarks. On-site facilities include:
+          </p>
+          <ul style="list-style:none;display:flex;flex-direction:column;gap:12px;font-size:14px;color:var(--text-secondary);">
+            <li style="display:flex;align-items:flex-start;gap:10px;"><strong style="color:var(--gold-dark);">&#10003;</strong> <strong>Free Medical Clinic:</strong> Full-time registered physicians and nurses providing preventive care, first aid, and prescription medicines.</li>
+            <li style="display:flex;align-items:flex-start;gap:10px;"><strong style="color:var(--gold-dark);">&#10003;</strong> <strong>Childcare Crèche:</strong> Safe, clean on-site daycare staffed by trained caregivers for children of artisan mothers.</li>
+            <li style="display:flex;align-items:flex-start;gap:10px;"><strong style="color:var(--gold-dark);">&#10003;</strong> <strong>Women Leadership:</strong> Over 60% of linking, inspection, and line supervisor roles are held by women.</li>
+            <li style="display:flex;align-items:flex-start;gap:10px;"><strong style="color:var(--gold-dark);">&#10003;</strong> <strong>Audited Safety:</strong> BSCI, Sedex SMETA, and DIFE certified with regular unannounced inspections.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================ -->
+  <!-- CALL TO ACTION & FACTORY TOUR BOOKING                        -->
+  <!-- ============================================================ -->
+  <section style="background:var(--primary);color:white;padding:90px var(--content-padding);text-align:center;">
+    <div class="ds-container" style="max-width:760px;margin:0 auto;">
+      <span class="ds-eyebrow" style="color:var(--gold);border-color:rgba(201,169,97,0.3);background:rgba(201,169,97,0.1);">Open Door Policy</span>
+      <h2 style="font-family:var(--font-display);font-size:clamp(30px, 4vw, 46px);margin:16px 0;">Schedule a Factory Floor Delegation Tour</h2>
+      <p style="font-size:16px;color:rgba(255,255,255,0.85);line-height:1.7;margin-bottom:36px;">
+        We welcome retail sourcing directors, brand technical designers, and third-party compliance auditors to inspect our Narsingdi plant in person. Our corporate team coordinates chauffeured airport transfers from Dhaka (DAC).
+      </p>
+      <div style="display:flex;gap:16px;justify-content:center;flex-wrap:wrap;">
+        <a href="contact.html" class="ds-btn ds-btn-gold">Book Your Delegation Visit &rarr;</a>
+        <a href="products.html" class="ds-btn ds-btn-secondary" style="border-color:rgba(255,255,255,0.3);color:white;">Explore Brand Portfolio</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================ -->
+  <!-- FOOTER                                                       -->
+  <!-- ============================================================ -->
+  <footer class="ds-footer">
+    <div class="ds-footer-top">
+      <div class="ds-container">
+        <div class="ds-footer-grid">
+          <div>
+            <div style="display:inline-flex;align-items:center;gap:10px;margin-bottom:16px;">
+              <svg width="24" height="24" viewBox="0 0 32 32" fill="none">
+                <rect width="32" height="32" rx="8" fill="url(#footGoldM)"/>
+                <path d="M16 6L24 22H20L18 17H14L12 22H8L16 6Z" fill="#111D13"/>
+                <defs>
+                  <linearGradient id="footGoldM" x1="0" y1="0" x2="32" y2="32">
+                    <stop stop-color="#E8CC8A"/>
+                    <stop offset="1" stop-color="#A6863C"/>
+                  </linearGradient>
+                </defs>
+              </svg>
+              <span style="font-size:18px;font-weight:700;color:white;letter-spacing:0.04em;">ASDWA FASHION LTD.</span>
+            </div>
+            <p style="font-size:14px;color:rgba(255,255,255,0.65);line-height:1.7;max-width:320px;">
+              Premier readymade garment &amp; knitwear manufacturer operating 553 flat knitting machines in Narsingdi and commercial headquarters in Mohakhali DOHS, Dhaka.
+            </p>
+          </div>
+
+          <div>
+            <h4 class="ds-footer-title">Operating Facilities</h4>
+            <p style="font-size:13px;color:rgba(255,255,255,0.7);line-height:1.7;margin-bottom:12px;">
+              <strong style="color:var(--gold);">Factory:</strong><br>
+              Kandai Bus Stand, Madhabdi,<br>
+              Narsingdi, Bangladesh.
+            </p>
+            <p style="font-size:13px;color:rgba(255,255,255,0.7);line-height:1.7;">
+              <strong style="color:var(--gold);">Corporate HQ:</strong><br>
+              House 198/A, Road 01, Mohakhali New DOHS,<br>
+              Dhaka-1206, Bangladesh.
+            </p>
+          </div>
+
+          <div>
+            <h4 class="ds-footer-title">Production Links</h4>
+            <ul class="ds-footer-links">
+              <li><a href="index.html">Main Overview</a></li>
+              <li><a href="manufacturing.html">Machinery Specs</a></li>
+              <li><a href="products.html">Delivered Programs</a></li>
+              <li><a href="responsibility.html">Solar &amp; ESG</a></li>
+              <li><a href="our-history.html">20+ Year History</a></li>
+              <li><a href="lyk.html">LYK Innovation Lab</a></li>
+              <li><a href="contact.html">Contact &amp; Visit</a></li>
+            </ul>
+          </div>
+
+          <div>
+            <h4 class="ds-footer-title">Accreditations</h4>
+            <ul style="list-style:none;font-size:13px;color:rgba(255,255,255,0.65);line-height:2;">
+              <li>• GOTS Organic Cotton</li>
+              <li>• GRS Recycled Standard</li>
+              <li>• RWS Responsible Wool</li>
+              <li>• OEKO-TEX Standard 100</li>
+              <li>• BSCI Social Compliance</li>
+              <li>• 100% Daytime Solar Energy</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="ds-footer-bottom">
+      <div class="ds-container" style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:16px;">
+        <p style="font-size:12px;color:rgba(255,255,255,0.5);">© 2026 ASDWA Fashion Ltd. All rights reserved. Mapped in Bangladesh (MiB) Verified. BGMEA Member.</p>
+        <p style="font-size:12px;color:rgba(255,255,255,0.5);"><a href="index.html" style="color:var(--gold);">Back to Home</a></p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+  <script src="js/mobile-menu.js"></script>
+  <script>
+    // Department Virtual Floor Navigator Data
+    const deptData = {
+      'knitting': {
+        img: 'images/Knitting-machines-Close-up detail.jpg',
+        badge: 'Primary Production Wing',
+        title: '553 Computerized Flat Knitting Machines',
+        desc: 'Our main knitting hall houses 553 automated flat knitting machines from world leaders Shima Seiki (Japan) and Stoll (Germany). Running 24/7 under humidity-controlled ambient conditions, these units execute intricate structural jacquards, multi-gauge transitions, and chunky rope cables with micrometric digital tension control.',
+        pill: '553 Units • 1.5GG to 14GG • Shima Seiki & Stoll',
+        tech: 'Shima Seiki SVR/SIR series & Stoll CMS 530/502/ADF',
+        gauge: '1.5GG, 3GG, 5GG, 7GG, 12GG, 14GG',
+        output: '28,000+ Panels / Day',
+        cad: 'SDS-ONE APEX & Stoll M1plus Digital CAD',
+        power: '100% Daytime Solar Powered via 450 kWp Rooftop Array'
+      },
+      'linking': {
+        img: 'images/Production-line-Workers-machinery.jpg',
+        badge: 'High-Precision Assembly Hall',
+        title: '380+ Circular Dial Linking Machines',
+        desc: 'Panels are united stitch-by-stitch on automated circular dial linkers ranging from 3GG to 18GG. Operated by master artisans, this method ensures seamless neckband elasticity, perfect armhole drape, and exact stripe alignment across side seams without bulky stitching ridges.',
+        pill: '380+ Units • 3GG to 18GG Dial Gauge',
+        tech: 'Precision Circular Dial Linking Machines (3GG to 18GG)',
+        gauge: 'Coarse 3GG to Ultra-Fine 18GG',
+        output: '25,000+ Assembled Garments / Day',
+        cad: 'Strict Needle-by-Needle Loop Matching',
+        power: 'Ergonomic LED Task-Lighting & Variable Drives'
+      },
+      'washing': {
+        img: 'images/factory-environment.jpg',
+        badge: 'Wet Processing & Softening Bay',
+        title: 'Low-Liquor Eco-Wash & Tumbling Bays',
+        desc: 'Knitwear requires precise wet finishing to release knitting tension, remove spinning oils, and achieve specified hand-feel. Our commercial wash drums utilize low liquor ratios, organic bio-softening enzymes, and closed-loop filtration to prevent shrinkage and conserve water.',
+        pill: '12 Commercial Tumblers • Closed-Loop Water',
+        tech: 'Low-Liquor Industrial Tumbling Drums with Heat Recovery',
+        gauge: 'Universal Wash Cycles for Cotton, Wool & Cashmere',
+        output: '30,000+ Units / Day Washing & Tumbling Capacity',
+        cad: 'Automated Chemical Dosing & Bio-Enzymes',
+        power: 'Water Recycling & ZDHC Compliant Effluent Treatment'
+      },
+      'lab': {
+        img: 'images/Factory-Interior-Production-floor.jpg',
+        badge: 'Accredited Quality Control Lab',
+        title: 'In-House Physical & Chemical Testing Lab',
+        desc: 'Before any production run is approved for bulk cutting or export, our in-house lab tests yarn and knitted panels for dimensional shrinkage after home washing, Martindale pilling resistance, dry/wet color crocking, and burst tensile strength to satisfy Inditex and European standards.',
+        pill: 'European Calibration • AQL 1.5 Benchmark',
+        tech: 'Tensile Rig, Martindale Pilling Box, Crockmeter, Light Cabinet',
+        gauge: 'All Gauge Programs & Certified Yarns',
+        output: 'Batch-by-Batch QA Verification Certificates',
+        cad: 'Standardized ISO / AATCC / ASTM Test Protocols',
+        power: 'Climate-Controlled 21°C / 65% RH Testing Environment'
+      },
+      'finishing': {
+        img: 'images/hombre-cardigan.jpeg',
+        badge: 'Steam Shaping & Handcraft',
+        title: 'Vacuum Steam Pressing & Dimensional Jigs',
+        desc: 'Every garment is pressed on vacuum-suction steam iron tables using custom aluminum and wooden sizing templates. Skilled technicians ensure exact sleeve length, chest circumference, and collar symmetry before attaching branded care tags and neck labels.',
+        pill: '40 Vacuum Steam Tables • Custom Sizing Jigs',
+        tech: 'High-Pressure Steam Tables with Integrated Vacuum Extraction',
+        gauge: 'All Gauges (Fine to Chunky Outerwear)',
+        output: '25,000+ Finished Sweaters / Day',
+        cad: 'Digital Caliper & Spec Sheet 9-Point Dimension Verification',
+        power: 'Energy-Efficient Centralized Steam Boiler System'
+      },
+      'detection': {
+        img: 'images/exterior-fabrica.jpg',
+        badge: '100% Consumer Safety Gate',
+        title: 'Dual-Conveyor Calibrated Metal Detectors',
+        desc: 'To protect consumers and comply with strict European infant and child safety regulations, 100% of finished garments pass through dual-head conveyor metal detectors calibrated to 1.0mm Fe / 1.2mm Non-Fe sensitivity before polybag packaging.',
+        pill: 'Dual-Head Conveyor Detectors • 100% Garment Screening',
+        tech: 'High-Sensitivity Conveyor Metal Detection Gates',
+        gauge: 'All Knitted Products (Adult, Kids & Babywear)',
+        output: '100% Inspected & Certified Needle-Free',
+        cad: 'Automatic Audible & Conveyor-Stop Safety Trigger',
+        power: 'Hourly Test-Piece Calibration Validation Logs'
+      }
+    };
+
+    function switchDept(deptKey, btn) {
+      document.querySelectorAll('.dept-tab-btn').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+
+      const data = deptData[deptKey];
+      if (!data) return;
+
+      const container = document.getElementById('dept-content-grid');
+      container.style.opacity = '0.35';
+
+      setTimeout(() => {
+        document.getElementById('dept-img').src = data.img;
+        document.getElementById('dept-pill').textContent = data.pill;
+        document.getElementById('dept-badge').textContent = data.badge;
+        document.getElementById('dept-title').textContent = data.title;
+        document.getElementById('dept-desc').textContent = data.desc;
+        document.getElementById('dept-tech').textContent = data.tech;
+        document.getElementById('dept-gauge').textContent = data.gauge;
+        document.getElementById('dept-output').textContent = data.output;
+        document.getElementById('dept-cad').textContent = data.cad;
+        document.getElementById('dept-power').textContent = data.power;
+        container.style.opacity = '1';
+      }, 160);
+    }
+
+    document.addEventListener('DOMContentLoaded', () => {
+      if (typeof i18n !== 'undefined') i18n.init();
+    });
+  </script>
+</body>
+</html>

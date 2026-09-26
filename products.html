@@ -1,0 +1,774 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Selected Brand Productions &amp; Technical Portfolio | ASDWA Fashion Ltd.</title>
+  <meta name="description" content="Commercial knitwear and sweater programs knitted, finished, and exported by ASDWA Fashion Ltd. for Zara, Mango, Pull&Bear, Bershka, and global fashion leaders. 1.5GG to 14GG precision.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=Outfit:wght@300;400;500;600;700&family=Cormorant+Garamond:ital,wght@0,500;0,600;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/design-system.css">
+  <style>
+    /* Hero Banner */
+    .products-hero {
+      position: relative;
+      min-height: 52vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 150px var(--content-padding) 60px;
+      background: linear-gradient(135deg, rgba(9, 17, 10, 0.92) 0%, rgba(18, 30, 20, 0.88) 100%), url('images/Production-line-Workers-machinery.jpg') center/cover no-repeat;
+      color: var(--white);
+      text-align: center;
+      overflow: hidden;
+    }
+
+    .products-hero-content {
+      position: relative;
+      z-index: 10;
+      max-width: 860px;
+      margin: 0 auto;
+    }
+
+    /* Filter Bar Container */
+    .catalog-controls {
+      background: var(--white);
+      border-bottom: 1px solid var(--border);
+      padding: 24px var(--content-padding);
+      position: sticky;
+      top: 72px;
+      z-index: 90;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.03);
+    }
+
+    .catalog-controls-inner {
+      max-width: var(--container-max);
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+
+    .filter-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 14px;
+    }
+
+    .brand-pills-wrap {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      flex-wrap: wrap;
+    }
+
+    .filter-pill {
+      background: var(--bg-stone);
+      border: 1px solid var(--border);
+      color: var(--text-secondary);
+      padding: 7px 16px;
+      border-radius: 999px;
+      font-size: 12px;
+      font-weight: 600;
+      letter-spacing: 0.04em;
+      cursor: pointer;
+      transition: all var(--transition-fast);
+      outline: none;
+    }
+
+    .filter-pill:hover {
+      border-color: var(--gold);
+      color: var(--primary);
+    }
+
+    .filter-pill.active {
+      background: var(--primary);
+      color: var(--gold);
+      border-color: var(--primary);
+      box-shadow: 0 2px 8px rgba(17, 29, 19, 0.2);
+    }
+
+    .gauge-pills-wrap {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 12px;
+    }
+
+    .gauge-pill {
+      background: transparent;
+      border: 1px solid var(--border);
+      color: var(--text-muted);
+      padding: 4px 10px;
+      border-radius: 6px;
+      font-size: 11px;
+      font-weight: 600;
+      font-family: var(--font-mono);
+      cursor: pointer;
+      transition: all var(--transition-fast);
+    }
+
+    .gauge-pill:hover, .gauge-pill.active {
+      border-color: var(--gold-dark);
+      background: rgba(201, 169, 97, 0.12);
+      color: var(--primary);
+    }
+
+    .search-input-box {
+      padding: 9px 18px 9px 38px;
+      border: 1px solid var(--border);
+      border-radius: 999px;
+      background: var(--bg) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%2379837B' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Ccircle cx='11' cy='11' r='8'%3E%3C/circle%3E%3Cline x1='21' y1='21' x2='16.65' y2='16.65'%3E%3C/line%3E%3C/svg%3E") no-repeat 14px center;
+      font-size: 13px;
+      width: 280px;
+      outline: none;
+      transition: all 0.2s ease;
+      font-family: var(--font-body);
+    }
+
+    .search-input-box:focus {
+      border-color: var(--gold);
+      background-color: var(--white);
+      box-shadow: 0 0 0 3px rgba(201, 169, 97, 0.15);
+    }
+
+    /* Product Grid */
+    .catalog-section {
+      padding: 48px var(--content-padding) 100px;
+      background: var(--bg-stone);
+    }
+
+    .product-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(290px, 1fr));
+      gap: 28px;
+    }
+
+    .product-card {
+      background: var(--white);
+      border-radius: 16px;
+      overflow: hidden;
+      border: 1px solid var(--border);
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.04);
+      transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+      display: flex;
+      flex-direction: column;
+      cursor: pointer;
+      position: relative;
+    }
+
+    .product-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 16px 36px rgba(17, 29, 19, 0.1);
+      border-color: rgba(201, 169, 97, 0.5);
+    }
+
+    .product-card-img-wrap {
+      aspect-ratio: 3/4;
+      position: relative;
+      overflow: hidden;
+      background: #EDE8E0;
+    }
+
+    .product-card-img-wrap img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    .product-card:hover .product-card-img-wrap img {
+      transform: scale(1.06);
+    }
+
+    .product-badge-gauge {
+      position: absolute;
+      top: 14px;
+      left: 14px;
+      background: rgba(17, 29, 19, 0.9);
+      color: var(--gold-light);
+      border: 1px solid rgba(201, 169, 97, 0.4);
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.06em;
+      padding: 4px 10px;
+      border-radius: 6px;
+      backdrop-filter: blur(8px);
+      z-index: 2;
+    }
+
+    .product-badge-brand {
+      position: absolute;
+      top: 14px;
+      right: 14px;
+      background: rgba(255, 255, 255, 0.92);
+      color: var(--primary);
+      font-size: 10.5px;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      padding: 4px 10px;
+      border-radius: 999px;
+      text-transform: uppercase;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+      z-index: 2;
+    }
+
+    .product-card-body {
+      padding: 22px;
+      display: flex;
+      flex-direction: column;
+      flex-grow: 1;
+    }
+
+    .product-card-title {
+      font-size: 17px;
+      font-weight: 600;
+      color: var(--text-primary);
+      margin-bottom: 8px;
+      line-height: 1.3;
+    }
+
+    .product-card-comp {
+      font-size: 12.5px;
+      color: var(--text-secondary);
+      line-height: 1.5;
+      margin-bottom: 16px;
+    }
+
+    .product-card-footer {
+      margin-top: auto;
+      padding-top: 14px;
+      border-top: 1px solid var(--border);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    /* Modal Inspection Styling */
+    .product-modal {
+      position: fixed;
+      inset: 0;
+      background: rgba(11, 19, 12, 0.88);
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+      z-index: 2000;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 24px;
+      opacity: 0;
+      visibility: hidden;
+      transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    .product-modal.active {
+      opacity: 1;
+      visibility: visible;
+    }
+
+    .product-modal-dialog {
+      background: var(--white);
+      border-radius: 20px;
+      max-width: 920px;
+      width: 100%;
+      overflow: hidden;
+      box-shadow: 0 25px 60px rgba(0, 0, 0, 0.45);
+      border: 1px solid var(--border);
+      display: grid;
+      grid-template-columns: 1fr 1.15fr;
+      position: relative;
+      transform: translateY(24px) scale(0.97);
+      transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    .product-modal.active .product-modal-dialog {
+      transform: translateY(0) scale(1);
+    }
+
+    .product-modal-close {
+      position: absolute;
+      top: 16px;
+      right: 16px;
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      background: rgba(17, 29, 19, 0.8);
+      color: white;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      font-size: 20px;
+      z-index: 10;
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      transition: all var(--transition-fast);
+    }
+
+    .product-modal-close:hover {
+      background: var(--gold);
+      color: #111D13;
+    }
+
+    .modal-img-col {
+      background: #EDE8E0;
+      aspect-ratio: 3/4;
+    }
+
+    .modal-img-col img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .modal-body-col {
+      padding: 38px 36px;
+      display: flex;
+      flex-direction: column;
+      overflow-y: auto;
+      max-height: 85vh;
+    }
+
+    .spec-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 18px 0;
+      font-size: 13px;
+    }
+
+    .spec-table tr {
+      border-bottom: 1px solid var(--border);
+    }
+
+    .spec-table td {
+      padding: 10px 0;
+    }
+
+    .spec-table td:first-child {
+      color: var(--text-muted);
+      font-weight: 500;
+      width: 38%;
+    }
+
+    .spec-table td:last-child {
+      color: var(--text-primary);
+      font-weight: 600;
+    }
+
+    @media (max-width: 860px) {
+      .product-modal-dialog {
+        grid-template-columns: 1fr;
+        max-height: 90vh;
+        overflow-y: auto;
+      }
+      .modal-img-col {
+        aspect-ratio: 4/3;
+      }
+      .modal-body-col {
+        padding: 24px;
+      }
+      .catalog-controls {
+        top: 60px;
+      }
+    }
+  </style>
+</head>
+
+<body data-base-path="">
+
+  <!-- TOP LIVE FACTORY TICKER -->
+  <aside class="top-ticker" aria-label="Announcement">
+    <div class="top-ticker-left">
+      <span class="ticker-pulse"></span>
+      <span><strong>LIVE:</strong> ASDWA Integrated Campus (Madhabdi, Narsingdi) • 553 Computerized Flat Knit Machines Operating</span>
+    </div>
+    <div class="top-ticker-right">
+      <span>100% Daytime Solar Energy (450 kWp)</span>
+      <span>•</span>
+      <span>AQL 1.5 European QA</span>
+      <span>•</span>
+      <a href="contact.html">Book Delegation Tour &rarr;</a>
+    </div>
+  </aside>
+
+  <!-- FLOATING LUXURY NAVIGATION -->
+  <nav class="ds-nav" id="navbar">
+    <div class="ds-nav-inner">
+      <a href="index.html" class="ds-nav-logo" style="display:inline-flex;align-items:center;gap:10px;">
+        <svg width="26" height="26" viewBox="0 0 32 32" fill="none">
+          <rect width="32" height="32" rx="8" fill="url(#goldGradP)"/>
+          <path d="M16 6L24 22H20L18 17H14L12 22H8L16 6Z" fill="#111D13"/>
+          <path d="M16 11L14.5 15H17.5L16 11Z" fill="#C9A961"/>
+          <defs>
+            <linearGradient id="goldGradP" x1="0" y1="0" x2="32" y2="32">
+              <stop stop-color="#E8CC8A"/>
+              <stop offset="1" stop-color="#A6863C"/>
+            </linearGradient>
+          </defs>
+        </svg>
+        <span>ASDWA <span style="font-size:11px;font-weight:400;opacity:0.8;letter-spacing:0.1em;">FASHION LTD.</span></span>
+      </a>
+      <ul class="ds-nav-links" id="nav-links">
+        <li><a href="index.html#about" class="ds-nav-link" data-i18n="nav.about">About ASDWA</a></li>
+        <li><a href="manufacturing.html" class="ds-nav-link" data-i18n="nav.manufacturing">Manufacturing</a></li>
+        <li><a href="products.html" class="ds-nav-link active" data-i18n="nav.products">Products &amp; Portfolio</a></li>
+        <li><a href="responsibility.html" class="ds-nav-link" data-i18n="nav.responsibility">Sustainability &amp; Solar</a></li>
+        <li><a href="our-history.html" class="ds-nav-link" data-i18n="nav.history">Our History</a></li>
+        <li><a href="lyk.html" class="ds-nav-link" data-i18n="nav.lyk">LYK Lab</a></li>
+        <li><a href="contact.html" class="ds-nav-link" data-i18n="nav.contact">Contact &amp; Visit</a></li>
+      </ul>
+      <div class="ds-nav-actions" style="display:flex;align-items:center;gap:12px;">
+        <div class="ds-nav-langs">
+          <button class="ds-lang-btn active" onclick="i18n.switchLanguage('en')" data-lang="en">EN</button>
+          <button class="ds-lang-btn" onclick="i18n.switchLanguage('es')" data-lang="es">ES</button>
+          <button class="ds-lang-btn" onclick="i18n.switchLanguage('ja')" data-lang="ja">JA</button>
+        </div>
+        <a href="contact.html" class="ds-btn ds-btn-gold" style="padding:8px 18px;font-size:12px;border-radius:999px;">Book Tour</a>
+      </div>
+      <button class="ds-hamburger" id="nav-toggle" aria-label="Toggle navigation">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- PAGE HERO -->
+  <header class="products-hero">
+    <div class="products-hero-content">
+      <div class="ds-eyebrow ds-eyebrow--white" data-i18n="work.hero_tag">Commercial Production Archives</div>
+      <h1 class="ds-h1" style="color:white;" data-i18n="work.title">Selected Knitwear Productions for International Retailers</h1>
+      <p class="ds-lead" style="color:rgba(255,255,255,0.85);margin:0 auto 28px;" data-i18n="work.subtitle">
+        Authentic commercial sweater and knitwear programs knitted, linked, and finished at our Madhabdi, Narsingdi campus for Europe's premier brands.
+      </p>
+      <div style="display:inline-flex;gap:12px;flex-wrap:wrap;justify-content:center;">
+        <span class="ds-badge ds-badge-gold">553 Computerized Machines</span>
+        <span class="ds-badge" style="background:rgba(255,255,255,0.15);color:white;backdrop-filter:blur(6px);">1.5GG to 14GG Range</span>
+        <span class="ds-badge" style="background:rgba(255,255,255,0.15);color:white;backdrop-filter:blur(6px);">AQL 1.5 European QA</span>
+        <span class="ds-badge" style="background:rgba(255,255,255,0.15);color:white;backdrop-filter:blur(6px);">GOTS &amp; GRS Certified</span>
+      </div>
+    </div>
+  </header>
+
+  <!-- CATALOG STICKY CONTROLS -->
+  <section class="catalog-controls">
+    <div class="catalog-controls-inner">
+      <div class="filter-row">
+        <!-- Brand Filter Pills -->
+        <div class="brand-pills-wrap" id="brand-filters">
+          <button class="filter-pill active" data-brand="all" onclick="filterByBrand('all')">All Brands</button>
+          <button class="filter-pill" data-brand="ZARA MAN" onclick="filterByBrand('ZARA MAN')">Zara Man</button>
+          <button class="filter-pill" data-brand="ZARA KIDS" onclick="filterByBrand('ZARA KIDS')">Zara Kids</button>
+          <button class="filter-pill" data-brand="ZARA BABY" onclick="filterByBrand('ZARA BABY')">Zara Baby</button>
+          <button class="filter-pill" data-brand="MANGO" onclick="filterByBrand('MANGO')">Mango</button>
+          <button class="filter-pill" data-brand="PULL&BEAR" onclick="filterByBrand('PULL&BEAR')">Pull&amp;Bear</button>
+          <button class="filter-pill" data-brand="BERSHKA" onclick="filterByBrand('BERSHKA')">Bershka</button>
+          <button class="filter-pill" data-brand="OYSHO" onclick="filterByBrand('OYSHO')">Oysho</button>
+        </div>
+
+        <!-- Search Input -->
+        <div>
+          <input type="text" id="catalog-search" class="search-input-box" placeholder="Search yarn, style, or gauge..." oninput="handleSearch(this.value)">
+        </div>
+      </div>
+
+      <div class="filter-row" style="padding-top:12px;border-top:1px solid var(--border);">
+        <!-- Gauge Filter Quick-Toggles -->
+        <div class="gauge-pills-wrap" id="gauge-filters">
+          <span style="font-weight:600;color:var(--text-muted);margin-right:6px;font-size:11px;text-transform:uppercase;letter-spacing:0.08em;">Gauge Filter:</span>
+          <button class="gauge-pill active" data-gauge="all" onclick="filterByGauge('all')">All</button>
+          <button class="gauge-pill" data-gauge="3GG" onclick="filterByGauge('3GG')">3GG Chunky</button>
+          <button class="gauge-pill" data-gauge="5GG" onclick="filterByGauge('5GG')">5GG Heavy</button>
+          <button class="gauge-pill" data-gauge="7GG" onclick="filterByGauge('7GG')">7GG Mid-Weight</button>
+          <button class="gauge-pill" data-gauge="12GG" onclick="filterByGauge('12GG')">12GG Fine</button>
+          <button class="gauge-pill" data-gauge="14GG" onclick="filterByGauge('14GG')">14GG Ultra-Fine</button>
+        </div>
+
+        <div style="font-size:12px;font-weight:600;color:var(--text-muted);letter-spacing:0.04em;" id="product-counter">
+          Showing 9 authenticated commercial programs
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PRODUCT GRID -->
+  <section class="catalog-section">
+    <div class="ds-container">
+      <div class="product-grid" id="product-grid">
+        <!-- Rendered dynamically -->
+      </div>
+
+      <!-- Empty Result State -->
+      <div id="catalog-empty" style="display:none;text-align:center;padding:80px 20px;background:var(--white);border-radius:16px;border:1px solid var(--border);margin-top:20px;">
+        <h3 class="ds-h3" style="color:var(--text-muted);">No garments match your active filters</h3>
+        <p class="ds-body" style="margin:8px 0 20px;">Try clearing the search query or selecting "All Brands" and "All Gauges".</p>
+        <button class="ds-btn ds-btn-secondary" onclick="resetFilters()">Reset All Filters</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- PRODUCT INSPECTION MODAL -->
+  <div class="product-modal" id="product-modal">
+    <div class="product-modal-dialog">
+      <button class="product-modal-close" onclick="closeModal()" aria-label="Close Modal">&times;</button>
+      <div class="modal-img-col">
+        <img id="modal-img" src="" alt="Garment Preview">
+      </div>
+      <div class="modal-body-col">
+        <div style="font-size:11px;font-weight:700;letter-spacing:0.16em;color:var(--gold-dark);text-transform:uppercase;margin-bottom:6px;" id="modal-brand">BRAND</div>
+        <h3 class="ds-h3" id="modal-title" style="margin-bottom:12px;font-size:22px;line-height:1.2;">Product Title</h3>
+        
+        <table class="spec-table">
+          <tr>
+            <td>Gauge &amp; Pitch:</td>
+            <td id="modal-gauge">7GG / Single Jersey &amp; Structure</td>
+          </tr>
+          <tr>
+            <td>Yarn Blend:</td>
+            <td id="modal-comp">60% Cotton, 30% Recycled Polyester, 10% Wool</td>
+          </tr>
+          <tr>
+            <td>Knitting Machine:</td>
+            <td id="modal-machine">Shima Seiki SVR122 Computerized Flat Bed</td>
+          </tr>
+          <tr>
+            <td>Finishing / Wash:</td>
+            <td id="modal-wash">Bio-Enzyme Softening &amp; Tension Release</td>
+          </tr>
+          <tr>
+            <td>Quality Standard:</td>
+            <td>AQL 1.5 Major / 2.5 Minor • 100% Metal Inspected</td>
+          </tr>
+          <tr>
+            <td>Commercial Dest.:</td>
+            <td>European Union &amp; North American Retail Distribution</td>
+          </tr>
+        </table>
+
+        <div style="margin-top:auto;display:flex;flex-direction:column;gap:10px;padding-top:16px;">
+          <a id="modal-inquire-btn" href="contact.html" class="ds-btn ds-btn-gold" style="text-align:center;">Request Tech Pack &amp; Proto Sample &rarr;</a>
+          <a id="modal-link" href="#" target="_blank" rel="noopener" class="ds-btn ds-btn-secondary" style="text-align:center;font-size:12px;">View Official Brand Retail &nearr;</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- PARTNERSHIP CTA -->
+  <section class="ds-section ds-section--dark" style="text-align:center;background:var(--primary);">
+    <div class="ds-container-narrow">
+      <div class="ds-eyebrow ds-eyebrow--white">PARTNERSHIP INQUIRIES</div>
+      <h2 class="ds-h2" style="color:white;" data-i18n="common.cta_title">Work With ASDWA Fashion Ltd.</h2>
+      <p class="ds-lead" style="color:rgba(255,255,255,0.75);margin:0 auto 36px;" data-i18n="common.cta_text">
+        Direct manufacturing partnership with European standards, 553 automated flat knitting machines, verified sustainable fibers, and transparent execution.
+      </p>
+      <a href="contact.html" class="ds-btn ds-btn-gold">Schedule Delegation Tour &amp; RFQ &rarr;</a>
+    </div>
+  </section>
+
+  <!-- LUXURY FOOTER -->
+  <footer class="ds-footer">
+    <div class="ds-footer-top">
+      <div class="ds-container">
+        <div class="ds-footer-inner">
+          <div class="ds-footer-col">
+            <div style="display:flex;align-items:center;gap:10px;margin-bottom:16px;">
+              <div style="width:28px;height:28px;border-radius:8px;background:linear-gradient(135deg,#E8CC8A,#A6863C);display:flex;align-items:center;justify-content:center;font-weight:700;color:#111D13;font-size:14px;">A</div>
+              <span style="font-family:var(--font-display);font-size:18px;color:#fff;font-weight:600;">ASDWA <span style="font-size:11px;font-weight:400;color:var(--gold);letter-spacing:0.1em;">FASHION LTD.</span></span>
+            </div>
+            <p style="font-size:13px;line-height:1.7;color:rgba(255,255,255,0.65);margin-bottom:20px;">
+              High-precision knitwear &amp; sweater manufacturing powerhouse in Bangladesh. 553 flat knitting machines, European quality engineering, and GOTS/GRS certified sustainability.
+            </p>
+            <p style="font-size:12px;color:var(--gold);font-weight:600;">Inditex &amp; Mango Verified Supplier</p>
+          </div>
+
+          <div class="ds-footer-col">
+            <h4 class="ds-footer-title">Navigation</h4>
+            <ul class="ds-footer-links">
+              <li><a href="index.html">Home</a></li>
+              <li><a href="manufacturing.html">Manufacturing Campus</a></li>
+              <li><a href="products.html">Brand Productions</a></li>
+              <li><a href="responsibility.html">Sustainability &amp; Solar</a></li>
+              <li><a href="our-history.html">Our 20+ Year History</a></li>
+              <li><a href="lyk.html">LYK Innovation Lab</a></li>
+              <li><a href="contact.html">Contact &amp; Delegation Tour</a></li>
+            </ul>
+          </div>
+
+          <div class="ds-footer-col">
+            <h4 class="ds-footer-title">Campus &amp; Office</h4>
+            <div style="font-size:13px;line-height:1.7;color:rgba(255,255,255,0.65);margin-bottom:14px;">
+              <strong style="color:#fff;display:block;">Manufacturing Facility:</strong>
+              Kandai Bus Stand, Madhabdi, Narsingdi, Bangladesh
+            </div>
+            <div style="font-size:13px;line-height:1.7;color:rgba(255,255,255,0.65);">
+              <strong style="color:#fff;display:block;">Corporate Headquarters:</strong>
+              Road-01, House-198/A, Mohakhali New DOHS, Dhaka 1206, Bangladesh
+            </div>
+          </div>
+
+          <div class="ds-footer-col">
+            <h4 class="ds-footer-title">Verified Accreditations</h4>
+            <ul style="list-style:none;padding:0;font-size:12.5px;line-height:1.9;color:rgba(255,255,255,0.65);">
+              <li>• GOTS Organic Standard</li>
+              <li>• GRS Recycled Standard</li>
+              <li>• RWS Responsible Wool</li>
+              <li>• OEKO-TEX Standard 100</li>
+              <li>• BSCI Social Compliance</li>
+              <li>• 100% Daytime Solar Energy (450 kWp)</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="ds-footer-bottom">
+      <div class="ds-container" style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:16px;">
+        <p style="font-size:12px;color:rgba(255,255,255,0.5);">© 2026 ASDWA Fashion Ltd. All rights reserved. Mapped in Bangladesh (MiB) Verified. BGMEA Member.</p>
+        <p style="font-size:12px;color:rgba(255,255,255,0.5);"><a href="index.html" style="color:var(--gold);">Back to Home</a></p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+  <script src="js/mobile-menu.js"></script>
+  <script>
+    let allProducts = [];
+    let currentBrand = 'all';
+    let currentGauge = 'all';
+    let searchQuery = '';
+
+    const grid = document.getElementById('product-grid');
+    const emptyMsg = document.getElementById('catalog-empty');
+    const counterEl = document.getElementById('product-counter');
+
+    function renderProducts(products) {
+      grid.innerHTML = '';
+      if (!products.length) {
+        emptyMsg.style.display = 'block';
+        if (counterEl) counterEl.textContent = 'Showing 0 items';
+        return;
+      }
+      emptyMsg.style.display = 'none';
+      if (counterEl) counterEl.textContent = `Showing ${products.length} authenticated commercial programs`;
+
+      products.forEach((p) => {
+        const card = document.createElement('div');
+        card.className = 'product-card';
+        card.onclick = () => openModal(p);
+
+        const imgSrc = p.imageLocal || p.image || 'images/hombre-cardigan.jpeg';
+        const brand = p.brandDisplay || (p.brand ? p.brand.toUpperCase() : 'ASDWA');
+        const gauge = p.gauge || '7GG';
+
+        card.innerHTML = `
+          <div class="product-card-img-wrap">
+            <span class="product-badge-gauge">${gauge}</span>
+            <span class="product-badge-brand">${brand}</span>
+            <img src="${imgSrc}" alt="${p.name}" loading="lazy">
+          </div>
+          <div class="product-card-body">
+            <h4 class="product-card-title">${p.name}</h4>
+            <p class="product-card-comp"><strong>Fiber:</strong> ${p.composition}</p>
+            <div class="product-card-footer">
+              <span style="font-size:12px;color:var(--gold-dark);font-weight:600;">Inspect Tech Specs &rarr;</span>
+              <span style="font-size:11px;color:var(--text-muted);font-family:var(--font-mono);">${p.id.toUpperCase()}</span>
+            </div>
+          </div>
+        `;
+        grid.appendChild(card);
+      });
+    }
+
+    function applyFilters() {
+      let filtered = allProducts;
+      if (currentBrand !== 'all') {
+        filtered = filtered.filter(p => p.brandDisplay === currentBrand);
+      }
+      if (currentGauge !== 'all') {
+        filtered = filtered.filter(p => p.gauge === currentGauge);
+      }
+      if (searchQuery.trim() !== '') {
+        const q = searchQuery.toLowerCase();
+        filtered = filtered.filter(p =>
+          p.name.toLowerCase().includes(q) ||
+          p.composition.toLowerCase().includes(q) ||
+          (p.gauge && p.gauge.toLowerCase().includes(q)) ||
+          (p.brandDisplay && p.brandDisplay.toLowerCase().includes(q))
+        );
+      }
+      renderProducts(filtered);
+    }
+
+    function filterByBrand(brand) {
+      currentBrand = brand;
+      document.querySelectorAll('.filter-pill').forEach(btn => {
+        btn.classList.toggle('active', btn.dataset.brand === brand);
+      });
+      applyFilters();
+    }
+
+    function filterByGauge(gauge) {
+      currentGauge = gauge;
+      document.querySelectorAll('.gauge-pill').forEach(btn => {
+        btn.classList.toggle('active', btn.dataset.gauge === gauge);
+      });
+      applyFilters();
+    }
+
+    function handleSearch(val) {
+      searchQuery = val;
+      applyFilters();
+    }
+
+    function resetFilters() {
+      currentBrand = 'all';
+      currentGauge = 'all';
+      searchQuery = '';
+      document.getElementById('catalog-search').value = '';
+      filterByBrand('all');
+      filterByGauge('all');
+    }
+
+    function openModal(p) {
+      const modal = document.getElementById('product-modal');
+      document.getElementById('modal-img').src = p.imageLocal || p.image;
+      document.getElementById('modal-brand').textContent = p.brandDisplay || p.brand.toUpperCase();
+      document.getElementById('modal-title').textContent = p.name;
+      document.getElementById('modal-gauge').textContent = `${p.gauge || '7GG'} Multi-Structure`;
+      document.getElementById('modal-comp').textContent = p.composition;
+      document.getElementById('modal-machine').textContent = p.gauge === '14GG' || p.gauge === '12GG'
+        ? 'Shima Seiki SVR093 / Stoll CMS 530 HP'
+        : (p.gauge === '3GG' || p.gauge === '5GG' ? 'Shima Seiki SVR122 Chunky / Stoll CMS 530' : 'Shima Seiki SVR122 / Stoll CMS 502');
+      document.getElementById('modal-link').href = p.productUrl || '#';
+      document.getElementById('modal-inquire-btn').href = `contact.html?style=${encodeURIComponent(p.name)}&gauge=${encodeURIComponent(p.gauge || '7GG')}`;
+      modal.classList.add('active');
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeModal() {
+      const modal = document.getElementById('product-modal');
+      modal.classList.remove('active');
+      document.body.style.overflow = '';
+    }
+
+    document.getElementById('product-modal').addEventListener('click', (e) => {
+      if (e.target.id === 'product-modal') closeModal();
+    });
+
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') closeModal();
+    });
+
+    document.addEventListener('DOMContentLoaded', () => {
+      if (typeof i18n !== 'undefined') i18n.init();
+      fetch('products_data.json')
+        .then(r => r.json())
+        .then(data => {
+          allProducts = data.filter(p => p.status === 'found');
+          renderProducts(allProducts);
+        })
+        .catch(err => console.error('Error loading products:', err));
+    });
+  </script>
+</body>
+</html>

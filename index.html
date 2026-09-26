@@ -1,0 +1,1640 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ASDWA Fashion Ltd. | Precision Knitwear &amp; Sweater Manufacturing Powerhouse</title>
+  <meta name="description"
+    content="ASDWA Fashion Ltd. is a premier knitwear and sweater manufacturer in Bangladesh with 553+ flat knitting machines, European quality engineering, 2,500+ master artisans, and GOTS/GRS/BSCI certified facilities in Narsingdi and Dhaka. Trusted by Zara, Mango, Pull&Bear, and global fashion leaders.">
+  <meta name="keywords"
+    content="ASDWA Fashion Ltd, knitwear manufacturer Bangladesh, sweater factory Narsingdi, Shima Seiki flat knitting, Stoll knitwear, GOTS certified knitwear, BSCI factory Bangladesh, Inditex supplier">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="ASDWA Fashion Ltd. | Precision Knitwear &amp; Sweater Manufacturer">
+  <meta property="og:description"
+    content="Operating 553+ computerized flat knitting machines in Narsingdi, Bangladesh with 2,500+ artisans and global design liaisons.">
+  <meta property="og:image" content="images/Factory-Interior-Production-floor.jpg">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=Outfit:wght@300;400;500;600;700&family=Cormorant+Garamond:ital,wght@0,500;0,600;1,400&display=swap"
+    rel="stylesheet">
+
+  <link rel="stylesheet" href="css/design-system.css">
+
+  <style>
+    /* ============================================================ */
+    /* CUSTOM HERO & INTERACTIVE SHOWCASE STYLING                   */
+    /* ============================================================ */
+    :root {
+      --primary: #111D13;
+      --primary-light: #18281B;
+      --primary-surface: #223725;
+      --gold: #C9A961;
+      --gold-light: #E8CC8A;
+      --gold-dark: #A6863C;
+      --gold-glow: rgba(201, 169, 97, 0.25);
+      --bg: #F9F9F7;
+      --bg-stone: #F2EFEB;
+      --white: #FFFFFF;
+      --text-primary: #111D13;
+      --text-secondary: #485249;
+      --text-muted: #79837B;
+      --border: #E2DDD5;
+    }
+
+    /* Video Hero */
+    #hero {
+      position: relative;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+      background: #0C150E;
+      padding: 140px 24px 100px;
+    }
+
+    .hero-video-container {
+      position: absolute;
+      inset: 0;
+      z-index: 1;
+      overflow: hidden;
+    }
+
+    .hero-video {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      opacity: 0.52;
+      transition: opacity 1.2s ease;
+    }
+
+    .hero-video-overlay {
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(circle at center, rgba(12, 21, 14, 0.4) 0%, rgba(12, 21, 14, 0.88) 100%),
+        linear-gradient(to bottom, rgba(12, 21, 14, 0.3) 0%, rgba(12, 21, 14, 0.95) 100%);
+      z-index: 2;
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 10;
+      max-width: 980px;
+      text-align: center;
+      color: var(--white);
+      margin: 0 auto;
+    }
+
+    .hero-eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--gold);
+      background: rgba(201, 169, 97, 0.12);
+      border: 1px solid rgba(201, 169, 97, 0.35);
+      padding: 6px 18px;
+      border-radius: 999px;
+      margin-bottom: 24px;
+      backdrop-filter: blur(8px);
+    }
+
+    .hero-title {
+      font-family: var(--font-display);
+      font-size: clamp(34px, 5.5vw, 68px);
+      line-height: 1.12;
+      font-weight: 400;
+      margin-bottom: 24px;
+      letter-spacing: -0.015em;
+    }
+
+    .hero-title em {
+      font-family: var(--font-serif);
+      font-style: italic;
+      color: var(--gold-light);
+      font-weight: 500;
+    }
+
+    .hero-subtitle {
+      font-size: clamp(16px, 1.8vw, 19px);
+      line-height: 1.7;
+      color: rgba(255, 255, 255, 0.82);
+      max-width: 780px;
+      margin: 0 auto 36px;
+      font-weight: 300;
+    }
+
+    .hero-cta-bar {
+      display: flex;
+      gap: 16px;
+      justify-content: center;
+      align-items: center;
+      flex-wrap: wrap;
+      margin-bottom: 48px;
+    }
+
+    .hero-video-controls {
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      background: rgba(0, 0, 0, 0.55);
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      border-radius: 999px;
+      padding: 6px 16px;
+      backdrop-filter: blur(10px);
+      font-size: 12px;
+      color: rgba(255, 255, 255, 0.8);
+    }
+
+    .video-switch-btn {
+      background: none;
+      border: none;
+      color: rgba(255, 255, 255, 0.65);
+      font-size: 11px;
+      padding: 4px 10px;
+      border-radius: 999px;
+      cursor: pointer;
+      transition: all 0.2s ease;
+    }
+
+    .video-switch-btn.active,
+    .video-switch-btn:hover {
+      background: var(--gold);
+      color: #0c150e;
+      font-weight: 600;
+    }
+
+    /* Live KPI Ribbon */
+    .hero-kpi-ribbon {
+      margin-top: 20px;
+      display: grid;
+      grid-template-columns: repeat(6, 1fr);
+      gap: 12px;
+      max-width: 1200px;
+      width: 100%;
+      margin-left: auto;
+      margin-right: auto;
+      position: relative;
+      z-index: 10;
+    }
+
+    .kpi-card {
+      background: rgba(20, 34, 23, 0.65);
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      border-radius: 12px;
+      padding: 16px 12px;
+      text-align: center;
+      backdrop-filter: blur(12px);
+      transition: transform 0.3s ease, border-color 0.3s ease, background 0.3s ease;
+    }
+
+    .kpi-card:hover {
+      transform: translateY(-4px);
+      border-color: var(--gold);
+      background: rgba(28, 48, 32, 0.85);
+    }
+
+    .kpi-number {
+      font-family: var(--font-display);
+      font-size: clamp(22px, 2.5vw, 32px);
+      font-weight: 600;
+      color: var(--gold);
+      line-height: 1.1;
+      display: block;
+      margin-bottom: 4px;
+    }
+
+    .kpi-label {
+      font-size: 11px;
+      font-weight: 500;
+      color: rgba(255, 255, 255, 0.75);
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      line-height: 1.3;
+    }
+
+    @media (max-width: 992px) {
+      .hero-kpi-ribbon {
+        grid-template-columns: repeat(3, 1fr);
+      }
+    }
+
+    @media (max-width: 600px) {
+      .hero-kpi-ribbon {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .top-ticker {
+        display: none;
+      }
+    }
+
+    /* Gauge Simulator Component */
+    .gauge-explorer-wrapper {
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      padding: 36px;
+      box-shadow: 0 10px 40px -10px rgba(17, 29, 19, 0.06);
+    }
+
+    .gauge-tabs {
+      display: flex;
+      gap: 8px;
+      overflow-x: auto;
+      padding-bottom: 12px;
+      border-bottom: 1px solid var(--border);
+      margin-bottom: 28px;
+      scrollbar-width: thin;
+    }
+
+    .gauge-tab-btn {
+      padding: 10px 20px;
+      background: var(--bg-stone);
+      border: 1px solid var(--border);
+      border-radius: 999px;
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--text-secondary);
+      white-space: nowrap;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .gauge-tab-btn:hover {
+      background: var(--border);
+      color: var(--text-primary);
+    }
+
+    .gauge-tab-btn.active {
+      background: var(--primary);
+      color: var(--white);
+      border-color: var(--primary);
+    }
+
+    .gauge-tab-btn.active .gauge-tag-pill {
+      background: var(--gold);
+      color: #0c150e;
+    }
+
+    .gauge-tag-pill {
+      background: rgba(0, 0, 0, 0.08);
+      font-size: 10px;
+      padding: 2px 7px;
+      border-radius: 999px;
+      font-weight: 700;
+    }
+
+    .gauge-display-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 36px;
+      align-items: center;
+    }
+
+    @media (max-width: 860px) {
+      .gauge-display-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .gauge-explorer-wrapper {
+        padding: 24px;
+      }
+    }
+
+    .gauge-media-box {
+      border-radius: 14px;
+      overflow: hidden;
+      aspect-ratio: 4/3;
+      background: var(--bg-stone);
+      position: relative;
+      border: 1px solid var(--border);
+    }
+
+    .gauge-media-box img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.5s ease;
+    }
+
+    .gauge-media-box:hover img {
+      transform: scale(1.04);
+    }
+
+    .gauge-spec-pill {
+      position: absolute;
+      bottom: 16px;
+      left: 16px;
+      background: rgba(17, 29, 19, 0.85);
+      backdrop-filter: blur(8px);
+      color: var(--white);
+      padding: 6px 14px;
+      border-radius: 999px;
+      font-size: 12px;
+      font-weight: 500;
+      border: 1px solid rgba(201, 169, 97, 0.4);
+    }
+
+    .gauge-info-box h3 {
+      font-family: var(--font-display);
+      font-size: 28px;
+      font-weight: 500;
+      color: var(--primary);
+      margin-bottom: 12px;
+    }
+
+    .gauge-spec-table {
+      width: 100%;
+      margin: 20px 0;
+      border-collapse: collapse;
+      font-size: 14px;
+    }
+
+    .gauge-spec-table tr {
+      border-bottom: 1px solid var(--border);
+    }
+
+    .gauge-spec-table td {
+      padding: 10px 0;
+      color: var(--text-secondary);
+    }
+
+    .gauge-spec-table td:first-child {
+      font-weight: 600;
+      color: var(--text-primary);
+      width: 40%;
+    }
+
+    /* 6-Stage Process Flow */
+    .process-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+      margin-top: 36px;
+    }
+
+    @media (max-width: 992px) {
+      .process-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (max-width: 640px) {
+      .process-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .process-card {
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 24px;
+      position: relative;
+      transition: all 0.3s ease;
+    }
+
+    .process-card:hover {
+      transform: translateY(-4px);
+      border-color: var(--gold);
+      box-shadow: 0 12px 30px rgba(17, 29, 19, 0.06);
+    }
+
+    .process-step-badge {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 34px;
+      height: 34px;
+      background: var(--primary);
+      color: var(--gold);
+      font-family: var(--font-display);
+      font-weight: 600;
+      border-radius: 50%;
+      margin-bottom: 16px;
+      font-size: 15px;
+    }
+
+    .process-card h4 {
+      font-size: 17px;
+      font-weight: 600;
+      color: var(--text-primary);
+      margin-bottom: 8px;
+    }
+
+    .process-card p {
+      font-size: 14px;
+      color: var(--text-secondary);
+      line-height: 1.6;
+    }
+
+    /* Interactive Product Modal */
+    .product-modal {
+      position: fixed;
+      inset: 0;
+      background: rgba(11, 19, 12, 0.85);
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+      z-index: 3000;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 24px;
+      opacity: 0;
+      visibility: hidden;
+      transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    .product-modal.active {
+      opacity: 1;
+      visibility: visible;
+    }
+
+    .product-modal-content {
+      background: var(--white);
+      border-radius: 20px;
+      max-width: 840px;
+      width: 100%;
+      overflow: hidden;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      box-shadow: 0 25px 60px rgba(0, 0, 0, 0.4);
+      position: relative;
+    }
+
+    @media (max-width: 768px) {
+      .product-modal-content {
+        grid-template-columns: 1fr;
+        max-height: 90vh;
+        overflow-y: auto;
+      }
+    }
+
+    .product-modal-close {
+      position: absolute;
+      top: 16px;
+      right: 16px;
+      width: 38px;
+      height: 38px;
+      border-radius: 50%;
+      background: rgba(0, 0, 0, 0.6);
+      color: white;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      z-index: 10;
+      font-size: 18px;
+      border: 1px solid rgba(255, 255, 255, 0.2);
+    }
+
+    .product-modal-close:hover {
+      background: var(--gold);
+      color: #0c150e;
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- Top Announcement Bar -->
+  <aside class="top-ticker" aria-label="Announcement">
+    <div class="top-ticker-left">
+      <span class="ticker-pulse"></span>
+      <span><strong>LIVE:</strong> ASDWA Integrated Campus (Madhabdi, Narsingdi) • 553 Computerized Flat Knit Machines
+        Operating</span>
+    </div>
+    <div class="top-ticker-right">
+      <span>100% Daytime Solar Energy</span>
+      <span>•</span>
+      <span>AQL 1.5 European QA</span>
+      <span>•</span>
+      <a href="contact.html">Book Delegation Tour &rarr;</a>
+    </div>
+  </aside>
+
+  <!-- ============================================================ -->
+  <!-- FLOATING LUXURY NAVIGATION                                   -->
+  <!-- ============================================================ -->
+  <nav class="ds-nav" id="navbar">
+    <div class="ds-nav-inner">
+      <a href="index.html" class="ds-nav-logo" style="display:inline-flex;align-items:center;gap:10px;">
+        <svg width="26" height="26" viewBox="0 0 32 32" fill="none">
+          <rect width="32" height="32" rx="8" fill="url(#goldGrad)" />
+          <path d="M16 6L24 22H20L18 17H14L12 22H8L16 6Z" fill="#111D13" />
+          <path d="M16 11L14.5 15H17.5L16 11Z" fill="#C9A961" />
+          <defs>
+            <linearGradient id="goldGrad" x1="0" y1="0" x2="32" y2="32">
+              <stop stop-color="#E8CC8A" />
+              <stop offset="1" stop-color="#A6863C" />
+            </linearGradient>
+          </defs>
+        </svg>
+        <span>ASDWA <span style="font-size:11px;font-weight:400;opacity:0.8;letter-spacing:0.1em;">FASHION
+            LTD.</span></span>
+      </a>
+
+      <ul class="ds-nav-links" id="nav-links">
+        <li><a href="index.html#about" class="ds-nav-link active" data-i18n="nav.about">About ASDWA</a></li>
+        <li><a href="manufacturing.html" class="ds-nav-link" data-i18n="nav.manufacturing">Manufacturing</a></li>
+        <li><a href="products.html" class="ds-nav-link" data-i18n="nav.products">Products &amp; Portfolio</a></li>
+        <li><a href="responsibility.html" class="ds-nav-link" data-i18n="nav.responsibility">Sustainability &amp;
+            Solar</a></li>
+        <li><a href="our-history.html" class="ds-nav-link" data-i18n="nav.history">Our History</a></li>
+        <li><a href="lyk.html" class="ds-nav-link" data-i18n="nav.lyk">LYK Lab</a></li>
+        <li><a href="contact.html" class="ds-nav-link" data-i18n="nav.contact">Contact &amp; Visit</a></li>
+      </ul>
+
+      <div class="ds-nav-actions" style="display:flex;align-items:center;gap:12px;">
+        <div class="ds-nav-langs">
+          <button class="ds-lang-btn active" onclick="i18n.switchLanguage('en')" data-lang="en">EN</button>
+          <button class="ds-lang-btn" onclick="i18n.switchLanguage('es')" data-lang="es">ES</button>
+          <button class="ds-lang-btn" onclick="i18n.switchLanguage('ja')" data-lang="ja">JA</button>
+        </div>
+        <a href="contact.html" class="ds-btn ds-btn-gold"
+          style="padding:8px 18px;font-size:12px;border-radius:999px;">Book Tour</a>
+      </div>
+
+      <button class="ds-hamburger" id="nav-toggle" aria-label="Toggle navigation">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- ============================================================ -->
+
+  <!-- ============================================================ -->
+  <!-- HERO SECTION — CINEMATIC VIDEO & PRODUCTION STATS            -->
+  <!-- ============================================================ -->
+  <section id="hero">
+    <div class="hero-video-container">
+      <video class="hero-video" id="hero-video" autoplay muted loop playsinline
+        poster="images/Factory-Interior-Production-floor.jpg">
+        <source src="media/hero-knitting-web.mp4" type="video/mp4">
+        <source src="media/0_Ai_generated_Knitted.mp4" type="video/mp4">
+      </video>
+      <div class="hero-video-overlay"></div>
+    </div>
+
+    <div class="hero-content">
+      <div class="hero-eyebrow" data-i18n="hero.eyebrow">
+        <span>ESTABLISHED 2002 • NARSINGDI, BANGLADESH</span>
+      </div>
+
+      <h1 class="hero-title" data-i18n-html="hero.title">
+        Precision Knitwear &amp; Sweater <br><em>Manufacturing Powerhouse</em>
+      </h1>
+
+      <p class="hero-subtitle" data-i18n="hero.subtitle">
+        ASDWA Fashion Ltd. operates 550+ computerized flat knitting machines, uniting European engineering standards
+        with 2,500+ master artisans across a unified 12-acre sustainable campus in Narsingdi.
+      </p>
+
+      <div class="hero-cta-bar">
+        <a href="#factory" class="ds-btn ds-btn-gold" data-i18n="hero.cta_primary">Explore Factory Tour</a>
+        <a href="#products" class="ds-btn ds-btn-secondary" style="border-color:rgba(255,255,255,0.4);color:white;"
+          data-i18n="hero.cta_secondary">View Brand Productions</a>
+        <a href="#contact" class="ds-btn"
+          style="background:rgba(255,255,255,0.12);color:white;backdrop-filter:blur(10px);border:1px solid rgba(255,255,255,0.25);">Request
+          Sample / RFQ</a>
+      </div>
+
+      <!-- Video reel switcher -->
+      <div class="hero-video-controls">
+        <span style="font-weight:600;color:var(--gold);">Video Reel:</span>
+        <button class="video-switch-btn active" onclick="switchHeroVideo('media/hero-knitting-web.mp4', this)">Knitting
+          Floor</button>
+        <button class="video-switch-btn" onclick="switchHeroVideo('media/0_Ai_generated_Knitted.mp4', this)">Artisan
+          Craft</button>
+        <button class="video-switch-btn" onclick="switchHeroVideo('media/LYK-hero-video.mp4', this)">LYK
+          Innovation</button>
+        <button class="video-switch-btn" id="video-toggle-play" onclick="toggleHeroPlay()">Pause</button>
+      </div>
+
+      <!-- Live KPI Ribbon -->
+      <div class="hero-kpi-ribbon">
+        <div class="kpi-card">
+          <span class="kpi-number" data-count="553">553+</span>
+          <span class="kpi-label">Flat Knitting Machines</span>
+        </div>
+        <div class="kpi-card">
+          <span class="kpi-number" data-count="2500">2,500+</span>
+          <span class="kpi-label">Skilled Artisans</span>
+        </div>
+        <div class="kpi-card">
+          <span class="kpi-number">1.5 - 14GG</span>
+          <span class="kpi-label">Full Gauge Spectrum</span>
+        </div>
+        <div class="kpi-card">
+          <span class="kpi-number" data-count="8500000">8.5M+</span>
+          <span class="kpi-label">Annual Pieces Capacity</span>
+        </div>
+        <div class="kpi-card">
+          <span class="kpi-number">100%</span>
+          <span class="kpi-label">Daytime Solar Power</span>
+        </div>
+        <div class="kpi-card">
+          <span class="kpi-number">AQL 1.5</span>
+          <span class="kpi-label">European Quality Check</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================ -->
+  <!-- ABOUT ASDWA FASHION LTD. — CORE IDENTITY                     -->
+  <!-- ============================================================ -->
+  <section id="about" style="background:var(--white);padding:100px var(--content-padding);">
+    <div class="ds-container">
+      <div class="ds-section-header" style="max-width:820px;margin-bottom:60px;">
+        <span class="ds-eyebrow" data-i18n="about.tag">Who We Are</span>
+        <h2 class="ds-title-lg" style="margin-top:12px;color:var(--primary);">
+          Direct Vertical Control Over Every Needle, Stitch, and Seam
+        </h2>
+        <p class="ds-lead" style="margin-top:16px;color:var(--text-secondary);" data-i18n="about.story_text_1">
+          ASDWA Fashion Ltd. is a premier export-oriented readymade garment (RMG) manufacturer specializing in high-end
+          sweaters and knitwear. Operating from Madhabdi, Narsingdi and corporate headquarters in Mohakhali DOHS, Dhaka,
+          we combine state-of-the-art Japanese and German knitting technology with over two decades of technical
+          mastery.
+        </p>
+      </div>
+
+      <div style="display:grid;grid-template-columns:repeat(auto-fit, minmax(320px, 1fr));gap:24px;">
+        <div class="ds-card" style="border-top:3px solid var(--gold);">
+          <span
+            style="font-size:12px;font-weight:700;color:var(--gold-dark);letter-spacing:0.1em;text-transform:uppercase;">Heritage
+            &amp; Continuity</span>
+          <h3 class="ds-card-title" style="margin-top:8px;" data-i18n="about.story_bullet_1">Established Since 2002</h3>
+          <p class="ds-card-text" data-i18n="about.story_bullet_1_text">Over 20 years of relentless dedication to gauge
+            precision, fiber integrity, and timely global exports to Europe, Japan, and North America.</p>
+        </div>
+
+        <div class="ds-card" style="border-top:3px solid var(--primary);">
+          <span
+            style="font-size:12px;font-weight:700;color:var(--gold-dark);letter-spacing:0.1em;text-transform:uppercase;">Industrial
+            Power</span>
+          <h3 class="ds-card-title" style="margin-top:8px;" data-i18n="about.story_bullet_2">Scale &amp; Machinery</h3>
+          <p class="ds-card-text" data-i18n="about.story_bullet_2_text">553+ flat knitting machines spanning 1.5GG to
+            14GG with annual production exceeding 8.5 million units across men's, women's, and children's knitwear.</p>
+        </div>
+
+        <div class="ds-card" style="border-top:3px solid #2e7d32;">
+          <span
+            style="font-size:12px;font-weight:700;color:var(--gold-dark);letter-spacing:0.1em;text-transform:uppercase;">Zero
+            Subcontracting</span>
+          <h3 class="ds-card-title" style="margin-top:8px;" data-i18n="about.story_bullet_3">Direct Brand Accountability
+          </h3>
+          <p class="ds-card-text" data-i18n="about.story_bullet_3_text">Complete vertical oversight from yarn lab
+            testing, computerized knitting, and dial linking to eco-washing and AQL 1.5 final needle inspection.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================ -->
+  <!-- INTERACTIVE GAUGE & CRAFTSMANSHIP EXPLORER                   -->
+  <!-- ============================================================ -->
+  <section id="gauges" style="background:var(--bg-stone);padding:100px var(--content-padding);">
+    <div class="ds-container">
+      <div class="ds-section-header" style="text-align:center;max-width:760px;margin:0 auto 48px;">
+        <span class="ds-eyebrow">Technical Mastery</span>
+        <h2 class="ds-title-lg" style="margin-top:12px;">The Complete Knitwear Gauge Spectrum</h2>
+        <p class="ds-lead" style="color:var(--text-secondary);margin-top:12px;">
+          From chunky 3GG alpine cables to ultra-delicate 14GG baby cashmere sets, inspect ASDWA's technical
+          capabilities across needle pitch and yarn blends.
+        </p>
+      </div>
+
+      <div class="gauge-explorer-wrapper">
+        <div class="gauge-tabs" role="tablist">
+          <button class="gauge-tab-btn active" onclick="selectGauge('3gg', this)">
+            <span>3GG Chunky Cable</span>
+            <span class="gauge-tag-pill">Coarse Knit</span>
+          </button>
+          <button class="gauge-tab-btn" onclick="selectGauge('5gg', this)">
+            <span>5GG Waffle &amp; Fisherman</span>
+            <span class="gauge-tag-pill">Mid-Coarse</span>
+          </button>
+          <button class="gauge-tab-btn" onclick="selectGauge('7gg', this)">
+            <span>7GG Textured Cardigan</span>
+            <span class="gauge-tag-pill">Standard Mid</span>
+          </button>
+          <button class="gauge-tab-btn" onclick="selectGauge('12gg', this)">
+            <span>12GG Extrafine Merino</span>
+            <span class="gauge-tag-pill">Fine Knit</span>
+          </button>
+          <button class="gauge-tab-btn" onclick="selectGauge('14gg', this)">
+            <span>14GG Luxury Baby &amp; Cashmere</span>
+            <span class="gauge-tag-pill">Ultra Fine</span>
+          </button>
+        </div>
+
+        <div class="gauge-display-grid" id="gauge-display">
+          <div class="gauge-media-box">
+            <img id="gauge-img" src="images/mango_cable_knit.jpg"
+              alt="3GG Chunky Cable Knitwear produced by ASDWA Fashion Ltd.">
+            <div class="gauge-spec-pill" id="gauge-pill">Gauge: 3GG • Needle Pitch: 8.46mm</div>
+          </div>
+
+          <div class="gauge-info-box">
+            <span class="ds-badge ds-badge-gold" id="gauge-badge">Heavy Winter Collection</span>
+            <h3 id="gauge-title" style="margin-top:12px;">3GG Chunky Mock-Neck Cable Knit</h3>
+            <p id="gauge-desc" style="color:var(--text-secondary);line-height:1.7;">
+              Engineered on heavy-gauge Shima Seiki &amp; Stoll computerized machines using recycled wool, alpaca, and
+              lyocell blends. Features dramatic dimensional rope cables with reinforced collars that retain elasticity
+              over years of wear.
+            </p>
+
+            <table class="gauge-spec-table">
+              <tr>
+                <td>Machine Technology</td>
+                <td id="gauge-machine">Stoll CMS 530 HP / Shima Seiki SVR 123 (3GG)</td>
+              </tr>
+              <tr>
+                <td>Yarn Count Range</td>
+                <td id="gauge-yarn">Nm 2/15 - 3/15 (Multi-ply roving yarn)</td>
+              </tr>
+              <tr>
+                <td>Typical Fibers</td>
+                <td id="gauge-fibers">Recycled Wool (GRS), Alpaca, Organic Cotton, Lyocell</td>
+              </tr>
+              <tr>
+                <td>Standard Garments</td>
+                <td id="gauge-garments">Fisherman Sweaters, Chunky Cardigans, Outerwear Knits</td>
+              </tr>
+              <tr>
+                <td>Sample Turnaround</td>
+                <td id="gauge-turnaround">72 to 96 Hours via LYK Lab</td>
+              </tr>
+            </table>
+
+            <div style="display:flex;gap:12px;margin-top:24px;">
+              <a href="#products" class="ds-btn ds-btn-primary" style="padding:10px 22px;font-size:13px;">View 3GG
+                Products</a>
+              <a href="#contact" class="ds-btn ds-btn-secondary" style="padding:10px 22px;font-size:13px;">Request
+                Swatches</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================ -->
+  <!-- 6-STAGE MANUFACTURING PROCESS & MACHINE FLOOR                -->
+  <!-- ============================================================ -->
+  <section id="factory" style="background:var(--white);padding:100px var(--content-padding);">
+    <div class="ds-container">
+      <div style="display:grid;grid-template-columns:1.2fr 0.8fr;gap:40px;align-items:end;margin-bottom:48px;">
+        <div>
+          <span class="ds-eyebrow" data-i18n="manufacturing.overview_tag">Process Mastery</span>
+          <h2 class="ds-title-lg" style="margin-top:12px;" data-i18n="manufacturing.overview_title">
+            Vertical Knitwear Operations Under One Unified Roof
+          </h2>
+          <p class="ds-lead" style="color:var(--text-secondary);margin-top:12px;"
+            data-i18n="manufacturing.overview_text">
+            We operate a fully integrated knitwear manufacturing facility in Bangladesh, combining 553 flat knitting
+            machines, experienced teams, and structured workflows to guarantee 100% traceability and zero subcontracting
+            risk.
+          </p>
+        </div>
+        <div style="text-align:right;">
+          <a href="manufacturing.html" class="ds-btn ds-btn-primary">View Full Factory Specs &rarr;</a>
+        </div>
+      </div>
+
+      <!-- Factory Floor Photo Feature -->
+      <div style="display:grid;grid-template-columns:1.5fr 1fr;gap:24px;margin-bottom:40px;">
+        <div
+          style="border-radius:16px;overflow:hidden;height:420px;position:relative;box-shadow:0 12px 36px rgba(0,0,0,0.08);">
+          <img src="images/Factory-Interior-Production-floor.jpg"
+            alt="ASDWA Fashion Ltd. Main Knitting Floor with 553+ Machines"
+            style="width:100%;height:100%;object-fit:cover;">
+          <div
+            style="position:absolute;bottom:0;inset-x:0;padding:24px;background:linear-gradient(to top, rgba(17,29,19,0.95), transparent);color:white;">
+            <span
+              style="color:var(--gold);font-size:12px;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;">Main
+              Machine Floor • Narsingdi Plant</span>
+            <h4 style="font-size:20px;font-weight:500;margin-top:4px;">553 Computerized Flat Knitting Units Operating in
+              Temperature-Controlled Halls</h4>
+          </div>
+        </div>
+
+        <div style="display:flex;flex-direction:column;gap:24px;">
+          <div
+            style="border-radius:16px;overflow:hidden;flex:1;position:relative;box-shadow:0 8px 24px rgba(0,0,0,0.06);">
+            <img src="images/Knitting-machines-Close-up detail.jpg"
+              alt="Precision needle beds on Shima Seiki machines at ASDWA"
+              style="width:100%;height:100%;object-fit:cover;">
+            <div
+              style="position:absolute;bottom:0;inset-x:0;padding:16px;background:linear-gradient(to top, rgba(17,29,19,0.9), transparent);color:white;">
+              <span style="color:var(--gold);font-size:11px;font-weight:600;text-transform:uppercase;">Micrometric
+                Needle Pitch</span>
+              <p style="font-size:13px;margin-top:2px;">Digital intarsia and jacquard tension calibration</p>
+            </div>
+          </div>
+          <div
+            style="border-radius:16px;overflow:hidden;flex:1;position:relative;box-shadow:0 8px 24px rgba(0,0,0,0.06);">
+            <img src="images/Production-line-Workers-machinery.jpg"
+              alt="Skilled artisans assembling knit garments at ASDWA Fashion Ltd."
+              style="width:100%;height:100%;object-fit:cover;">
+            <div
+              style="position:absolute;bottom:0;inset-x:0;padding:16px;background:linear-gradient(to top, rgba(17,29,19,0.9), transparent);color:white;">
+              <span style="color:var(--gold);font-size:11px;font-weight:600;text-transform:uppercase;">2,500+ Skilled
+                Artisans</span>
+              <p style="font-size:13px;margin-top:2px;">Dial linking, hand looping, and careful steam pressing</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 6-Stage Process Cards -->
+      <div class="process-grid">
+        <div class="process-card">
+          <div class="process-step-badge">1</div>
+          <h4>Yarn Lab Testing &amp; Acclimatization</h4>
+          <p>Every inbound yarn lot is acclimated in humidity-controlled bays and lab-tested for tensile strength, yarn
+            count (Nm), color fastness, and elongation.</p>
+        </div>
+
+        <div class="process-card">
+          <div class="process-step-badge">2</div>
+          <h4>Computerized Flat Knitting</h4>
+          <p>553 Shima Seiki and Stoll automated machines run digitally programmed CAD files with multi-gauge, intarsia,
+            and cable capabilities.</p>
+        </div>
+
+        <div class="process-card">
+          <div class="process-step-badge">3</div>
+          <h4>High-Precision Dial Linking</h4>
+          <p>Garment panels are linked stitch-by-stitch on automated circular dial linkers (3GG to 18GG), ensuring flat,
+            elastic, durable seams that never fray.</p>
+        </div>
+
+        <div class="process-card">
+          <div class="process-step-badge">4</div>
+          <h4>Wet Processing &amp; Eco-Softening</h4>
+          <p>Low-water-ratio commercial washing drums with organic bio-enzymes remove spinning oils, stabilize
+            dimensional shrink, and achieve buttery hand-feel.</p>
+        </div>
+
+        <div class="process-card">
+          <div class="process-step-badge">5</div>
+          <h4>In-House Physical &amp; Chemical Lab</h4>
+          <p>Tension testing, crocking, torque wash testing, and pilling box analysis ensure compliance with REACH,
+            OEKO-TEX, and brand proprietary standards.</p>
+        </div>
+
+        <div class="process-card">
+          <div class="process-step-badge">6</div>
+          <h4>Steam Pressing &amp; Dual Metal Detection</h4>
+          <p>Vacuum steam tables shape each garment to precise spec sheets. Every item passes through dual-head conveyor
+            metal detectors for 100% needle safety.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================ -->
+  <!-- SELECTED BRAND PRODUCTIONS — LIVE PORTFOLIO                  -->
+  <!-- ============================================================ -->
+  <section id="products" style="background:var(--bg-stone);padding:100px var(--content-padding);">
+    <div class="ds-container">
+      <div
+        style="display:flex;justify-content:space-between;align-items:end;flex-wrap:wrap;gap:20px;margin-bottom:36px;">
+        <div>
+          <span class="ds-eyebrow" data-i18n="work.hero_tag">Commercial Productions</span>
+          <h2 class="ds-title-lg" style="margin-top:12px;" data-i18n="work.title">Selected Knitwear for International
+            Retailers</h2>
+          <p class="ds-lead" style="color:var(--text-secondary);margin-top:8px;max-width:720px;"
+            data-i18n="work.subtitle">
+            Authenticated production runs knitted, finished, and exported from ASDWA Fashion Ltd.'s factory floor for
+            global fashion houses.
+          </p>
+        </div>
+        <div>
+          <a href="products.html" class="ds-btn ds-btn-secondary">Open Full Catalog &rarr;</a>
+        </div>
+      </div>
+
+      <!-- Filter Bar -->
+      <div style="display:flex;gap:10px;flex-wrap:wrap;margin-bottom:36px;">
+        <button class="btn-filter-pill active" onclick="filterBrand('all', this)">All Brands</button>
+        <button class="btn-filter-pill" onclick="filterBrand('zara-man', this)">ZARA MAN</button>
+        <button class="btn-filter-pill" onclick="filterBrand('pull-and-bear', this)">PULL&amp;BEAR</button>
+        <button class="btn-filter-pill" onclick="filterBrand('zara-kids', this)">ZARA KIDS</button>
+        <button class="btn-filter-pill" onclick="filterBrand('zara-baby', this)">ZARA BABY</button>
+        <button class="btn-filter-pill" onclick="filterBrand('mango', this)">MANGO</button>
+        <button class="btn-filter-pill" onclick="filterBrand('bershka', this)">BERSHKA</button>
+        <button class="btn-filter-pill" onclick="filterBrand('oysho', this)">OYSHO</button>
+      </div>
+
+      <!-- Live Dynamic Products Grid -->
+      <div id="home-products-grid"
+        style="display:grid;grid-template-columns:repeat(auto-fill, minmax(280px, 1fr));gap:24px;">
+        <!-- Injected via JavaScript from products_data.json -->
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================ -->
+  <!-- CERTIFIED SUSTAINABILITY & SOCIAL WELFARE                    -->
+  <!-- ============================================================ -->
+  <section id="sustainability" style="background:var(--white);padding:100px var(--content-padding);">
+    <div class="ds-container">
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:center;margin-bottom:60px;">
+        <div>
+          <span class="ds-eyebrow" data-i18n="responsibility.hero_tag">Sustainability &amp; Ethics</span>
+          <h2 class="ds-title-lg" style="margin-top:12px;">Where Clean Energy Powers Master Craftsmanship</h2>
+          <p class="ds-lead" style="color:var(--text-secondary);margin-top:16px;">
+            ASDWA Fashion Ltd. demonstrates that large-scale knitwear manufacturing can operate in harmony with
+            environmental conservation and social empowerment.
+          </p>
+          <div style="margin-top:24px;display:flex;flex-direction:column;gap:16px;">
+            <div style="display:flex;gap:14px;align-items:flex-start;">
+              <div
+                style="width:28px;height:28px;border-radius:50%;background:rgba(201,169,97,0.2);display:flex;align-items:center;justify-content:center;color:var(--gold-dark);font-weight:700;flex-shrink:0;">
+                &#10003;</div>
+              <div>
+                <h4 style="font-size:16px;font-weight:600;color:var(--primary);">450 kWp Rooftop Solar Installation</h4>
+                <p style="font-size:14px;color:var(--text-secondary);">Generates 100% of the factory's daytime energy
+                  needs, offsetting over 380 metric tons of CO2 each year.</p>
+              </div>
+            </div>
+
+            <div style="display:flex;gap:14px;align-items:flex-start;">
+              <div
+                style="width:28px;height:28px;border-radius:50%;background:rgba(201,169,97,0.2);display:flex;align-items:center;justify-content:center;color:var(--gold-dark);font-weight:700;flex-shrink:0;">
+                &#10003;</div>
+              <div>
+                <h4 style="font-size:16px;font-weight:600;color:var(--primary);">On-Site Healthcare Center &amp; Daycare
+                </h4>
+                <p style="font-size:14px;color:var(--text-secondary);">Full-time registered physicians and nurses
+                  provide free medical care, alongside a supervised daycare crèche for working mothers.</p>
+              </div>
+            </div>
+
+            <div style="display:flex;gap:14px;align-items:flex-start;">
+              <div
+                style="width:28px;height:28px;border-radius:50%;background:rgba(201,169,97,0.2);display:flex;align-items:center;justify-content:center;color:var(--gold-dark);font-weight:700;flex-shrink:0;">
+                &#10003;</div>
+              <div>
+                <h4 style="font-size:16px;font-weight:600;color:var(--primary);">Zero Toxic Discharge &amp; Water
+                  Recycling</h4>
+                <p style="font-size:14px;color:var(--text-secondary);">Closed-loop wastewater neutralization, rainwater
+                  harvesting tanks, and exclusively biodegradable washing agents.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;">
+          <div style="border-radius:14px;overflow:hidden;box-shadow:0 8px 24px rgba(0,0,0,0.06);">
+            <img src="images/child-care-medical-suport.jpg"
+              alt="Child daycare and healthcare clinic at ASDWA Fashion Ltd."
+              style="width:100%;height:100%;object-fit:cover;">
+          </div>
+          <div style="border-radius:14px;overflow:hidden;box-shadow:0 8px 24px rgba(0,0,0,0.06);margin-top:24px;">
+            <img src="images/Tree-planting-Natural-environment.jpg"
+              alt="Factory tree planting and green landscape at ASDWA" style="width:100%;height:100%;object-fit:cover;">
+          </div>
+        </div>
+      </div>
+
+      <!-- Global Certification Badges Strip -->
+      <div style="border-top:1px solid var(--border);padding-top:40px;">
+        <p
+          style="text-align:center;font-size:12px;font-weight:700;letter-spacing:0.15em;text-transform:uppercase;color:var(--text-muted);margin-bottom:24px;">
+          Verified Global Standards &amp; Social Audits
+        </p>
+        <div style="display:flex;justify-content:center;align-items:center;flex-wrap:wrap;gap:40px;opacity:0.9;">
+          <div style="display:flex;flex-direction:column;align-items:center;gap:8px;">
+            <img src="images/gots-vector-logo.png" alt="GOTS Global Organic Textile Standard"
+              style="height:60px;object-fit:contain;">
+            <span style="font-size:11px;font-weight:600;color:var(--text-secondary);">GOTS Organic</span>
+          </div>
+          <div style="display:flex;flex-direction:column;align-items:center;gap:8px;">
+            <img src="images/GRS-logo copia.png" alt="Global Recycled Standard (GRS)"
+              style="height:60px;object-fit:contain;">
+            <span style="font-size:11px;font-weight:600;color:var(--text-secondary);">GRS Recycled</span>
+          </div>
+          <div style="display:flex;flex-direction:column;align-items:center;gap:8px;">
+            <img src="images/responsible-wool-standard-rws-logo-vector.png" alt="Responsible Wool Standard (RWS)"
+              style="height:60px;object-fit:contain;">
+            <span style="font-size:11px;font-weight:600;color:var(--text-secondary);">RWS Wool</span>
+          </div>
+          <div style="display:flex;flex-direction:column;align-items:center;gap:8px;">
+            <img src="images/recycled-blended-claim-standard-logo-png_seeklogo-490361.png" alt="Recycled Claim Standard"
+              style="height:60px;object-fit:contain;">
+            <span style="font-size:11px;font-weight:600;color:var(--text-secondary);">RCS Standard</span>
+          </div>
+          <div style="display:flex;flex-direction:column;align-items:center;gap:8px;">
+            <div
+              style="height:60px;display:flex;align-items:center;justify-content:center;font-family:var(--font-display);font-size:24px;font-weight:700;color:var(--primary);border:2px solid var(--primary);padding:0 14px;border-radius:6px;">
+              BSCI
+            </div>
+            <span style="font-size:11px;font-weight:600;color:var(--text-secondary);">Social Audited</span>
+          </div>
+          <div style="display:flex;flex-direction:column;align-items:center;gap:8px;">
+            <div
+              style="height:60px;display:flex;align-items:center;justify-content:center;font-family:var(--font-display);font-size:22px;font-weight:700;color:var(--primary);border:2px solid var(--primary);padding:0 14px;border-radius:6px;">
+              OEKO-TEX®
+            </div>
+            <span style="font-size:11px;font-weight:600;color:var(--text-secondary);">Standard 100</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================ -->
+  <!-- INTERACTIVE SOURCING & FACTORY VISIT PORTAL                  -->
+  <!-- ============================================================ -->
+  <section id="contact" style="background:var(--primary);color:var(--white);padding:100px var(--content-padding);">
+    <div class="ds-container">
+      <div style="text-align:center;max-width:760px;margin:0 auto 48px;">
+        <span class="ds-eyebrow"
+          style="color:var(--gold);border-color:rgba(201,169,97,0.3);background:rgba(201,169,97,0.1);"
+          data-i18n="contact.tag">Direct Factory Connection</span>
+        <h2 class="ds-title-lg" style="margin-top:12px;color:var(--white);">Schedule a Delegation Visit or Request an
+          RFQ</h2>
+        <p class="ds-lead" style="color:rgba(255,255,255,0.75);margin-top:12px;">
+          Connect directly with ASDWA Fashion Ltd.'s factory directors and engineering team without third-party broker
+          friction.
+        </p>
+      </div>
+
+      <div style="display:grid;grid-template-columns:1.2fr 0.8fr;gap:40px;align-items:start;">
+        <!-- RFQ & Visit Booking Form -->
+        <div
+          style="background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.15);border-radius:18px;padding:36px;backdrop-filter:blur(14px);">
+          <h3 style="font-size:20px;font-weight:500;color:var(--white);margin-bottom:20px;">Direct Sourcing &amp;
+            Inspection Inquiry</h3>
+
+          <form id="contact-form" action="https://formspree.io/f/mwvwqlno" method="POST">
+            <input type="hidden" name="_subject" value="New Sourcing Inquiry for ASDWA Fashion Ltd.">
+
+            <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:16px;">
+              <div>
+                <label style="display:block;font-size:13px;font-weight:500;color:var(--gold);margin-bottom:6px;">Your
+                  Name *</label>
+                <input type="text" name="name" required
+                  style="width:100%;padding:12px;background:rgba(0,0,0,0.3);border:1px solid rgba(255,255,255,0.2);border-radius:8px;color:white;font-size:14px;"
+                  placeholder="e.g. Elena Rostova">
+              </div>
+              <div>
+                <label style="display:block;font-size:13px;font-weight:500;color:var(--gold);margin-bottom:6px;">Work
+                  Email *</label>
+                <input type="email" name="_replyto" required
+                  style="width:100%;padding:12px;background:rgba(0,0,0,0.3);border:1px solid rgba(255,255,255,0.2);border-radius:8px;color:white;font-size:14px;"
+                  placeholder="buyer@brand.com">
+              </div>
+            </div>
+
+            <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:16px;">
+              <div>
+                <label style="display:block;font-size:13px;font-weight:500;color:var(--gold);margin-bottom:6px;">Company
+                  / Brand *</label>
+                <input type="text" name="company" required
+                  style="width:100%;padding:12px;background:rgba(0,0,0,0.3);border:1px solid rgba(255,255,255,0.2);border-radius:8px;color:white;font-size:14px;"
+                  placeholder="Brand or Retailer">
+              </div>
+              <div>
+                <label style="display:block;font-size:13px;font-weight:500;color:var(--gold);margin-bottom:6px;">Inquiry
+                  Type</label>
+                <select name="inquiry_type"
+                  style="width:100%;padding:12px;background:rgba(18,29,20,0.9);border:1px solid rgba(255,255,255,0.2);border-radius:8px;color:white;font-size:14px;">
+                  <option value="factory_visit">Factory Floor Delegation Visit</option>
+                  <option value="bulk_rfq">Bulk Sweater Production RFQ</option>
+                  <option value="sampling">LYK 72-Hour Rapid Sampling</option>
+                  <option value="compliance">Compliance &amp; Audit Review</option>
+                </select>
+              </div>
+            </div>
+
+            <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:16px;">
+              <div>
+                <label style="display:block;font-size:13px;font-weight:500;color:var(--gold);margin-bottom:6px;">Target
+                  Season</label>
+                <select name="target_season"
+                  style="width:100%;padding:12px;background:rgba(18,29,20,0.9);border:1px solid rgba(255,255,255,0.2);border-radius:8px;color:white;font-size:14px;">
+                  <option value="AW26">Autumn / Winter 2026</option>
+                  <option value="SS27">Spring / Summer 2027</option>
+                  <option value="AW27">Autumn / Winter 2027</option>
+                  <option value="Immediate">Immediate Replenishment Run</option>
+                </select>
+              </div>
+              <div>
+                <label
+                  style="display:block;font-size:13px;font-weight:500;color:var(--gold);margin-bottom:6px;">Estimated
+                  Quantity (pcs)</label>
+                <input type="text" name="estimated_pcs"
+                  style="width:100%;padding:12px;background:rgba(0,0,0,0.3);border:1px solid rgba(255,255,255,0.2);border-radius:8px;color:white;font-size:14px;"
+                  placeholder="e.g. 5,000 - 50,000">
+              </div>
+            </div>
+
+            <div style="margin-bottom:20px;">
+              <label style="display:block;font-size:13px;font-weight:500;color:var(--gold);margin-bottom:6px;">Technical
+                Program Details *</label>
+              <textarea name="message" required rows="4"
+                style="width:100%;padding:12px;background:rgba(0,0,0,0.3);border:1px solid rgba(255,255,255,0.2);border-radius:8px;color:white;font-size:14px;resize:vertical;"
+                placeholder="Specify gauges (e.g. 7GG, 12GG), preferred yarns (organic cotton, extrafine merino, cashmere blend), and target delivery window."></textarea>
+            </div>
+
+            <button type="submit" id="form-btn" class="ds-btn ds-btn-gold"
+              style="width:100%;font-size:14px;padding:14px;">
+              Submit Sourcing Inquiry to ASDWA
+            </button>
+            <div id="form-success"
+              style="display:none;margin-top:16px;padding:16px;background:rgba(74,222,128,0.2);border:1px solid #4ade80;border-radius:8px;color:#4ade80;text-align:center;">
+              Thank you! Your request has been transmitted directly to ASDWA Fashion Ltd. Managing Directors.
+            </div>
+          </form>
+        </div>
+
+        <!-- Campus Locations & International Desks -->
+        <div style="display:flex;flex-direction:column;gap:20px;">
+          <!-- Narsingdi Factory Campus -->
+          <div
+            style="background:rgba(255,255,255,0.06);border:1px solid rgba(201,169,97,0.3);border-radius:14px;padding:24px;">
+            <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:8px;">
+              <span
+                style="font-size:11px;font-weight:700;color:var(--gold);letter-spacing:0.12em;text-transform:uppercase;">Flagship
+                Manufacturing Campus</span>
+              <span
+                style="font-size:11px;background:rgba(74,222,128,0.2);color:#4ade80;padding:2px 8px;border-radius:999px;">Primary
+                Factory</span>
+            </div>
+            <h4 style="font-size:18px;font-weight:600;color:white;">ASDWA Fashion Ltd. Integrated Plant</h4>
+            <p style="font-size:13px;color:rgba(255,255,255,0.75);margin-top:6px;line-height:1.6;">
+              Kandai Bus Stand, Madhabdi, Narsingdi, Bangladesh.<br>
+              553 Flat Knitting Machines • Eco-Washing &amp; Quality Lab • Solar Campus
+            </p>
+            <div style="margin-top:14px;">
+              <a href="https://maps.google.com/?q=Madhabdi+Narsingdi+Bangladesh" target="_blank" rel="noopener"
+                style="font-size:12px;color:var(--gold);text-decoration:underline;">View on Google Maps &rarr;</a>
+            </div>
+          </div>
+
+          <!-- Mohakhali Corporate Headquarters -->
+          <div
+            style="background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.15);border-radius:14px;padding:24px;">
+            <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:8px;">
+              <span
+                style="font-size:11px;font-weight:700;color:var(--gold);letter-spacing:0.12em;text-transform:uppercase;">Corporate
+                Headquarters</span>
+              <span
+                style="font-size:11px;background:rgba(255,255,255,0.15);color:white;padding:2px 8px;border-radius:999px;">Commercial
+                HQ</span>
+            </div>
+            <h4 style="font-size:18px;font-weight:600;color:white;">Dhaka Corporate &amp; Sampling Office</h4>
+            <p style="font-size:13px;color:rgba(255,255,255,0.75);margin-top:6px;line-height:1.6;">
+              House 198/A, Road 01, Mohakhali New DOHS, Dhaka 1206, Bangladesh.<br>
+              Executive Management • Merchandising • Yarn Sourcing Hub
+            </p>
+            <div style="margin-top:14px;">
+              <a href="https://maps.google.com/?q=House+198+Road+1+Mohakhali+DOHS+Dhaka" target="_blank" rel="noopener"
+                style="font-size:12px;color:var(--gold);text-decoration:underline;">View on Google Maps &rarr;</a>
+            </div>
+          </div>
+
+          <!-- International Liaisons -->
+          <div
+            style="background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.1);border-radius:14px;padding:20px;">
+            <span
+              style="font-size:11px;font-weight:700;color:var(--gold);letter-spacing:0.12em;text-transform:uppercase;">Global
+              Commercial Desks</span>
+            <div
+              style="display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:12px;font-size:13px;color:rgba(255,255,255,0.8);">
+              <div><strong>Barcelona:</strong> European Design &amp; Client Desk</div>
+              <div><strong>Prato:</strong> Italian Yarn &amp; Materials</div>
+              <div><strong>Tokyo:</strong> Japan &amp; Asia Coordination</div>
+              <div><strong>New York:</strong> North American Sales</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================ -->
+  <!-- PRODUCT TECHNICAL MODAL                                      -->
+  <!-- ============================================================ -->
+  <div class="product-modal" id="product-modal" role="dialog" aria-modal="true">
+    <div class="product-modal-content">
+      <button class="product-modal-close" onclick="closeProductModal()" aria-label="Close modal">&times;</button>
+      <div style="background:var(--bg-stone);height:100%;min-height:360px;">
+        <img id="modal-img" src="" alt="Garment photo" style="width:100%;height:100%;object-fit:cover;">
+      </div>
+      <div style="padding:36px;display:flex;flex-direction:column;justify-content:center;">
+        <span class="ds-badge ds-badge-gold" id="modal-brand"
+          style="margin-bottom:12px;align-self:flex-start;">BRAND</span>
+        <h3 id="modal-title"
+          style="font-family:var(--font-display);font-size:26px;color:var(--primary);margin-bottom:16px;">Product Name
+        </h3>
+
+        <table class="gauge-spec-table" style="margin-bottom:24px;">
+          <tr>
+            <td>Gauge</td>
+            <td id="modal-gauge">7GG</td>
+          </tr>
+          <tr>
+            <td>Composition</td>
+            <td id="modal-comp">60% Cotton, 40% Recycled Polyester</td>
+          </tr>
+          <tr>
+            <td>Manufacturing Facility</td>
+            <td>ASDWA Fashion Ltd. (Narsingdi)</td>
+          </tr>
+          <tr>
+            <td>Quality Standard</td>
+            <td>AQL 1.5 • Dual Metal Detection Inspected</td>
+          </tr>
+        </table>
+
+        <div style="margin-top:auto;display:flex;gap:12px;">
+          <a id="modal-link" href="#" target="_blank" rel="noopener" class="ds-btn ds-btn-gold"
+            style="flex:1;text-align:center;font-size:13px;">View Official Brand Retail</a>
+          <button onclick="requestThisGarment()" class="ds-btn ds-btn-secondary" style="font-size:13px;">Inquire This
+            Style</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ============================================================ -->
+  <!-- FOOTER                                                       -->
+  <!-- ============================================================ -->
+  <footer class="ds-footer">
+    <div class="ds-footer-top">
+      <div class="ds-container">
+        <div class="ds-footer-grid">
+          <div>
+            <div style="display:inline-flex;align-items:center;gap:10px;margin-bottom:16px;">
+              <svg width="24" height="24" viewBox="0 0 32 32" fill="none">
+                <rect width="32" height="32" rx="8" fill="url(#footGold)" />
+                <path d="M16 6L24 22H20L18 17H14L12 22H8L16 6Z" fill="#111D13" />
+                <defs>
+                  <linearGradient id="footGold" x1="0" y1="0" x2="32" y2="32">
+                    <stop stop-color="#E8CC8A" />
+                    <stop offset="1" stop-color="#A6863C" />
+                  </linearGradient>
+                </defs>
+              </svg>
+              <span style="font-size:18px;font-weight:700;color:white;letter-spacing:0.04em;">ASDWA FASHION LTD.</span>
+            </div>
+            <p style="font-size:14px;color:rgba(255,255,255,0.65);line-height:1.7;max-width:320px;"
+              data-i18n="footer.tagline">
+              ASDWA Fashion Ltd. is a premier export readymade garment (RMG) manufacturer specializing in high-gauge
+              precision knitwear and sweaters since 2002.
+            </p>
+            <div style="margin-top:16px;display:flex;gap:8px;flex-wrap:wrap;">
+              <span class="ds-badge" style="background:rgba(255,255,255,0.1);color:var(--gold);font-size:10px;">BGMEA
+                Member</span>
+              <span class="ds-badge" style="background:rgba(255,255,255,0.1);color:var(--gold);font-size:10px;">MiB
+                Verified</span>
+              <span class="ds-badge" style="background:rgba(255,255,255,0.1);color:var(--gold);font-size:10px;">553 Flat
+                Machines</span>
+            </div>
+          </div>
+
+          <div>
+            <h4 class="ds-footer-title" data-i18n="common.footer_quick_links">Quick Links</h4>
+            <ul class="ds-footer-links">
+              <li><a href="#about" data-i18n="common.footer_about">About ASDWA</a></li>
+              <li><a href="#factory" data-i18n="nav.manufacturing">Manufacturing &amp; Machines</a></li>
+              <li><a href="#products" data-i18n="nav.products">Products &amp; Portfolio</a></li>
+              <li><a href="#sustainability" data-i18n="nav.responsibility">Sustainability &amp; Welfare</a></li>
+              <li><a href="our-history.html" data-i18n="nav.history">Our History (2002-2026)</a></li>
+              <li><a href="lyk.html" data-i18n="nav.lyk">LYK Innovation Lab</a></li>
+              <li><a href="#contact" data-i18n="nav.contact">Contact &amp; Visit</a></li>
+            </ul>
+          </div>
+
+          <div>
+            <h4 class="ds-footer-title">Operating Facilities</h4>
+            <p style="font-size:13px;color:rgba(255,255,255,0.7);line-height:1.7;margin-bottom:12px;">
+              <strong style="color:var(--gold);">Factory:</strong><br>
+              Kandai Bus Stand, Madhabdi,<br>
+              Narsingdi, Bangladesh.
+            </p>
+            <p style="font-size:13px;color:rgba(255,255,255,0.7);line-height:1.7;">
+              <strong style="color:var(--gold);">Corporate Office:</strong><br>
+              House 198/A, Road 01, Mohakhali New DOHS,<br>
+              Dhaka-1206, Bangladesh.
+            </p>
+          </div>
+
+          <div>
+            <h4 class="ds-footer-title">Certifications</h4>
+            <ul style="list-style:none;font-size:13px;color:rgba(255,255,255,0.65);line-height:2;">
+              <li>• GOTS (Global Organic Textile Standard)</li>
+              <li>• GRS (Global Recycled Standard)</li>
+              <li>• RWS (Responsible Wool Standard)</li>
+              <li>• OEKO-TEX Standard 100 Class I</li>
+              <li>• BSCI Social Audit Certified</li>
+              <li>• 100% Rooftop Solar Powered</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="ds-footer-bottom">
+      <div class="ds-container"
+        style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:16px;">
+        <p style="font-size:12px;color:rgba(255,255,255,0.5);" data-i18n="footer.copyright">
+          © 2026 ASDWA Fashion Ltd. All rights reserved. Mapped in Bangladesh (MiB) Verified. BGMEA Member.
+        </p>
+        <p style="font-size:12px;color:rgba(255,255,255,0.5);">
+          European Engineering • Bangladeshi Artisan Mastery
+        </p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="js/main.js"></script>
+  <script src="js/mobile-menu.js"></script>
+
+  <script>
+    // Initialize i18n
+    document.addEventListener('DOMContentLoaded', () => {
+      if (typeof i18n !== 'undefined') {
+        i18n.init();
+      }
+      loadHomeProducts();
+      initCounters();
+    });
+
+    // Video Switcher
+    function switchHeroVideo(src, btn) {
+      const video = document.getElementById('hero-video');
+      if (!video) return;
+      document.querySelectorAll('.video-switch-btn').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      video.style.opacity = '0';
+      setTimeout(() => {
+        video.src = src;
+        video.play();
+        video.style.opacity = '0.52';
+      }, 300);
+    }
+
+    function toggleHeroPlay() {
+      const video = document.getElementById('hero-video');
+      const btn = document.getElementById('video-toggle-play');
+      if (video.paused) {
+        video.play();
+        btn.textContent = 'Pause';
+      } else {
+        video.pause();
+        btn.textContent = 'Play';
+      }
+    }
+
+    // Gauge Simulator Data
+    const gaugeData = {
+      '3gg': {
+        img: 'images/mango_cable_knit.jpg',
+        badge: 'Heavy Winter Collection',
+        title: '3GG Chunky Mock-Neck Cable Knit',
+        desc: 'Engineered on heavy-gauge Shima Seiki & Stoll computerized machines using recycled wool, alpaca, and lyocell blends. Features dramatic dimensional rope cables with reinforced collars that retain elasticity over years of wear.',
+        pill: 'Gauge: 3GG • Needle Pitch: 8.46mm',
+        machine: 'Stoll CMS 530 HP / Shima Seiki SVR 123 (3GG)',
+        yarn: 'Nm 2/15 - 3/15 (Multi-ply roving yarn)',
+        fibers: 'Recycled Wool (GRS), Alpaca, Organic Cotton, Lyocell',
+        garments: 'Fisherman Sweaters, Chunky Cardigans, Outerwear Knits',
+        turnaround: '72 to 96 Hours via LYK Lab'
+      },
+      '5gg': {
+        img: 'images/pullbear_waffle_knit.jpg',
+        badge: 'Mid-Heavy Texture Knit',
+        title: '5GG Waffle Crewneck & Fisherman Rib',
+        desc: 'Precision textured waffle knit using BCI Organic Cotton blended with recycled polyester for shape memory. Ideal for autumn-winter layering with thermal insulation and moisture breathability.',
+        pill: 'Gauge: 5GG • Needle Pitch: 5.08mm',
+        machine: 'Shima Seiki SIR 122 / Stoll CMS 502 (5GG)',
+        yarn: 'Nm 2/28 - 2/32 (Double-end knitting)',
+        fibers: '80% BCI Organic Cotton, 20% Recycled Polyester',
+        garments: 'Waffle Sweaters, Raglan Jumpers, Textured Hoodies',
+        turnaround: '72 Hours via LYK Lab'
+      },
+      '7gg': {
+        img: 'images/hombre-cardigan.jpeg',
+        badge: 'Trans-Seasonal Structured Knit',
+        title: '7GG Textured Cardigan with Horn Buttons',
+        desc: 'Sophisticated multi-stitch cardigan with horn button plackets and front patch pockets. Combines combed cotton with recycled poly and wool for year-round drape and resistance against pilling.',
+        pill: 'Gauge: 7GG • Needle Pitch: 3.63mm',
+        machine: 'Shima Seiki SVR 122 (7GG computerized)',
+        yarn: 'Nm 2/32 - 2/48 (Core spun & blended)',
+        fibers: '60% Cotton, 30% Recycled Polyester, 10% Wool',
+        garments: 'Cardigans, Buttoned Vests, Textured Crewnecks',
+        turnaround: '48 to 72 Hours via LYK Lab'
+      },
+      '12gg': {
+        img: 'images/zara_kids_knit.jpg',
+        badge: 'Fine Gauge High-End Knit',
+        title: '12GG Extrafine Merino & Striped Cotton',
+        desc: 'Luxurious fine-gauge knitting engineered with 100% RWS certified Extrafine Merino Wool or GOTS certified organic cotton. Features clean tubular hems, micro-rib neckbands, and ultra-smooth skin contact.',
+        pill: 'Gauge: 12GG • Needle Pitch: 2.12mm',
+        machine: 'Stoll ADF 530 / Shima Seiki SVR 053 (12GG)',
+        yarn: 'Nm 2/48 - 2/60 (Fine combed yarn)',
+        fibers: '100% Extrafine Merino Wool (RWS) / 100% GOTS Cotton',
+        garments: 'Tailored Business Knits, Striped Sweaters, Kids Pullovers',
+        turnaround: '48 Hours via LYK Lab'
+      },
+      '14gg': {
+        img: 'images/baby_romper_knit.jpg',
+        badge: 'Ultra-Fine Cashmere & Infant Safe',
+        title: '14GG Cashmere-Touch Romper & Modal Lounge',
+        desc: 'Ultra-fine gauge knitting meeting the strictest Oeko-Tex Standard 100 Class I infant safety requirements. Ultra-gentle seams, zero loose threads, and passed through double-head conveyor needle detectors.',
+        pill: 'Gauge: 14GG • Needle Pitch: 1.81mm',
+        machine: 'Shima Seiki SVR 122 (14GG Ultra-Fine)',
+        yarn: 'Nm 2/60 - 2/80 (Ultra-fine combed & modal)',
+        fibers: '95% Organic Cotton, 5% Cashmere / Modal Cashmere',
+        garments: 'Baby Rompers, Fine Beanies, Silk-Cashmere Loungewear',
+        turnaround: '48 to 72 Hours via LYK Lab'
+      }
+    };
+
+    function selectGauge(gaugeKey, btn) {
+      document.querySelectorAll('.gauge-tab-btn').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+
+      const data = gaugeData[gaugeKey];
+      if (!data) return;
+
+      const display = document.getElementById('gauge-display');
+      display.style.opacity = '0.4';
+
+      setTimeout(() => {
+        document.getElementById('gauge-img').src = data.img;
+        document.getElementById('gauge-pill').textContent = data.pill;
+        document.getElementById('gauge-badge').textContent = data.badge;
+        document.getElementById('gauge-title').textContent = data.title;
+        document.getElementById('gauge-desc').textContent = data.desc;
+        document.getElementById('gauge-machine').textContent = data.machine;
+        document.getElementById('gauge-yarn').textContent = data.yarn;
+        document.getElementById('gauge-fibers').textContent = data.fibers;
+        document.getElementById('gauge-garments').textContent = data.garments;
+        document.getElementById('gauge-turnaround').textContent = data.turnaround;
+        display.style.opacity = '1';
+      }, 180);
+    }
+
+    // Dynamic Product Loader
+    let allProducts = [];
+
+    async function loadHomeProducts() {
+      try {
+        const res = await fetch('products_data.json');
+        allProducts = await res.json();
+        renderProducts(allProducts);
+      } catch (e) {
+        console.error('Error loading products:', e);
+      }
+    }
+
+    function renderProducts(items) {
+      const container = document.getElementById('home-products-grid');
+      if (!container) return;
+
+      container.innerHTML = items.map(p => `
+        <div class="ds-card" style="padding:0;overflow:hidden;cursor:pointer;transition:transform 0.3s ease, box-shadow 0.3s ease;" onclick="openProductModal('${p.id}')">
+          <div style="aspect-ratio:3/4;overflow:hidden;background:#ebe7df;position:relative;">
+            <img src="${p.image}" alt="${p.name}" style="width:100%;height:100%;object-fit:cover;transition:transform 0.5s ease;" onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='scale(1)'">
+            <span class="ds-badge ds-badge-gold" style="position:absolute;top:12px;left:12px;">${p.gauge}</span>
+            <span class="ds-badge" style="position:absolute;bottom:12px;right:12px;background:rgba(17,29,19,0.85);color:white;font-size:10px;">${p.brandDisplay}</span>
+          </div>
+          <div style="padding:20px;">
+            <span style="font-size:11px;font-weight:700;color:var(--gold-dark);letter-spacing:0.1em;text-transform:uppercase;">${p.brandDisplay}</span>
+            <h4 style="font-size:16px;font-weight:600;color:var(--text-primary);margin:6px 0 10px;line-height:1.3;">${p.name}</h4>
+            <p style="font-size:12px;color:var(--text-secondary);line-height:1.5;"><strong>Composition:</strong> ${p.composition}</p>
+            <div style="margin-top:14px;padding-top:12px;border-top:1px solid var(--border);display:flex;justify-content:space-between;align-items:center;">
+              <span style="font-size:12px;color:var(--gold-dark);font-weight:600;">Inspect Specs &rarr;</span>
+              <span style="font-size:11px;color:var(--text-muted);">ASDWA Certified</span>
+            </div>
+          </div>
+        </div>
+      `).join('');
+    }
+
+    function filterBrand(brand, btn) {
+      document.querySelectorAll('.btn-filter-pill').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+
+      if (brand === 'all') {
+        renderProducts(allProducts);
+      } else {
+        const filtered = allProducts.filter(p => p.brand === brand);
+        renderProducts(filtered);
+      }
+    }
+
+    function openProductModal(id) {
+      const p = allProducts.find(item => item.id === id);
+      if (!p) return;
+
+      document.getElementById('modal-img').src = p.image;
+      document.getElementById('modal-brand').textContent = p.brandDisplay;
+      document.getElementById('modal-title').textContent = p.name;
+      document.getElementById('modal-gauge').textContent = p.gauge;
+      document.getElementById('modal-comp').textContent = p.composition;
+      document.getElementById('modal-link').href = p.productUrl;
+
+      document.getElementById('product-modal').classList.add('active');
+    }
+
+    function closeProductModal() {
+      document.getElementById('product-modal').classList.remove('active');
+    }
+
+    function requestThisGarment() {
+      closeProductModal();
+      window.location.hash = '#contact';
+      const msgArea = document.querySelector('textarea[name="message"]');
+      const title = document.getElementById('modal-title').textContent;
+      if (msgArea) {
+        msgArea.value = `Interested in sampling / bulk production for style: ${title}. Please provide technical specs and FOB quote.`;
+        msgArea.focus();
+      }
+    }
+
+    // Live Animated Numbers Counter
+    function initCounters() {
+      const counters = document.querySelectorAll('[data-count]');
+      counters.forEach(counter => {
+        const target = +counter.getAttribute('data-count');
+        let count = 0;
+        const speed = target / 60;
+        const update = () => {
+          count += speed;
+          if (count < target) {
+            if (target >= 1000000) {
+              counter.textContent = (count / 1000000).toFixed(1) + 'M+';
+            } else if (target >= 1000) {
+              counter.textContent = Math.floor(count).toLocaleString() + '+';
+            } else {
+              counter.textContent = Math.floor(count) + '+';
+            }
+            requestAnimationFrame(update);
+          } else {
+            if (target >= 1000000) {
+              counter.textContent = (target / 1000000).toFixed(1) + 'M+';
+            } else if (target >= 1000) {
+              counter.textContent = target.toLocaleString() + '+';
+            } else {
+              counter.textContent = target + '+';
+            }
+          }
+        };
+        update();
+      });
+    }
+
+    // Contact Form submission
+    const form = document.getElementById('contact-form');
+    if (form) {
+      form.addEventListener('submit', function (e) {
+        e.preventDefault();
+        const btn = document.getElementById('form-btn');
+        btn.textContent = 'Transmitting to Factory...';
+        btn.disabled = true;
+
+        fetch(form.action, {
+          method: 'POST',
+          body: new FormData(form),
+          headers: { 'Accept': 'application/json' }
+        }).then(res => {
+          btn.style.display = 'none';
+          document.getElementById('form-success').style.display = 'block';
+          form.reset();
+        }).catch(err => {
+          btn.textContent = 'Error. Try Again or Email Directly';
+          btn.disabled = false;
+        });
+      });
+    }
+
+    document.addEventListener('DOMContentLoaded', () => {
+      if (typeof i18n !== 'undefined') i18n.init();
+      loadHomeProducts();
+      initCounters();
+    });
+  </script>
+</body>
+
+</html>

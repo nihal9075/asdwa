@@ -1,0 +1,502 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Our 20+ Year Heritage &amp; Industrial Milestones | ASDWA Fashion Ltd.</title>
+  <meta name="description" content="The heritage of ASDWA Fashion Ltd. — founded in 2002, evolving into a 553-machine computerized knitwear powerhouse in Madhabdi, Narsingdi and Dhaka, Bangladesh. Over two decades of textile engineering excellence.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=Outfit:wght@300;400;500;600;700&family=Cormorant+Garamond:ital,wght@0,500;0,600;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/design-system.css">
+  <style>
+    /* Heritage Hero */
+    .history-hero {
+      position: relative;
+      min-height: 65vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 160px var(--content-padding) 70px;
+      background: linear-gradient(135deg, rgba(9, 17, 10, 0.94) 0%, rgba(18, 30, 20, 0.88) 100%), url('images/photo_founders.jpg') center/cover no-repeat;
+      color: var(--white);
+      text-align: center;
+      overflow: hidden;
+    }
+
+    .history-hero-content {
+      position: relative;
+      z-index: 10;
+      max-width: 900px;
+      margin: 0 auto;
+    }
+
+    .founders-wrap {
+      display: grid;
+      grid-template-columns: 1.2fr 1fr;
+      gap: 48px;
+      align-items: center;
+      margin-top: 56px;
+    }
+
+    .founders-img-box {
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      box-shadow: 0 20px 50px rgba(0, 0, 0, 0.12);
+      border: 1px solid var(--border);
+      position: relative;
+    }
+
+    .founders-img-box img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      transition: transform 0.6s ease;
+    }
+
+    .founders-img-box:hover img {
+      transform: scale(1.03);
+    }
+
+    /* Interactive Timeline Section */
+    .timeline-section {
+      padding: 80px var(--content-padding) 120px;
+      background: var(--bg-stone);
+      position: relative;
+    }
+
+    .timeline-wrap {
+      position: relative;
+      max-width: 860px;
+      margin: 0 auto;
+      padding: 40px 0;
+    }
+
+    .timeline-wrap::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 50%;
+      width: 2px;
+      background: #E2DDD5;
+      transform: translateX(-50%);
+    }
+
+    .timeline-progress-bar {
+      position: absolute;
+      top: 0;
+      left: 50%;
+      width: 2px;
+      background: linear-gradient(180deg, var(--gold-light), var(--gold), var(--gold-dark));
+      transform: translateX(-50%);
+      height: 0%;
+      transition: height 0.15s ease-out;
+      box-shadow: 0 0 10px rgba(201, 169, 97, 0.5);
+    }
+
+    .timeline-item {
+      position: relative;
+      margin-bottom: 64px;
+      width: 50%;
+      opacity: 0;
+      transform: translateY(30px);
+      transition: all 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    .timeline-item.in-view {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .timeline-item:nth-child(odd) {
+      left: 0;
+      padding-right: 48px;
+      text-align: right;
+    }
+
+    .timeline-item:nth-child(even) {
+      left: 50%;
+      padding-left: 48px;
+      text-align: left;
+    }
+
+    .timeline-node {
+      position: absolute;
+      top: 24px;
+      width: 18px;
+      height: 18px;
+      border-radius: 50%;
+      background: var(--white);
+      border: 3px solid var(--gold);
+      box-shadow: 0 0 0 4px rgba(201, 169, 97, 0.25);
+      z-index: 5;
+    }
+
+    .timeline-item:nth-child(odd) .timeline-node {
+      right: -9px;
+    }
+
+    .timeline-item:nth-child(even) .timeline-node {
+      left: -9px;
+    }
+
+    .timeline-card {
+      background: var(--white);
+      border-radius: 16px;
+      padding: 30px;
+      border: 1px solid var(--border);
+      box-shadow: 0 6px 24px rgba(0, 0, 0, 0.04);
+      transition: all 0.3s ease;
+      position: relative;
+    }
+
+    .timeline-card:hover {
+      border-color: var(--gold);
+      box-shadow: 0 16px 36px rgba(17, 29, 19, 0.08);
+      transform: translateY(-4px);
+    }
+
+    .timeline-year {
+      font-family: var(--font-display);
+      font-size: 28px;
+      font-weight: 700;
+      color: var(--gold-dark);
+      line-height: 1;
+      margin-bottom: 8px;
+    }
+
+    .timeline-title {
+      font-size: 19px;
+      font-weight: 600;
+      color: var(--primary);
+      margin-bottom: 12px;
+      line-height: 1.3;
+    }
+
+    .timeline-text {
+      font-size: 14px;
+      color: var(--text-secondary);
+      line-height: 1.65;
+    }
+
+    .timeline-badge {
+      display: inline-block;
+      padding: 3px 10px;
+      border-radius: 999px;
+      background: var(--bg-stone);
+      font-size: 10.5px;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--gold-dark);
+      margin-bottom: 8px;
+      border: 1px solid var(--border);
+    }
+
+    @media (max-width: 768px) {
+      .timeline-wrap::before, .timeline-progress-bar {
+        left: 20px;
+      }
+      .timeline-item {
+        width: 100%;
+        left: 0 !important;
+        padding-left: 56px !important;
+        padding-right: 0 !important;
+        text-align: left !important;
+      }
+      .timeline-node {
+        left: 11px !important;
+        right: auto !important;
+      }
+      .founders-wrap {
+        grid-template-columns: 1fr;
+        gap: 32px;
+      }
+    }
+  </style>
+</head>
+
+<body data-base-path="">
+
+  <!-- TOP LIVE FACTORY TICKER -->
+  <aside class="top-ticker" aria-label="Announcement">
+    <div class="top-ticker-left">
+      <span class="ticker-pulse"></span>
+      <span><strong>LIVE:</strong> ASDWA Integrated Campus (Madhabdi, Narsingdi) • 553 Computerized Flat Knit Machines Operating</span>
+    </div>
+    <div class="top-ticker-right">
+      <span>100% Daytime Solar Energy (450 kWp)</span>
+      <span>•</span>
+      <span>AQL 1.5 European QA</span>
+      <span>•</span>
+      <a href="contact.html">Book Delegation Tour &rarr;</a>
+    </div>
+  </aside>
+
+  <!-- FLOATING LUXURY NAVIGATION -->
+  <nav class="ds-nav" id="navbar">
+    <div class="ds-nav-inner">
+      <a href="index.html" class="ds-nav-logo" style="display:inline-flex;align-items:center;gap:10px;">
+        <svg width="26" height="26" viewBox="0 0 32 32" fill="none">
+          <rect width="32" height="32" rx="8" fill="url(#goldGradH)"/>
+          <path d="M16 6L24 22H20L18 17H14L12 22H8L16 6Z" fill="#111D13"/>
+          <path d="M16 11L14.5 15H17.5L16 11Z" fill="#C9A961"/>
+          <defs>
+            <linearGradient id="goldGradH" x1="0" y1="0" x2="32" y2="32">
+              <stop stop-color="#E8CC8A"/>
+              <stop offset="1" stop-color="#A6863C"/>
+            </linearGradient>
+          </defs>
+        </svg>
+        <span>ASDWA <span style="font-size:11px;font-weight:400;opacity:0.8;letter-spacing:0.1em;">FASHION LTD.</span></span>
+      </a>
+      <ul class="ds-nav-links" id="nav-links">
+        <li><a href="index.html#about" class="ds-nav-link" data-i18n="nav.about">About ASDWA</a></li>
+        <li><a href="manufacturing.html" class="ds-nav-link" data-i18n="nav.manufacturing">Manufacturing</a></li>
+        <li><a href="products.html" class="ds-nav-link" data-i18n="nav.products">Products &amp; Portfolio</a></li>
+        <li><a href="responsibility.html" class="ds-nav-link" data-i18n="nav.responsibility">Sustainability &amp; Solar</a></li>
+        <li><a href="our-history.html" class="ds-nav-link active" data-i18n="nav.history">Our History</a></li>
+        <li><a href="lyk.html" class="ds-nav-link" data-i18n="nav.lyk">LYK Lab</a></li>
+        <li><a href="contact.html" class="ds-nav-link" data-i18n="nav.contact">Contact &amp; Visit</a></li>
+      </ul>
+      <div class="ds-nav-actions" style="display:flex;align-items:center;gap:12px;">
+        <div class="ds-nav-langs">
+          <button class="ds-lang-btn active" onclick="i18n.switchLanguage('en')" data-lang="en">EN</button>
+          <button class="ds-lang-btn" onclick="i18n.switchLanguage('es')" data-lang="es">ES</button>
+          <button class="ds-lang-btn" onclick="i18n.switchLanguage('ja')" data-lang="ja">JA</button>
+        </div>
+        <a href="contact.html" class="ds-btn ds-btn-gold" style="padding:8px 18px;font-size:12px;border-radius:999px;">Book Tour</a>
+      </div>
+      <button class="ds-hamburger" id="nav-toggle" aria-label="Toggle navigation">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- HERITAGE HERO -->
+  <header class="history-hero">
+    <div class="history-hero-content">
+      <div class="ds-eyebrow ds-eyebrow--white">ESTABLISHED 2002 &mdash; OVER TWO DECADES OF TEXTILE MASTERY</div>
+      <h1 class="ds-h1" style="color:white;">A Heritage Built on Technical Mastery, Trust, and Industrial Vision</h1>
+      <p class="ds-lead" style="color:rgba(255,255,255,0.85);margin:0 auto 28px;">
+        From our foundation in 2002 to becoming a 553-machine manufacturing complex in Madhabdi, Narsingdi and commercial headquarters in Mohakhali DOHS, Dhaka.
+      </p>
+      <div style="display:inline-flex;gap:12px;flex-wrap:wrap;justify-content:center;">
+        <span class="ds-badge ds-badge-gold">Founded 2002</span>
+        <span class="ds-badge" style="background:rgba(255,255,255,0.15);color:white;backdrop-filter:blur(6px);">553 Automated Units</span>
+        <span class="ds-badge" style="background:rgba(255,255,255,0.15);color:white;backdrop-filter:blur(6px);">2,500+ Master Artisans</span>
+        <span class="ds-badge" style="background:rgba(255,255,255,0.15);color:white;backdrop-filter:blur(6px);">8.5M+ Annual Garments</span>
+      </div>
+    </div>
+  </header>
+
+  <!-- FOUNDER PHILOSOPHY SECTION -->
+  <section class="ds-section ds-section--white">
+    <div class="ds-container">
+      <div class="founders-wrap">
+        <div>
+          <div class="ds-eyebrow">FOUNDING ETHOS</div>
+          <h2 class="ds-h2" style="margin-bottom:20px;">Precision Is Not Just Automation &mdash; It Is Respect for the Fiber</h2>
+          <div class="ds-card" style="background:var(--bg-stone);border-color:var(--border);padding:32px;">
+            <div style="font-family:var(--font-display);font-size:36px;color:var(--gold-dark);margin-bottom:8px;line-height:1;">&#8220;</div>
+            <p style="font-family:var(--font-display);font-size:clamp(17px,1.6vw,20px);font-weight:400;font-style:italic;line-height:1.6;color:var(--text-primary);margin-bottom:20px;">
+              Manufacturing knitwear was never meant to be a transactional commodity. It is a shared technical discipline — balancing the tactile beauty of yarn with exacting engineering, absolute accountability, and unbending commitments to our people.
+            </p>
+            <div style="border-top:1px solid var(--border);padding-top:16px;display:flex;justify-content:space-between;align-items:center;">
+              <div>
+                <strong style="color:var(--primary);font-size:15px;display:block;">Leadership &amp; Engineering Directorate</strong>
+                <span style="font-size:12px;color:var(--text-muted);">ASDWA Fashion Ltd. (Narsingdi &amp; Dhaka)</span>
+              </div>
+              <span style="font-size:11px;font-weight:700;letter-spacing:0.16em;color:var(--gold-dark);text-transform:uppercase;">EST. 2002</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="founders-img-box">
+          <img src="images/photo_founders.jpg" alt="Leadership of ASDWA Fashion Ltd.">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- INTERACTIVE CHRONOLOGICAL TIMELINE -->
+  <section class="timeline-section">
+    <div class="ds-container">
+      <div class="ds-section-header" style="text-align:center;max-width:760px;margin:0 auto 60px;">
+        <span class="ds-eyebrow">CHRONOLOGICAL MILESTONES</span>
+        <h2 class="ds-h2">The Evolution of ASDWA Fashion Ltd.</h2>
+        <p class="ds-lead">How two decades of disciplined investment and engineering rigor built Bangladesh's premier knitwear manufacturing plant.</p>
+      </div>
+
+      <div class="timeline-wrap">
+        <div class="timeline-progress-bar"></div>
+
+        <!-- 2002 -->
+        <div class="timeline-item">
+          <div class="timeline-node"></div>
+          <div class="timeline-card">
+            <span class="timeline-badge">Origin</span>
+            <div class="timeline-year">2002</div>
+            <h4 class="timeline-title">Inception of Manufacturing Operations in Bangladesh</h4>
+            <p class="timeline-text">
+              Established dedicated knitwear production facilities in Bangladesh, centering on European export standards, gauge precision, and ethical artisan welfare from day one.
+            </p>
+          </div>
+        </div>
+
+        <!-- 2008 -->
+        <div class="timeline-item">
+          <div class="timeline-node"></div>
+          <div class="timeline-card">
+            <span class="timeline-badge">Modernization</span>
+            <div class="timeline-year">2008</div>
+            <h4 class="timeline-title">Adoption of Shima Seiki &amp; Stoll Computerized Flat Knitting</h4>
+            <p class="timeline-text">
+              Pioneered the transition from hand-flat machinery to Japanese Shima Seiki and German Stoll computerized flat knitting systems, unlocking multi-gauge capabilities from 3GG to 12GG.
+            </p>
+          </div>
+        </div>
+
+        <!-- 2014 -->
+        <div class="timeline-item">
+          <div class="timeline-node"></div>
+          <div class="timeline-card">
+            <span class="timeline-badge">Integration</span>
+            <div class="timeline-year">2014</div>
+            <h4 class="timeline-title">Eco-Wash &amp; In-House Testing Laboratory Commissioning</h4>
+            <p class="timeline-text">
+              Integrated low-liquor ratio washing and tumbling bays alongside our climate-controlled physical testing laboratory, enabling batch-by-batch shrinkage, pilling, and tensile verification.
+            </p>
+          </div>
+        </div>
+
+        <!-- 2018 -->
+        <div class="timeline-item">
+          <div class="timeline-node"></div>
+          <div class="timeline-card" style="border-left:4px solid var(--gold);">
+            <span class="timeline-badge" style="background:rgba(201,169,97,0.15);color:var(--gold-dark);">Consolidation</span>
+            <div class="timeline-year">2018</div>
+            <h4 class="timeline-title">Consolidation into Unified 12-Acre Campus in Narsingdi</h4>
+            <p class="timeline-text">
+              Unified all knitting lines, 380+ dial linking machines, finishing halls, medical dispensary, and daycare crèche into our flagship campus at Kandai Bus Stand, Madhabdi, Narsingdi.
+            </p>
+          </div>
+        </div>
+
+        <!-- 2022 -->
+        <div class="timeline-item">
+          <div class="timeline-node"></div>
+          <div class="timeline-card">
+            <span class="timeline-badge">Green Transition</span>
+            <div class="timeline-year">2022</div>
+            <h4 class="timeline-title">450 kWp Rooftop Solar &amp; LYK Rapid Prototyping Cell</h4>
+            <p class="timeline-text">
+              Commissioned a 450 kWp monocrystalline rooftop solar installation providing 100% daytime operational power. Launched the LYK Innovation Lab for 72-hour physical sampling and circular recycled yarns.
+            </p>
+          </div>
+        </div>
+
+        <!-- 2026 -->
+        <div class="timeline-item">
+          <div class="timeline-node"></div>
+          <div class="timeline-card" style="background:#F6FBF7;border-color:#4ADE80;">
+            <span class="timeline-badge" style="background:rgba(74,222,128,0.15);color:#15803D;">Present Day</span>
+            <div class="timeline-year" style="color:#15803D;">2026 &amp; Beyond</div>
+            <h4 class="timeline-title">A Global Benchmark for Responsible Knitwear Manufacturing</h4>
+            <p class="timeline-text">
+              Operating 553 flat knitting machines with 8.5M+ annual capacity. Trusted by Zara, Mango, Pull&amp;Bear, Bershka, and Oysho with GOTS, GRS, RCS, RWS, and BSCI accreditations.
+            </p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- TOUR INVITATION CTA -->
+  <section class="ds-section ds-section--dark" style="text-align:center;background:var(--primary);">
+    <div class="ds-container-narrow">
+      <div class="ds-eyebrow ds-eyebrow--white">DELEGATION TOURS</div>
+      <h2 class="ds-h2" style="color:white;">Experience 20+ Years of Mastery in Person</h2>
+      <p class="ds-lead" style="color:rgba(255,255,255,0.75);margin:0 auto 36px;">
+        We welcome retail sourcing directors, fashion designers, and ESG auditors to walk our 553-machine production floor in Madhabdi, Narsingdi.
+      </p>
+      <a href="contact.html" class="ds-btn ds-btn-gold">Book a Delegation Campus Tour &rarr;</a>
+    </div>
+  </section>
+
+  <!-- LUXURY FOOTER -->
+  <footer class="ds-footer">
+    <div class="ds-footer-top">
+      <div class="ds-container">
+        <div class="ds-footer-inner">
+          <div class="ds-footer-col">
+            <div style="display:flex;align-items:center;gap:10px;margin-bottom:16px;">
+              <div style="width:28px;height:28px;border-radius:8px;background:linear-gradient(135deg,#E8CC8A,#A6863C);display:flex;align-items:center;justify-content:center;font-weight:700;color:#111D13;font-size:14px;">A</div>
+              <span style="font-family:var(--font-display);font-size:18px;color:#fff;font-weight:600;">ASDWA <span style="font-size:11px;font-weight:400;color:var(--gold);letter-spacing:0.1em;">FASHION LTD.</span></span>
+            </div>
+            <p style="font-size:13px;line-height:1.7;color:rgba(255,255,255,0.65);margin-bottom:20px;">
+              High-precision knitwear &amp; sweater manufacturing powerhouse in Bangladesh. 553 flat knitting machines, European quality engineering, and GOTS/GRS certified sustainability.
+            </p>
+            <p style="font-size:12px;color:var(--gold);font-weight:600;">Inditex &amp; Mango Verified Supplier</p>
+          </div>
+
+          <div class="ds-footer-col">
+            <h4 class="ds-footer-title">Navigation</h4>
+            <ul class="ds-footer-links">
+              <li><a href="index.html">Home</a></li>
+              <li><a href="manufacturing.html">Manufacturing Campus</a></li>
+              <li><a href="products.html">Brand Productions</a></li>
+              <li><a href="responsibility.html">Sustainability &amp; Solar</a></li>
+              <li><a href="our-history.html">Our 20+ Year History</a></li>
+              <li><a href="lyk.html">LYK Innovation Lab</a></li>
+              <li><a href="contact.html">Contact &amp; Delegation Tour</a></li>
+            </ul>
+          </div>
+
+          <div class="ds-footer-col">
+            <h4 class="ds-footer-title">Campus &amp; Office</h4>
+            <div style="font-size:13px;line-height:1.7;color:rgba(255,255,255,0.65);margin-bottom:14px;">
+              <strong style="color:#fff;display:block;">Manufacturing Facility:</strong>
+              Kandai Bus Stand, Madhabdi, Narsingdi, Bangladesh
+            </div>
+            <div style="font-size:13px;line-height:1.7;color:rgba(255,255,255,0.65);">
+              <strong style="color:#fff;display:block;">Corporate Headquarters:</strong>
+              Road-01, House-198/A, Mohakhali New DOHS, Dhaka 1206, Bangladesh
+            </div>
+          </div>
+
+          <div class="ds-footer-col">
+            <h4 class="ds-footer-title">Verified Accreditations</h4>
+            <ul style="list-style:none;padding:0;font-size:12.5px;line-height:1.9;color:rgba(255,255,255,0.65);">
+              <li>• GOTS Organic Standard</li>
+              <li>• GRS Recycled Standard</li>
+              <li>• RWS Responsible Wool</li>
+              <li>• OEKO-TEX Standard 100</li>
+              <li>• BSCI Social Compliance</li>
+              <li>• 100% Daytime Solar Energy (450 kWp)</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="ds-footer-bottom">
+      <div class="ds-container" style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:16px;">
+        <p style="font-size:12px;color:rgba(255,255,255,0.5);">© 2026 ASDWA Fashion Ltd. All rights reserved. Mapped in Bangladesh (MiB) Verified. BGMEA Member.</p>
+        <p style="font-size:12px;color:rgba(255,255,255,0.5);"><a href="index.html" style="color:var(--gold);">Back to Home</a></p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+  <script src="js/mobile-menu.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      if (typeof i18n !== 'undefined') i18n.init();
+    });
+  </script>
+</body>
+</html>

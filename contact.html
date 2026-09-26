@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact Headquarters &amp; Factory Delegation Visits | ASDWA Fashion Ltd.</title>
+  <meta name="description" content="Connect directly with ASDWA Fashion Ltd. Schedule a delegation tour to our Madhabdi, Narsingdi campus or meet our executive merchandising team in Mohakhali DOHS, Dhaka, Bangladesh.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=Outfit:wght@300;400;500;600;700&family=Cormorant+Garamond:ital,wght@0,500;0,600;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/design-system.css">
+  <style>
+    .contact-hero {
+      position: relative;
+      min-height: 52vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 150px var(--content-padding) 60px;
+      background: linear-gradient(135deg, rgba(9, 17, 10, 0.92) 0%, rgba(18, 30, 20, 0.88) 100%), url('images/exterior-fabrica.jpg') center/cover no-repeat;
+      color: var(--white);
+      text-align: center;
+      overflow: hidden;
+    }
+
+    .contact-hero-content {
+      position: relative;
+      z-index: 10;
+      max-width: 860px;
+      margin: 0 auto;
+    }
+
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 1.2fr 0.8fr;
+      gap: 48px;
+      margin-top: 48px;
+    }
+
+    @media (max-width: 992px) {
+      .contact-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .form-card {
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      padding: 40px;
+      box-shadow: 0 10px 40px rgba(0, 0, 0, 0.04);
+    }
+
+    .form-group {
+      margin-bottom: 20px;
+    }
+
+    .form-label {
+      display: block;
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--primary);
+      margin-bottom: 8px;
+    }
+
+    .form-input, .form-select, .form-textarea {
+      width: 100%;
+      padding: 13px 16px;
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      font-family: var(--font-body);
+      font-size: 14px;
+      color: var(--text-primary);
+      outline: none;
+      transition: all 0.2s ease;
+      background: var(--bg);
+    }
+
+    .form-input:focus, .form-select:focus, .form-textarea:focus {
+      border-color: var(--gold);
+      background: var(--white);
+      box-shadow: 0 0 0 3px rgba(201, 169, 97, 0.15);
+    }
+
+    .location-box {
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 28px;
+      margin-bottom: 20px;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.03);
+      transition: all 0.3s ease;
+    }
+
+    .location-box:hover {
+      border-color: var(--gold);
+      transform: translateY(-3px);
+      box-shadow: 0 12px 30px rgba(17, 29, 19, 0.08);
+    }
+  </style>
+</head>
+
+<body data-base-path="">
+
+  <!-- TOP LIVE FACTORY TICKER -->
+  <aside class="top-ticker" aria-label="Announcement">
+    <div class="top-ticker-left">
+      <span class="ticker-pulse"></span>
+      <span><strong>LIVE:</strong> ASDWA Integrated Campus (Madhabdi, Narsingdi) • 553 Computerized Flat Knit Machines Operating</span>
+    </div>
+    <div class="top-ticker-right">
+      <span>100% Daytime Solar Energy (450 kWp)</span>
+      <span>•</span>
+      <span>AQL 1.5 European QA</span>
+      <span>•</span>
+      <a href="#inquiry">Book Delegation Tour &rarr;</a>
+    </div>
+  </aside>
+
+  <!-- FLOATING LUXURY NAVIGATION -->
+  <nav class="ds-nav" id="navbar">
+    <div class="ds-nav-inner">
+      <a href="index.html" class="ds-nav-logo" style="display:inline-flex;align-items:center;gap:10px;">
+        <svg width="26" height="26" viewBox="0 0 32 32" fill="none">
+          <rect width="32" height="32" rx="8" fill="url(#goldGradC)"/>
+          <path d="M16 6L24 22H20L18 17H14L12 22H8L16 6Z" fill="#111D13"/>
+          <path d="M16 11L14.5 15H17.5L16 11Z" fill="#C9A961"/>
+          <defs>
+            <linearGradient id="goldGradC" x1="0" y1="0" x2="32" y2="32">
+              <stop stop-color="#E8CC8A"/>
+              <stop offset="1" stop-color="#A6863C"/>
+            </linearGradient>
+          </defs>
+        </svg>
+        <span>ASDWA <span style="font-size:11px;font-weight:400;opacity:0.8;letter-spacing:0.1em;">FASHION LTD.</span></span>
+      </a>
+      <ul class="ds-nav-links" id="nav-links">
+        <li><a href="index.html#about" class="ds-nav-link" data-i18n="nav.about">About ASDWA</a></li>
+        <li><a href="manufacturing.html" class="ds-nav-link" data-i18n="nav.manufacturing">Manufacturing</a></li>
+        <li><a href="products.html" class="ds-nav-link" data-i18n="nav.products">Products &amp; Portfolio</a></li>
+        <li><a href="responsibility.html" class="ds-nav-link" data-i18n="nav.responsibility">Sustainability &amp; Solar</a></li>
+        <li><a href="our-history.html" class="ds-nav-link" data-i18n="nav.history">Our History</a></li>
+        <li><a href="lyk.html" class="ds-nav-link" data-i18n="nav.lyk">LYK Lab</a></li>
+        <li><a href="contact.html" class="ds-nav-link active" data-i18n="nav.contact">Contact &amp; Visit</a></li>
+      </ul>
+      <div class="ds-nav-actions" style="display:flex;align-items:center;gap:12px;">
+        <div class="ds-nav-langs">
+          <button class="ds-lang-btn active" onclick="i18n.switchLanguage('en')" data-lang="en">EN</button>
+          <button class="ds-lang-btn" onclick="i18n.switchLanguage('es')" data-lang="es">ES</button>
+          <button class="ds-lang-btn" onclick="i18n.switchLanguage('ja')" data-lang="ja">JA</button>
+        </div>
+        <a href="#inquiry" class="ds-btn ds-btn-gold" style="padding:8px 18px;font-size:12px;border-radius:999px;">Book Tour</a>
+      </div>
+      <button class="ds-hamburger" id="nav-toggle" aria-label="Toggle navigation">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- CONTACT HERO -->
+  <header class="contact-hero">
+    <div class="contact-hero-content">
+      <div class="ds-eyebrow ds-eyebrow--white">HEADQUARTERS &bull; FACTORY DELEGATIONS &bull; SOURCING</div>
+      <h1 class="ds-h1" style="color:white;">Direct Communication with ASDWA Factory Leadership</h1>
+      <p class="ds-lead" style="color:rgba(255,255,255,0.85);margin:0 auto 28px;">
+        Whether you are planning a comprehensive compliance audit, scheduling a technical designer delegation, or booking bulk production capacity for upcoming seasons, we are at your service.
+      </p>
+      <div style="display:inline-flex;gap:12px;flex-wrap:wrap;justify-content:center;">
+        <span class="ds-badge ds-badge-gold">Narsingdi Mega-Plant</span>
+        <span class="ds-badge" style="background:rgba(255,255,255,0.15);color:white;">Mohakhali DOHS Corporate HQ</span>
+        <span class="ds-badge" style="background:rgba(255,255,255,0.15);color:white;">VIP Airport Delegation Pickup</span>
+      </div>
+    </div>
+  </header>
+
+  <!-- MAIN CONTACT CONTENT -->
+  <section class="ds-section ds-section--stone" id="inquiry">
+    <div class="ds-container">
+      <div class="contact-grid">
+        <!-- Official RFQ / Delegation Form -->
+        <div class="form-card">
+          <span class="ds-badge ds-badge-gold" style="margin-bottom:12px;">DIRECT INQUIRY</span>
+          <h2 class="ds-h2" style="font-size:26px;margin-bottom:8px;">Send an Official Request</h2>
+          <p style="font-size:14px;color:var(--text-secondary);margin-bottom:28px;">
+            Inquiries are routed directly to Managing Directors and Senior Merchandising Heads. We typically respond within 24 business hours.
+          </p>
+
+          <form id="dedicated-contact-form" action="https://formspree.io/f/mwvwqlno" method="POST">
+            <input type="hidden" name="_subject" id="form-subject" value="Dedicated Sourcing Request — ASDWA Fashion Ltd.">
+            
+            <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;">
+              <div class="form-group">
+                <label class="form-label">Full Name *</label>
+                <input type="text" name="name" required class="form-input" placeholder="Your name">
+              </div>
+              <div class="form-group">
+                <label class="form-label">Professional Email *</label>
+                <input type="email" name="_replyto" required class="form-input" placeholder="name@fashionhouse.com">
+              </div>
+            </div>
+
+            <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;">
+              <div class="form-group">
+                <label class="form-label">Brand / Retailer *</label>
+                <input type="text" name="company" required class="form-input" placeholder="Company Name">
+              </div>
+              <div class="form-group">
+                <label class="form-label">Country / Region *</label>
+                <input type="text" name="country" required class="form-input" placeholder="e.g. Spain, Germany, Japan, USA">
+              </div>
+            </div>
+
+            <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;">
+              <div class="form-group">
+                <label class="form-label">Inquiry Focus</label>
+                <select name="focus" id="inquiry-focus" class="form-select">
+                  <option value="factory_tour">Book Factory Delegation Tour (Narsingdi)</option>
+                  <option value="bulk_program">Seasonal Bulk Production Program</option>
+                  <option value="lyk_sampling">72-Hour Rapid Sampling (LYK Lab)</option>
+                  <option value="compliance_audit">Compliance, ESG &amp; Social Audits</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label class="form-label">Estimated Order Size</label>
+                <select name="order_size" class="form-select">
+                  <option value="5k_10k">5,000 – 15,000 units</option>
+                  <option value="15k_50k">15,000 – 50,000 units</option>
+                  <option value="50k_plus">50,000+ units (Major Program)</option>
+                  <option value="sampling_only">Sampling &amp; Development First</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label class="form-label">Program Specifications &amp; Notes *</label>
+              <textarea name="message" id="inquiry-message" required rows="5" class="form-textarea" placeholder="Detail your desired gauges (e.g. 5GG waffle, 12GG merino), fiber compositions, target season, and any compliance requirements."></textarea>
+            </div>
+
+            <button type="submit" id="contact-submit-btn" class="ds-btn ds-btn-primary" style="width:100%;padding:14px;font-size:14px;">
+              Submit Official Request to ASDWA Leadership &rarr;
+            </button>
+            <div id="contact-success" style="display:none;margin-top:16px;padding:16px;background:#e8f5e9;border:1px solid #4ade80;border-radius:10px;color:#2e7d32;text-align:center;">
+              Thank you! Your inquiry has been transmitted to ASDWA Fashion Ltd. executive management. We will contact you within 24 hours.
+            </div>
+          </form>
+        </div>
+
+        <!-- Operating Locations & Buyer Desks -->
+        <div>
+          <div class="location-box" style="border-left:4px solid var(--gold);">
+            <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:8px;">
+              <span style="font-size:11px;font-weight:700;color:var(--gold-dark);letter-spacing:0.12em;text-transform:uppercase;">Flagship Manufacturing Campus</span>
+              <span class="ds-badge ds-badge-gold">Primary Plant</span>
+            </div>
+            <h3 style="font-size:18px;font-weight:600;color:var(--primary);margin-bottom:8px;">ASDWA Fashion Ltd. Integrated Plant</h3>
+            <p style="font-size:14px;color:var(--text-secondary);line-height:1.6;margin-bottom:12px;">
+              Kandai Bus Stand, Madhabdi,<br>
+              Narsingdi, Bangladesh.<br>
+              <span style="font-size:12px;color:var(--text-muted);">(Convenient 75-minute drive from Dhaka International Airport via Dhaka-Sylhet Highway)</span>
+            </p>
+            <div style="display:flex;gap:12px;align-items:center;margin-top:12px;">
+              <a href="https://maps.google.com/?q=Madhabdi+Narsingdi+Bangladesh" target="_blank" rel="noopener" class="ds-btn ds-btn-secondary" style="font-size:12px;padding:6px 14px;">Open in Google Maps &nearr;</a>
+            </div>
+          </div>
+
+          <div class="location-box" style="border-left:4px solid var(--primary);">
+            <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:8px;">
+              <span style="font-size:11px;font-weight:700;color:var(--primary);letter-spacing:0.12em;text-transform:uppercase;">Corporate Headquarters</span>
+              <span class="ds-badge ds-badge-primary">Commercial HQ</span>
+            </div>
+            <h3 style="font-size:18px;font-weight:600;color:var(--primary);margin-bottom:8px;">Dhaka Corporate &amp; Merchandising Office</h3>
+            <p style="font-size:14px;color:var(--text-secondary);line-height:1.6;margin-bottom:12px;">
+              House 198/A, Road 01, Mohakhali New DOHS,<br>
+              Dhaka-1206, Bangladesh.<br>
+              <span style="font-size:12px;color:var(--text-muted);">Executive Management • Merchandising • Yarn Sourcing Hub</span>
+            </p>
+            <div style="display:flex;gap:12px;align-items:center;margin-top:12px;">
+              <a href="https://maps.google.com/?q=House+198+Road+1+Mohakhali+DOHS+Dhaka" target="_blank" rel="noopener" class="ds-btn ds-btn-secondary" style="font-size:12px;padding:6px 14px;">Open in Google Maps &nearr;</a>
+            </div>
+          </div>
+
+          <div class="location-box">
+            <h4 style="font-size:14px;font-weight:700;color:var(--primary);text-transform:uppercase;letter-spacing:0.1em;margin-bottom:12px;">Global Client &amp; Design Desks</h4>
+            <div style="display:flex;flex-direction:column;gap:10px;font-size:13px;color:var(--text-secondary);">
+              <div><strong style="color:var(--primary);">Barcelona (Europe):</strong> Vilassar de Mar, Barcelona, Spain</div>
+              <div><strong style="color:var(--primary);">Prato (Italy):</strong> Via Montalese, Prato, Italy</div>
+              <div><strong style="color:var(--primary);">Tokyo (Japan):</strong> Minami Aoyama, Minato-ku, Tokyo, Japan</div>
+              <div><strong style="color:var(--primary);">New York (North America):</strong> Ronkonkoma, NY, USA</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- LUXURY FOOTER -->
+  <footer class="ds-footer">
+    <div class="ds-footer-top">
+      <div class="ds-container">
+        <div class="ds-footer-inner">
+          <div class="ds-footer-col">
+            <div style="display:flex;align-items:center;gap:10px;margin-bottom:16px;">
+              <div style="width:28px;height:28px;border-radius:8px;background:linear-gradient(135deg,#E8CC8A,#A6863C);display:flex;align-items:center;justify-content:center;font-weight:700;color:#111D13;font-size:14px;">A</div>
+              <span style="font-family:var(--font-display);font-size:18px;color:#fff;font-weight:600;">ASDWA <span style="font-size:11px;font-weight:400;color:var(--gold);letter-spacing:0.1em;">FASHION LTD.</span></span>
+            </div>
+            <p style="font-size:13px;line-height:1.7;color:rgba(255,255,255,0.65);margin-bottom:20px;">
+              High-precision knitwear &amp; sweater manufacturing powerhouse in Bangladesh. 553 flat knitting machines, European quality engineering, and GOTS/GRS certified sustainability.
+            </p>
+            <p style="font-size:12px;color:var(--gold);font-weight:600;">Inditex &amp; Mango Verified Supplier</p>
+          </div>
+
+          <div class="ds-footer-col">
+            <h4 class="ds-footer-title">Navigation</h4>
+            <ul class="ds-footer-links">
+              <li><a href="index.html">Home</a></li>
+              <li><a href="manufacturing.html">Manufacturing Campus</a></li>
+              <li><a href="products.html">Brand Productions</a></li>
+              <li><a href="responsibility.html">Sustainability &amp; Solar</a></li>
+              <li><a href="our-history.html">Our 20+ Year History</a></li>
+              <li><a href="lyk.html">LYK Innovation Lab</a></li>
+              <li><a href="contact.html">Contact &amp; Delegation Tour</a></li>
+            </ul>
+          </div>
+
+          <div class="ds-footer-col">
+            <h4 class="ds-footer-title">Campus &amp; Office</h4>
+            <div style="font-size:13px;line-height:1.7;color:rgba(255,255,255,0.65);margin-bottom:14px;">
+              <strong style="color:#fff;display:block;">Manufacturing Facility:</strong>
+              Kandai Bus Stand, Madhabdi, Narsingdi, Bangladesh
+            </div>
+            <div style="font-size:13px;line-height:1.7;color:rgba(255,255,255,0.65);">
+              <strong style="color:#fff;display:block;">Corporate Headquarters:</strong>
+              Road-01, House-198/A, Mohakhali New DOHS, Dhaka 1206, Bangladesh
+            </div>
+          </div>
+
+          <div class="ds-footer-col">
+            <h4 class="ds-footer-title">Verified Accreditations</h4>
+            <ul style="list-style:none;padding:0;font-size:12.5px;line-height:1.9;color:rgba(255,255,255,0.65);">
+              <li>• GOTS Organic Standard</li>
+              <li>• GRS Recycled Standard</li>
+              <li>• RWS Responsible Wool</li>
+              <li>• OEKO-TEX Standard 100</li>
+              <li>• BSCI Social Compliance</li>
+              <li>• 100% Daytime Solar Energy (450 kWp)</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="ds-footer-bottom">
+      <div class="ds-container" style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:16px;">
+        <p style="font-size:12px;color:rgba(255,255,255,0.5);">© 2026 ASDWA Fashion Ltd. All rights reserved. Mapped in Bangladesh (MiB) Verified. BGMEA Member.</p>
+        <p style="font-size:12px;color:rgba(255,255,255,0.5);"><a href="index.html" style="color:var(--gold);">Back to Home</a></p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+  <script src="js/mobile-menu.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      if (typeof i18n !== 'undefined') i18n.init();
+
+      // Check URL parameters for pre-filled style inquiries from products page
+      const params = new URLSearchParams(window.location.search);
+      const styleName = params.get('style');
+      const gauge = params.get('gauge');
+
+      if (styleName) {
+        const msgArea = document.getElementById('inquiry-message');
+        const subjectInput = document.getElementById('form-subject');
+        const focusSelect = document.getElementById('inquiry-focus');
+
+        if (focusSelect) focusSelect.value = 'bulk_program';
+        if (subjectInput) subjectInput.value = `Sourcing Inquiry for: ${styleName} (${gauge || '7GG'}) — ASDWA Fashion Ltd.`;
+        if (msgArea) {
+          msgArea.value = `Inquiring about prototype tech pack and bulk production quote for style: "${styleName}" (${gauge ? gauge + ' gauge' : 'standard gauge'}). Please provide lead times, sample delivery timeline, and MOQ.`;
+        }
+      }
+      
+      const form = document.getElementById('dedicated-contact-form');
+      if (form) {
+        form.addEventListener('submit', function (e) {
+          e.preventDefault();
+          const btn = document.getElementById('contact-submit-btn');
+          btn.textContent = 'Transmitting to ASDWA Directors...';
+          btn.disabled = true;
+
+          fetch(form.action, {
+            method: 'POST',
+            body: new FormData(form),
+            headers: { 'Accept': 'application/json' }
+          }).then(res => {
+            btn.style.display = 'none';
+            document.getElementById('contact-success').style.display = 'block';
+            form.reset();
+          }).catch(err => {
+            btn.textContent = 'Error. Please Try Again';
+            btn.disabled = false;
+          });
+        });
+      }
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,543 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sustainability, Solar Energy &amp; Worker Welfare | ASDWA Fashion Ltd.</title>
+  <meta name="description" content="Discover ASDWA Fashion Ltd.'s environmental stewardship: 450 kWp rooftop solar, zero hazardous discharge, worker healthcare clinic with full-time doctor, daycare crèche, and GOTS/GRS/RWS/BSCI certifications in Narsingdi, Bangladesh.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=Outfit:wght@300;400;500;600;700&family=Cormorant+Garamond:ital,wght@0,500;0,600;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/design-system.css">
+  <style>
+    /* Hero Banner */
+    .resp-hero {
+      position: relative;
+      min-height: 75vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 160px var(--content-padding) 80px;
+      background: linear-gradient(135deg, rgba(9, 19, 10, 0.92) 0%, rgba(21, 34, 23, 0.86) 100%), url('images/factory-environment.jpg') center/cover no-repeat;
+      color: var(--white);
+      text-align: center;
+      overflow: hidden;
+    }
+
+    .resp-hero-content {
+      position: relative;
+      z-index: 10;
+      max-width: 920px;
+      margin: 0 auto;
+    }
+
+    .impact-metric-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 20px;
+      margin-top: 48px;
+    }
+
+    .impact-metric-card {
+      background: rgba(255, 255, 255, 0.08);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      border-radius: var(--radius-md);
+      padding: 24px 16px;
+      text-align: center;
+      transition: all var(--transition-base);
+    }
+
+    .impact-metric-card:hover {
+      background: rgba(255, 255, 255, 0.15);
+      border-color: var(--gold);
+      transform: translateY(-3px);
+    }
+
+    .impact-metric-val {
+      font-family: var(--font-display);
+      font-size: clamp(32px, 3.8vw, 48px);
+      font-weight: 600;
+      color: var(--gold-light);
+      line-height: 1;
+      margin-bottom: 6px;
+    }
+
+    .impact-metric-lbl {
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: rgba(255, 255, 255, 0.8);
+    }
+
+    /* Media Cards */
+    .resp-media-card {
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      box-shadow: var(--shadow-md);
+      border: 1px solid var(--border);
+      aspect-ratio: 4/3;
+      background: var(--bg-stone);
+      position: relative;
+    }
+
+    .resp-media-card img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform var(--transition-slow);
+    }
+
+    .resp-media-card:hover img {
+      transform: scale(1.04);
+    }
+
+    /* Calculator Widget */
+    .calculator-box {
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      padding: 40px;
+      box-shadow: 0 10px 40px rgba(0, 0, 0, 0.04);
+      margin-top: 48px;
+    }
+
+    .calc-slider {
+      width: 100%;
+      height: 8px;
+      border-radius: 4px;
+      background: #E2DDD5;
+      outline: none;
+      -webkit-appearance: none;
+      margin: 20px 0;
+    }
+
+    .calc-slider::-webkit-slider-thumb {
+      -webkit-appearance: none;
+      width: 24px;
+      height: 24px;
+      border-radius: 50%;
+      background: var(--gold);
+      cursor: pointer;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+      border: 2px solid var(--white);
+    }
+
+    .calc-results-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+      margin-top: 28px;
+      text-align: center;
+    }
+
+    .calc-res-item {
+      background: var(--bg-stone);
+      padding: 20px 16px;
+      border-radius: 12px;
+      border: 1px solid var(--border);
+    }
+
+    .calc-res-num {
+      font-family: var(--font-display);
+      font-size: 32px;
+      font-weight: 600;
+      color: var(--primary);
+      line-height: 1.1;
+      margin-bottom: 4px;
+    }
+
+    .calc-res-label {
+      font-size: 11px;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: var(--text-muted);
+    }
+
+    /* Certification Card */
+    .cert-card-pro {
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 32px 24px;
+      text-align: center;
+      transition: all 0.3s ease;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .cert-card-pro:hover {
+      border-color: var(--gold);
+      transform: translateY(-4px);
+      box-shadow: 0 12px 30px rgba(17, 29, 19, 0.08);
+    }
+
+    .cert-logo-pro {
+      height: 64px;
+      max-width: 140px;
+      object-fit: contain;
+      margin-bottom: 18px;
+      filter: grayscale(15%);
+      transition: filter 0.3s ease;
+    }
+
+    .cert-card-pro:hover .cert-logo-pro {
+      filter: grayscale(0%);
+    }
+
+    @media (max-width: 992px) {
+      .impact-metric-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+      .calc-results-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+    @media (max-width: 500px) {
+      .impact-metric-grid {
+        grid-template-columns: 1fr;
+      }
+      .calculator-box {
+        padding: 24px 18px;
+      }
+    }
+  </style>
+</head>
+
+<body data-base-path="">
+
+  <!-- TOP LIVE FACTORY TICKER -->
+  <aside class="top-ticker" aria-label="Announcement">
+    <div class="top-ticker-left">
+      <span class="ticker-pulse"></span>
+      <span><strong>LIVE:</strong> ASDWA Integrated Campus (Madhabdi, Narsingdi) • 553 Computerized Flat Knit Machines Operating</span>
+    </div>
+    <div class="top-ticker-right">
+      <span>100% Daytime Solar Energy (450 kWp)</span>
+      <span>•</span>
+      <span>AQL 1.5 European QA</span>
+      <span>•</span>
+      <a href="contact.html">Book Delegation Tour &rarr;</a>
+    </div>
+  </aside>
+
+  <!-- FLOATING LUXURY NAVIGATION -->
+  <nav class="ds-nav" id="navbar">
+    <div class="ds-nav-inner">
+      <a href="index.html" class="ds-nav-logo" style="display:inline-flex;align-items:center;gap:10px;">
+        <svg width="26" height="26" viewBox="0 0 32 32" fill="none">
+          <rect width="32" height="32" rx="8" fill="url(#goldGradR)"/>
+          <path d="M16 6L24 22H20L18 17H14L12 22H8L16 6Z" fill="#111D13"/>
+          <path d="M16 11L14.5 15H17.5L16 11Z" fill="#C9A961"/>
+          <defs>
+            <linearGradient id="goldGradR" x1="0" y1="0" x2="32" y2="32">
+              <stop stop-color="#E8CC8A"/>
+              <stop offset="1" stop-color="#A6863C"/>
+            </linearGradient>
+          </defs>
+        </svg>
+        <span>ASDWA <span style="font-size:11px;font-weight:400;opacity:0.8;letter-spacing:0.1em;">FASHION LTD.</span></span>
+      </a>
+      <ul class="ds-nav-links" id="nav-links">
+        <li><a href="index.html#about" class="ds-nav-link" data-i18n="nav.about">About ASDWA</a></li>
+        <li><a href="manufacturing.html" class="ds-nav-link" data-i18n="nav.manufacturing">Manufacturing</a></li>
+        <li><a href="products.html" class="ds-nav-link" data-i18n="nav.products">Products &amp; Portfolio</a></li>
+        <li><a href="responsibility.html" class="ds-nav-link active" data-i18n="nav.responsibility">Sustainability &amp; Solar</a></li>
+        <li><a href="our-history.html" class="ds-nav-link" data-i18n="nav.history">Our History</a></li>
+        <li><a href="lyk.html" class="ds-nav-link" data-i18n="nav.lyk">LYK Lab</a></li>
+        <li><a href="contact.html" class="ds-nav-link" data-i18n="nav.contact">Contact &amp; Visit</a></li>
+      </ul>
+      <div class="ds-nav-actions" style="display:flex;align-items:center;gap:12px;">
+        <div class="ds-nav-langs">
+          <button class="ds-lang-btn active" onclick="i18n.switchLanguage('en')" data-lang="en">EN</button>
+          <button class="ds-lang-btn" onclick="i18n.switchLanguage('es')" data-lang="es">ES</button>
+          <button class="ds-lang-btn" onclick="i18n.switchLanguage('ja')" data-lang="ja">JA</button>
+        </div>
+        <a href="contact.html" class="ds-btn ds-btn-gold" style="padding:8px 18px;font-size:12px;border-radius:999px;">Book Tour</a>
+      </div>
+      <button class="ds-hamburger" id="nav-toggle" aria-label="Toggle navigation">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- HERO SECTION -->
+  <header class="resp-hero">
+    <div class="resp-hero-content">
+      <div class="ds-eyebrow ds-eyebrow--white" data-i18n="responsibility.hero_tag">Sustainability &amp; Ethical Governance</div>
+      <h1 class="ds-h1" style="color:white;">A Responsible Approach to<br><em>Modern Knitwear Production</em></h1>
+      <p class="ds-lead" style="color:rgba(255,255,255,0.9);margin:0 auto 28px;">
+        At ASDWA Fashion Ltd., environmental preservation, worker dignity, and transparent material traceability are fundamental engineering pillars.
+      </p>
+      
+      <div class="impact-metric-grid">
+        <div class="impact-metric-card">
+          <div class="impact-metric-val">450 kWp</div>
+          <div class="impact-metric-lbl">Rooftop Solar Array</div>
+        </div>
+        <div class="impact-metric-card">
+          <div class="impact-metric-val">100%</div>
+          <div class="impact-metric-lbl">Daytime Clean Energy</div>
+        </div>
+        <div class="impact-metric-card">
+          <div class="impact-metric-val">380 T</div>
+          <div class="impact-metric-lbl">Annual CO2 Offset</div>
+        </div>
+        <div class="impact-metric-card">
+          <div class="impact-metric-val">0</div>
+          <div class="impact-metric-lbl">Hazardous Chemicals</div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- SOLAR ENERGY TRANSITION -->
+  <section class="ds-section ds-section--white">
+    <div class="ds-container">
+      <div class="ds-grid-2" style="align-items:center;">
+        <div>
+          <div class="ds-eyebrow">Clean Energy Transition</div>
+          <h2 class="ds-h2">450 kWp Rooftop Solar Powers Our 553 Knitting Machines</h2>
+          <p class="ds-lead" style="margin-bottom:16px;">
+            Harnessing the abundant sunlight of Bangladesh to manufacture knitwear with minimal carbon footprint.
+          </p>
+          <p class="ds-body" style="margin-bottom:20px;">
+            Solar installations on the rooftop of our Madhabdi, Narsingdi plant supply clean daytime power to our 553 flat knitting machines, linking rows, and lighting grids. This drastically cuts reliance on the national fossil grid and guarantees steady power for uninterrupted precision.
+          </p>
+          <div style="display:flex;gap:12px;flex-wrap:wrap;">
+            <span class="ds-badge ds-badge-gold">450 kWp Monocrystalline PV</span>
+            <span class="ds-badge ds-badge-primary">100% LED Daylighting</span>
+            <span class="ds-badge ds-badge-stone">Inverter-Driven Motors</span>
+          </div>
+        </div>
+        <div class="resp-media-card">
+          <img src="images/factory-environment.jpg" alt="ASDWA Fashion Ltd. solar campus and natural environment">
+        </div>
+      </div>
+
+      <!-- Interactive Carbon Offset Calculator -->
+      <div class="calculator-box">
+        <div style="display:flex;justify-content:space-between;align-items:flex-end;flex-wrap:wrap;gap:12px;">
+          <div>
+            <span class="ds-eyebrow">Interactive Estimator</span>
+            <h3 class="ds-h3" style="font-size:24px;margin-top:4px;">Calculate Your Brand's Solar Offset with ASDWA</h3>
+          </div>
+          <div style="font-size:14px;color:var(--text-secondary);">
+            Estimated Order Volume: <strong style="color:var(--gold-dark);font-size:18px;" id="order-vol-display">50,000 pcs</strong>
+          </div>
+        </div>
+
+        <input type="range" id="order-slider" class="calc-slider" min="5000" max="250000" step="5000" value="50000" oninput="updateCalculator(this.value)">
+
+        <div class="calc-results-grid">
+          <div class="calc-res-item">
+            <div class="calc-res-num" id="calc-kwh">12,500 kWh</div>
+            <div class="calc-res-label">Solar Clean Power Used</div>
+          </div>
+          <div class="calc-res-item">
+            <div class="calc-res-num" id="calc-co2">9.8 Metric Tons</div>
+            <div class="calc-res-label">CO2 Emissions Avoided</div>
+          </div>
+          <div class="calc-res-item">
+            <div class="calc-res-num" id="calc-trees">445 Trees</div>
+            <div class="calc-res-label">Equivalent Tree Planting</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- WORKER WELFARE & HEALTHCARE -->
+  <section class="ds-section ds-section--stone">
+    <div class="ds-container">
+      <div class="ds-grid-2" style="align-items:center;">
+        <div class="resp-media-card">
+          <img src="images/child-care-medical-suport.jpg" alt="Child daycare center and medical dispensary at ASDWA Fashion Ltd.">
+        </div>
+        <div>
+          <div class="ds-eyebrow">Artisan Well-Being &amp; Dignity</div>
+          <h2 class="ds-h2">Free Healthcare, On-Site Daycare, and Fair Living Wages</h2>
+          <p class="ds-lead" style="margin-bottom:16px;">
+            Our 2,500+ artisans and staff are the heart of ASDWA Fashion Ltd.
+          </p>
+          <p class="ds-body" style="margin-bottom:20px;">
+            The ASDWA facility provides an in-house medical center staffed with registered full-time doctors and nurses, offering free diagnostics and prescriptions. A fully supervised childcare crèche enables artisan mothers to work with absolute peace of mind.
+          </p>
+          <ul style="list-style:none;display:flex;flex-direction:column;gap:12px;font-size:14px;color:var(--text-secondary);">
+            <li style="display:flex;gap:10px;"><strong style="color:var(--gold-dark);">&#10003;</strong> Free maternal healthcare leave and lactation support rooms</li>
+            <li style="display:flex;gap:10px;"><strong style="color:var(--gold-dark);">&#10003;</strong> Nutritious meal subsidies and filtered RO drinking water stations</li>
+            <li style="display:flex;gap:10px;"><strong style="color:var(--gold-dark);">&#10003;</strong> Democratic workers' participation committee with elected representatives</li>
+            <li style="display:flex;gap:10px;"><strong style="color:var(--gold-dark);">&#10003;</strong> Strict zero-tolerance policy against child labor, harassment, and discrimination</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- NATURAL ENVIRONMENT & GREENERY -->
+  <section class="ds-section ds-section--white">
+    <div class="ds-container">
+      <div class="ds-grid-2" style="align-items:center;">
+        <div>
+          <div class="ds-eyebrow">Natural Ecosystem</div>
+          <h2 class="ds-h2">Eco-Conscious 12-Acre Green Factory Campus</h2>
+          <p class="ds-lead" style="margin-bottom:16px;">
+            Harmonizing advanced industrial knitwear production with nature.
+          </p>
+          <p class="ds-body" style="margin-bottom:20px;">
+            Our campus in Madhabdi, Narsingdi preserves open green spaces with over 1,200 planted fruit and shade trees, dedicated rainwater harvesting reservoirs, and extensive natural cross-ventilation designed to optimize energy efficiency and worker comfort.
+          </p>
+          <div style="display:flex;gap:12px;flex-wrap:wrap;">
+            <span class="ds-badge ds-badge-gold">Rainwater Harvesting</span>
+            <span class="ds-badge ds-badge-stone">1,200+ Campus Trees</span>
+            <span class="ds-badge ds-badge-primary">Zero Single-Use Plastics</span>
+          </div>
+        </div>
+        <div class="resp-media-card">
+          <img src="images/Tree-planting-Natural-environment.jpg" alt="Tree planting and natural environment at ASDWA Fashion Ltd.">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- THIRD-PARTY CERTIFICATIONS MATRIX -->
+  <section class="ds-section ds-section--stone">
+    <div class="ds-container">
+      <div class="ds-section-header" style="text-align:center;max-width:760px;margin:0 auto 56px;">
+        <span class="ds-eyebrow">Third-Party Verification</span>
+        <h2 class="ds-h2">Internationally Audited Certifications</h2>
+        <p class="ds-lead">We maintain active compliance with premier European and global auditing standards.</p>
+      </div>
+
+      <div style="display:grid;grid-template-columns:repeat(auto-fit, minmax(260px, 1fr));gap:24px;">
+        <div class="cert-card-pro">
+          <img src="images/gots-vector-logo.png" alt="GOTS Logo" class="cert-logo-pro">
+          <h3 class="ds-card-title">GOTS Certified</h3>
+          <p class="ds-card-text" style="font-size:13px;line-height:1.6;">Global Organic Textile Standard certifying 100% organic cotton fibers from farm to final garment, ensuring no chemical pesticides.</p>
+        </div>
+
+        <div class="cert-card-pro">
+          <img src="images/GRS-logo copia.png" alt="GRS Logo" class="cert-logo-pro">
+          <h3 class="ds-card-title">GRS Certified</h3>
+          <p class="ds-card-text" style="font-size:13px;line-height:1.6;">Global Recycled Standard verifying recycled polyester, acrylic, and recycled wool with strict environmental processing criteria.</p>
+        </div>
+
+        <div class="cert-card-pro">
+          <img src="images/responsible-wool-standard-rws-logo-vector.png" alt="RWS Logo" class="cert-logo-pro">
+          <h3 class="ds-card-title">RWS Certified</h3>
+          <p class="ds-card-text" style="font-size:13px;line-height:1.6;">Responsible Wool Standard ensuring that sheep wool comes from farms with progressive land management and animal welfare ethics.</p>
+        </div>
+
+        <div class="cert-card-pro">
+          <img src="images/recycled-blended-claim-standard-logo-png_seeklogo-490361.png" alt="RCS Logo" class="cert-logo-pro">
+          <h3 class="ds-card-title">RCS Blended</h3>
+          <p class="ds-card-text" style="font-size:13px;line-height:1.6;">Recycled Claim Standard validating chain of custody for recycled blended fibers across all knitting operations.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA COMPLIANCE PACKAGE -->
+  <section style="background:var(--primary);color:white;padding:80px var(--content-padding);text-align:center;">
+    <div class="ds-container-narrow" style="margin:0 auto;">
+      <div class="ds-eyebrow ds-eyebrow--white">TRANSPARENT GOVERNANCE</div>
+      <h2 style="font-family:var(--font-display);font-size:clamp(28px, 4vw, 42px);margin-bottom:16px;">Request Complete Audit &amp; ESG Reports</h2>
+      <p style="font-size:16px;color:rgba(255,255,255,0.8);margin-bottom:32px;">
+        Brand compliance and ESG officers can request our latest BSCI audit scorecards, SEDEX SMETA data, HIGG Index FEM/FSLM scores, and chemical inventories.
+      </p>
+      <a href="contact.html" class="ds-btn ds-btn-gold">Request Compliance Package &rarr;</a>
+    </div>
+  </section>
+
+  <!-- LUXURY FOOTER -->
+  <footer class="ds-footer">
+    <div class="ds-footer-top">
+      <div class="ds-container">
+        <div class="ds-footer-inner">
+          <div class="ds-footer-col">
+            <div style="display:flex;align-items:center;gap:10px;margin-bottom:16px;">
+              <div style="width:28px;height:28px;border-radius:8px;background:linear-gradient(135deg,#E8CC8A,#A6863C);display:flex;align-items:center;justify-content:center;font-weight:700;color:#111D13;font-size:14px;">A</div>
+              <span style="font-family:var(--font-display);font-size:18px;color:#fff;font-weight:600;">ASDWA <span style="font-size:11px;font-weight:400;color:var(--gold);letter-spacing:0.1em;">FASHION LTD.</span></span>
+            </div>
+            <p style="font-size:13px;line-height:1.7;color:rgba(255,255,255,0.65);margin-bottom:20px;">
+              High-precision knitwear &amp; sweater manufacturing powerhouse in Bangladesh. 553 flat knitting machines, European quality engineering, and GOTS/GRS certified sustainability.
+            </p>
+            <p style="font-size:12px;color:var(--gold);font-weight:600;">Inditex &amp; Mango Verified Supplier</p>
+          </div>
+
+          <div class="ds-footer-col">
+            <h4 class="ds-footer-title">Navigation</h4>
+            <ul class="ds-footer-links">
+              <li><a href="index.html">Home</a></li>
+              <li><a href="manufacturing.html">Manufacturing Campus</a></li>
+              <li><a href="products.html">Brand Productions</a></li>
+              <li><a href="responsibility.html">Sustainability &amp; Solar</a></li>
+              <li><a href="our-history.html">Our 20+ Year History</a></li>
+              <li><a href="lyk.html">LYK Innovation Lab</a></li>
+              <li><a href="contact.html">Contact &amp; Delegation Tour</a></li>
+            </ul>
+          </div>
+
+          <div class="ds-footer-col">
+            <h4 class="ds-footer-title">Campus &amp; Office</h4>
+            <div style="font-size:13px;line-height:1.7;color:rgba(255,255,255,0.65);margin-bottom:14px;">
+              <strong style="color:#fff;display:block;">Manufacturing Facility:</strong>
+              Kandai Bus Stand, Madhabdi, Narsingdi, Bangladesh
+            </div>
+            <div style="font-size:13px;line-height:1.7;color:rgba(255,255,255,0.65);">
+              <strong style="color:#fff;display:block;">Corporate Headquarters:</strong>
+              Road-01, House-198/A, Mohakhali New DOHS, Dhaka 1206, Bangladesh
+            </div>
+          </div>
+
+          <div class="ds-footer-col">
+            <h4 class="ds-footer-title">Verified Accreditations</h4>
+            <ul style="list-style:none;padding:0;font-size:12.5px;line-height:1.9;color:rgba(255,255,255,0.65);">
+              <li>• GOTS Organic Standard</li>
+              <li>• GRS Recycled Standard</li>
+              <li>• RWS Responsible Wool</li>
+              <li>• OEKO-TEX Standard 100</li>
+              <li>• BSCI Social Compliance</li>
+              <li>• 100% Daytime Solar Energy (450 kWp)</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="ds-footer-bottom">
+      <div class="ds-container" style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:16px;">
+        <p style="font-size:12px;color:rgba(255,255,255,0.5);">© 2026 ASDWA Fashion Ltd. All rights reserved. Mapped in Bangladesh (MiB) Verified. BGMEA Member.</p>
+        <p style="font-size:12px;color:rgba(255,255,255,0.5);"><a href="index.html" style="color:var(--gold);">Back to Home</a></p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+  <script src="js/mobile-menu.js"></script>
+  <script>
+    function updateCalculator(val) {
+      const vol = parseInt(val, 10);
+      document.getElementById('order-vol-display').textContent = `${vol.toLocaleString()} pcs`;
+      
+      // Calculations: ~0.25 kWh solar energy per sweater produced
+      const kwh = Math.round(vol * 0.25);
+      const co2Tons = (kwh * 0.00078).toFixed(1);
+      const trees = Math.round(co2Tons * 45.4);
+
+      document.getElementById('calc-kwh').textContent = `${kwh.toLocaleString()} kWh`;
+      document.getElementById('calc-co2').textContent = `${co2Tons} Metric Tons`;
+      document.getElementById('calc-trees').textContent = `${trees.toLocaleString()} Trees`;
+    }
+
+    document.addEventListener('DOMContentLoaded', () => {
+      if (typeof i18n !== 'undefined') i18n.init();
+      updateCalculator(50000);
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>LYK Innovation Lab &amp; 72-Hour Rapid Sampling | ASDWA Fashion Ltd.</title>
+  <meta name="description" content="LYK (Lubaba Yarn Kitchen) by ASDWA Fashion Ltd. — our circular yarn development platform and 72-hour rapid prototyping lab transforming knitwear design for global retail brands.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=Outfit:wght@300;400;500;600;700&family=Cormorant+Garamond:ital,wght@0,500;0,600;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/design-system.css">
+  <style>
+    /* Hero Banner */
+    .lyk-hero {
+      position: relative;
+      min-height: 80vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 160px var(--content-padding) 80px;
+      overflow: hidden;
+      background: #09130a;
+      color: var(--white);
+      text-align: center;
+    }
+
+    .lyk-hero-video {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      opacity: 0.45;
+      z-index: 1;
+    }
+
+    .lyk-hero::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(circle at center, rgba(13, 26, 15, 0.45) 0%, rgba(9, 19, 10, 0.92) 100%);
+      z-index: 2;
+    }
+
+    .lyk-hero-content {
+      position: relative;
+      z-index: 10;
+      max-width: 900px;
+      margin: 0 auto;
+    }
+
+    /* Step Cards */
+    .circle-step-badge {
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      background: rgba(201, 169, 97, 0.15);
+      border: 1px solid var(--gold);
+      color: var(--gold);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: var(--font-mono);
+      font-size: 14px;
+      font-weight: 700;
+      margin-bottom: 18px;
+    }
+
+    /* 3D Simulation Panel */
+    .simulation-box {
+      background: var(--primary);
+      border-radius: 20px;
+      padding: 48px;
+      color: white;
+      border: 1px solid rgba(201, 169, 97, 0.3);
+      box-shadow: 0 20px 50px rgba(0, 0, 0, 0.3);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .simulation-box::after {
+      content: '';
+      position: absolute;
+      top: -50%;
+      right: -50%;
+      width: 100%;
+      height: 100%;
+      background: radial-gradient(circle, rgba(201, 169, 97, 0.1) 0%, transparent 70%);
+      pointer-events: none;
+    }
+
+    .sim-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 40px;
+      align-items: center;
+    }
+
+    @media (max-width: 860px) {
+      .sim-grid {
+        grid-template-columns: 1fr;
+      }
+      .simulation-box {
+        padding: 28px 20px;
+      }
+    }
+  </style>
+</head>
+
+<body data-base-path="">
+
+  <!-- TOP LIVE FACTORY TICKER -->
+  <aside class="top-ticker" aria-label="Announcement">
+    <div class="top-ticker-left">
+      <span class="ticker-pulse"></span>
+      <span><strong>LIVE:</strong> ASDWA Integrated Campus (Madhabdi, Narsingdi) • 553 Computerized Flat Knit Machines Operating</span>
+    </div>
+    <div class="top-ticker-right">
+      <span>100% Daytime Solar Energy (450 kWp)</span>
+      <span>•</span>
+      <span>AQL 1.5 European QA</span>
+      <span>•</span>
+      <a href="contact.html">Book Delegation Tour &rarr;</a>
+    </div>
+  </aside>
+
+  <!-- FLOATING LUXURY NAVIGATION -->
+  <nav class="ds-nav" id="navbar">
+    <div class="ds-nav-inner">
+      <a href="index.html" class="ds-nav-logo" style="display:inline-flex;align-items:center;gap:10px;">
+        <svg width="26" height="26" viewBox="0 0 32 32" fill="none">
+          <rect width="32" height="32" rx="8" fill="url(#goldGradL)"/>
+          <path d="M16 6L24 22H20L18 17H14L12 22H8L16 6Z" fill="#111D13"/>
+          <path d="M16 11L14.5 15H17.5L16 11Z" fill="#C9A961"/>
+          <defs>
+            <linearGradient id="goldGradL" x1="0" y1="0" x2="32" y2="32">
+              <stop stop-color="#E8CC8A"/>
+              <stop offset="1" stop-color="#A6863C"/>
+            </linearGradient>
+          </defs>
+        </svg>
+        <span>ASDWA <span style="font-size:11px;font-weight:400;opacity:0.8;letter-spacing:0.1em;">FASHION LTD.</span></span>
+      </a>
+      <ul class="ds-nav-links" id="nav-links">
+        <li><a href="index.html#about" class="ds-nav-link" data-i18n="nav.about">About ASDWA</a></li>
+        <li><a href="manufacturing.html" class="ds-nav-link" data-i18n="nav.manufacturing">Manufacturing</a></li>
+        <li><a href="products.html" class="ds-nav-link" data-i18n="nav.products">Products &amp; Portfolio</a></li>
+        <li><a href="responsibility.html" class="ds-nav-link" data-i18n="nav.responsibility">Sustainability &amp; Solar</a></li>
+        <li><a href="our-history.html" class="ds-nav-link" data-i18n="nav.history">Our History</a></li>
+        <li><a href="lyk.html" class="ds-nav-link active" data-i18n="nav.lyk">LYK Lab</a></li>
+        <li><a href="contact.html" class="ds-nav-link" data-i18n="nav.contact">Contact &amp; Visit</a></li>
+      </ul>
+      <div class="ds-nav-actions" style="display:flex;align-items:center;gap:12px;">
+        <div class="ds-nav-langs">
+          <button class="ds-lang-btn active" onclick="i18n.switchLanguage('en')" data-lang="en">EN</button>
+          <button class="ds-lang-btn" onclick="i18n.switchLanguage('es')" data-lang="es">ES</button>
+          <button class="ds-lang-btn" onclick="i18n.switchLanguage('ja')" data-lang="ja">JA</button>
+        </div>
+        <a href="contact.html" class="ds-btn ds-btn-gold" style="padding:8px 18px;font-size:12px;border-radius:999px;">Book Tour</a>
+      </div>
+      <button class="ds-hamburger" id="nav-toggle" aria-label="Toggle navigation">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- HERO SECTION -->
+  <header class="lyk-hero">
+    <video class="lyk-hero-video" autoplay muted loop playsinline>
+      <source src="media/LYK-hero-video.mp4" type="video/mp4">
+    </video>
+    <div class="lyk-hero-content">
+      <div class="ds-eyebrow ds-eyebrow--white">CIRCULAR YARN &amp; FAST-TRACK PROTOTYPING &bull; ASDWA LAB</div>
+      <h1 class="ds-h1" style="color:white;">From Circular Fiber Research to<br><em>72-Hour Rapid Sampling</em></h1>
+      <p class="ds-lead" style="color:rgba(255,255,255,0.9);margin:0 auto 36px;">
+        LYK (Lubaba Yarn Kitchen) is ASDWA Fashion Ltd.'s advanced innovation wing, transforming pre-consumer textile waste into certified circular yarns and developing production-ready knit samples in as fast as 72 hours.
+      </p>
+      <div style="display:flex;gap:16px;justify-content:center;flex-wrap:wrap;">
+        <a href="#sampling" class="ds-btn ds-btn-gold">Explore 72h Sampling &darr;</a>
+        <a href="contact.html" class="ds-btn ds-btn-secondary" style="border-color:white;color:white;">Request Sample Swatches &rarr;</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- STATS RIBBON -->
+  <div style="background:var(--primary);color:white;padding:48px var(--content-padding);border-bottom:1px solid rgba(201,169,97,0.2);">
+    <div class="ds-container">
+      <div style="display:grid;grid-template-columns:repeat(auto-fit, minmax(200px, 1fr));gap:24px;text-align:center;">
+        <div>
+          <span style="font-family:var(--font-display);font-size:38px;color:var(--gold);font-weight:600;display:block;">72 Hrs</span>
+          <span style="font-size:12px;text-transform:uppercase;letter-spacing:0.1em;opacity:0.8;">Sample Turnaround</span>
+        </div>
+        <div>
+          <span style="font-family:var(--font-display);font-size:38px;color:var(--gold);font-weight:600;display:block;">-80%</span>
+          <span style="font-size:12px;text-transform:uppercase;letter-spacing:0.1em;opacity:0.8;">Water Saved via Melange Blend</span>
+        </div>
+        <div>
+          <span style="font-family:var(--font-display);font-size:38px;color:var(--gold);font-weight:600;display:block;">450+</span>
+          <span style="font-size:12px;text-transform:uppercase;letter-spacing:0.1em;opacity:0.8;">Certified Fiber Swatches</span>
+        </div>
+        <div>
+          <span style="font-family:var(--font-display);font-size:38px;color:var(--gold);font-weight:600;display:block;">3D CAD</span>
+          <span style="font-size:12px;text-transform:uppercase;letter-spacing:0.1em;opacity:0.8;">Virtual Simulation Before Knit</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 72-HOUR SAMPLING CELL -->
+  <section id="sampling" class="ds-section ds-section--white">
+    <div class="ds-container">
+      <div class="ds-grid-2" style="align-items:center;">
+        <div>
+          <div class="ds-eyebrow">Speed to Market</div>
+          <h2 class="ds-h2">72-Hour Rapid Prototype Development</h2>
+          <p class="ds-lead" style="margin-bottom:16px;">
+            Eliminating weeks of sampling lag for international fashion design teams.
+          </p>
+          <p class="ds-body" style="margin-bottom:20px;">
+            Our dedicated LYK prototyping beds in Dhaka and Narsingdi operate completely independently from bulk production lines. This allows our specialized programming engineers to knit, wash, link, and hand-finish new silhouettes, gauge trials, and colorway swatches in as fast as 72 hours.
+          </p>
+          <div style="display:flex;gap:12px;flex-wrap:wrap;">
+            <span class="ds-badge ds-badge-gold">Dedicated Sampling Beds</span>
+            <span class="ds-badge ds-badge-primary">SDS-ONE APEX4 CAD</span>
+            <span class="ds-badge ds-badge-stone">DHL Express Dispatch</span>
+          </div>
+        </div>
+
+        <div style="border-radius:16px;overflow:hidden;box-shadow:0 12px 36px rgba(0,0,0,0.1);border:1px solid var(--border);">
+          <img src="images/hombre-cardigan.jpeg" alt="Sample knitwear development by ASDWA LYK Lab" style="width:100%;height:100%;object-fit:cover;">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 3D VIRTUAL KNIT SIMULATION SECTION -->
+  <section class="ds-section ds-section--stone">
+    <div class="ds-container">
+      <div class="simulation-box">
+        <div class="sim-grid">
+          <div>
+            <span class="ds-eyebrow ds-eyebrow--white">DIGITAL TWIN KNITTING</span>
+            <h3 style="font-family:var(--font-display);font-size:clamp(26px, 3.2vw, 38px);color:white;margin:12px 0 16px;">
+              Eliminate Physical Sample Waste with 3D Simulation
+            </h3>
+            <p style="color:rgba(255, 255, 255, 0.8);font-size:15px;line-height:1.7;margin-bottom:24px;">
+              Using advanced Shima Seiki SDS-ONE APEX4 and Stoll M1plus CAD systems, our software engineers simulate yarn drape, loop structure, and multi-color jacquards with photorealistic fidelity. European designers can inspect stitch tension, gauge weight, and color transitions digitally before a single meter of yarn is spun.
+            </p>
+            <div style="display:flex;gap:16px;flex-wrap:wrap;">
+              <span class="ds-badge ds-badge-gold">Zero Fabric Waste</span>
+              <span class="ds-badge" style="background:rgba(255,255,255,0.15);color:white;">Direct CAD to Machine Sync</span>
+            </div>
+          </div>
+
+          <div style="border-radius:14px;overflow:hidden;border:1px solid rgba(255,255,255,0.2);box-shadow:0 10px 30px rgba(0,0,0,0.4);">
+            <img src="images/Knitting-machines-Close-up detail.jpg" alt="High precision computerized knitting simulation" style="width:100%;height:100%;object-fit:cover;">
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CIRCULAR YARN STEPS -->
+  <section class="ds-section ds-section--white">
+    <div class="ds-container">
+      <div class="ds-section-header" style="text-align:center;max-width:760px;margin:0 auto 56px;">
+        <span class="ds-eyebrow">Circular Economy</span>
+        <h2 class="ds-h2">The LYK Closed-Loop Material Cycle</h2>
+        <p class="ds-lead">How post-industrial cutting scraps are regenerated into certified luxury knitwear.</p>
+      </div>
+
+      <div style="display:grid;grid-template-columns:repeat(auto-fit, minmax(280px, 1fr));gap:24px;">
+        <div class="ds-card">
+          <div class="circle-step-badge">01</div>
+          <h3 class="ds-card-title">Color-Sorted Collection</h3>
+          <p class="ds-card-text">Pure cotton and wool cutting clippings are collected and sorted strictly by Pantone shades, eliminating the need for fresh chemical re-dyeing.</p>
+        </div>
+
+        <div class="ds-card">
+          <div class="circle-step-badge">02</div>
+          <h3 class="ds-card-title">Mechanical Fiber Shredding</h3>
+          <p class="ds-card-text">Clippings undergo mechanical garnetting to extract original long-staple fibers without harmful acid breakdown or bleaching.</p>
+        </div>
+
+        <div class="ds-card">
+          <div class="circle-step-badge">03</div>
+          <h3 class="ds-card-title">Reinforced Core Spinning</h3>
+          <p class="ds-card-text">Regenerated fibers are blended with GOTS organic cotton or GRS recycled polyester to produce strong, low-twist yarns certified under GRS.</p>
+        </div>
+
+        <div class="ds-card">
+          <div class="circle-step-badge">04</div>
+          <h3 class="ds-card-title">Automated Flat Knitting</h3>
+          <p class="ds-card-text">Knitted on ASDWA's computerized Shima Seiki machines into sweaters, cardigans, and beanies for commercial global retail.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section style="background:var(--primary);color:white;padding:80px var(--content-padding);text-align:center;">
+    <div class="ds-container-narrow" style="margin:0 auto;">
+      <div class="ds-eyebrow ds-eyebrow--white">FAST-TRACK SOURCING</div>
+      <h2 style="font-family:var(--font-display);font-size:clamp(28px, 4vw, 42px);margin-bottom:16px;">Collaborate with the LYK Lab</h2>
+      <p style="font-size:16px;color:rgba(255,255,255,0.8);margin-bottom:32px;">
+        Send us your moodboards, tech packs, or yarn composition requirements for immediate development. 72-hour turnaround guarantee for pre-qualified buyers.
+      </p>
+      <a href="contact.html" class="ds-btn ds-btn-gold">Initiate Sampling Project &rarr;</a>
+    </div>
+  </section>
+
+  <!-- LUXURY FOOTER -->
+  <footer class="ds-footer">
+    <div class="ds-footer-top">
+      <div class="ds-container">
+        <div class="ds-footer-inner">
+          <div class="ds-footer-col">
+            <div style="display:flex;align-items:center;gap:10px;margin-bottom:16px;">
+              <div style="width:28px;height:28px;border-radius:8px;background:linear-gradient(135deg,#E8CC8A,#A6863C);display:flex;align-items:center;justify-content:center;font-weight:700;color:#111D13;font-size:14px;">A</div>
+              <span style="font-family:var(--font-display);font-size:18px;color:#fff;font-weight:600;">ASDWA <span style="font-size:11px;font-weight:400;color:var(--gold);letter-spacing:0.1em;">FASHION LTD.</span></span>
+            </div>
+            <p style="font-size:13px;line-height:1.7;color:rgba(255,255,255,0.65);margin-bottom:20px;">
+              High-precision knitwear &amp; sweater manufacturing powerhouse in Bangladesh. 553 flat knitting machines, European quality engineering, and GOTS/GRS certified sustainability.
+            </p>
+            <p style="font-size:12px;color:var(--gold);font-weight:600;">Inditex &amp; Mango Verified Supplier</p>
+          </div>
+
+          <div class="ds-footer-col">
+            <h4 class="ds-footer-title">Navigation</h4>
+            <ul class="ds-footer-links">
+              <li><a href="index.html">Home</a></li>
+              <li><a href="manufacturing.html">Manufacturing Campus</a></li>
+              <li><a href="products.html">Brand Productions</a></li>
+              <li><a href="responsibility.html">Sustainability &amp; Solar</a></li>
+              <li><a href="our-history.html">Our 20+ Year History</a></li>
+              <li><a href="lyk.html">LYK Innovation Lab</a></li>
+              <li><a href="contact.html">Contact &amp; Delegation Tour</a></li>
+            </ul>
+          </div>
+
+          <div class="ds-footer-col">
+            <h4 class="ds-footer-title">Campus &amp; Office</h4>
+            <div style="font-size:13px;line-height:1.7;color:rgba(255,255,255,0.65);margin-bottom:14px;">
+              <strong style="color:#fff;display:block;">Manufacturing Facility:</strong>
+              Kandai Bus Stand, Madhabdi, Narsingdi, Bangladesh
+            </div>
+            <div style="font-size:13px;line-height:1.7;color:rgba(255,255,255,0.65);">
+              <strong style="color:#fff;display:block;">Corporate Headquarters:</strong>
+              Road-01, House-198/A, Mohakhali New DOHS, Dhaka 1206, Bangladesh
+            </div>
+          </div>
+
+          <div class="ds-footer-col">
+            <h4 class="ds-footer-title">Verified Accreditations</h4>
+            <ul style="list-style:none;padding:0;font-size:12.5px;line-height:1.9;color:rgba(255,255,255,0.65);">
+              <li>• GOTS Organic Standard</li>
+              <li>• GRS Recycled Standard</li>
+              <li>• RWS Responsible Wool</li>
+              <li>• OEKO-TEX Standard 100</li>
+              <li>• BSCI Social Compliance</li>
+              <li>• 100% Daytime Solar Energy (450 kWp)</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="ds-footer-bottom">
+      <div class="ds-container" style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:16px;">
+        <p style="font-size:12px;color:rgba(255,255,255,0.5);">© 2026 ASDWA Fashion Ltd. All rights reserved. Mapped in Bangladesh (MiB) Verified. BGMEA Member.</p>
+        <p style="font-size:12px;color:rgba(255,255,255,0.5);"><a href="index.html" style="color:var(--gold);">Back to Home</a></p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+  <script src="js/mobile-menu.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      if (typeof i18n !== 'undefined') i18n.init();
+    });
+  </script>
+</body>
+</html>
