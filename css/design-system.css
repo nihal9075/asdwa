@@ -7,35 +7,35 @@
 
 :root {
   /* Brand Palette */
-  --primary: #152217;               /* Deepest Forest Noir */
-  --primary-light: #1D2B1F;         /* Rich Alpine Forest */
-  --primary-surface: #243527;       /* Soft Forest Slate */
+  --primary: #111D13;               /* Deepest Forest Noir */
+  --primary-light: #18281B;         /* Rich Alpine Forest */
+  --primary-surface: #223725;       /* Soft Forest Slate */
   --charcoal: #2A382C;
   
   /* Luxury Accents */
   --gold: #C9A961;                  /* Champagne Gold */
-  --gold-light: #E5D2A5;            /* Soft Cream Gold */
-  --gold-dark: #A5863F;             /* Antique Burnished Gold */
-  --gold-glow: rgba(201, 169, 97, 0.22);
+  --gold-light: #E8CC8A;            /* Soft Cream Gold */
+  --gold-dark: #A6863C;             /* Antique Burnished Gold */
+  --gold-glow: rgba(201, 169, 97, 0.25);
   --gold-subtle: rgba(201, 169, 97, 0.08);
 
   /* Neutrals & Surfaces */
   --bg: #F9F9F7;                    /* Organic Pure Cream */
-  --bg-stone: #F3F1EC;              /* Warm Alabaster */
+  --bg-stone: #F2EFEB;              /* Warm Alabaster */
   --bg-stone-dark: #EAE6DF;         /* Muted Pebble */
   --white: #FFFFFF;
   --black: #0B130C;
 
   /* Typography Colors */
-  --text-primary: #152217;          /* Near-black Forest */
+  --text-primary: #111D13;          /* Near-black Forest */
   --text-secondary: #485249;        /* Balanced Slate */
-  --text-muted: #7E8780;            /* Soft Neutral */
+  --text-muted: #79837B;            /* Soft Neutral */
   --text-inverse: #FFFFFF;
   --text-inverse-muted: rgba(255, 255, 255, 0.72);
 
   /* Borders & Dividers */
-  --border: #E4DFD6;
-  --border-light: rgba(228, 223, 214, 0.65);
+  --border: #E2DDD5;
+  --border-light: rgba(226, 221, 213, 0.65);
   --border-dark: rgba(255, 255, 255, 0.12);
   --border-gold: rgba(201, 169, 97, 0.35);
 
@@ -159,9 +159,13 @@ button {
   z-index: 1000;
   padding: 8px 18px;
   border-radius: 999px;
-  transition: top 0.35s cubic-bezier(0.16, 1, 0.3, 1), background 0.35s ease, border-color 0.35s ease, box-shadow 0.35s ease;
   backdrop-filter: blur(28px) saturate(180%);
   -webkit-backdrop-filter: blur(28px) saturate(180%);
+}
+
+/* Enable smooth transitions only after DOM is ready to prevent refresh animation flicker */
+.ds-nav.nav-transitions-ready {
+  transition: top 0.35s cubic-bezier(0.16, 1, 0.3, 1), background 0.35s ease, border-color 0.35s ease, box-shadow 0.35s ease;
 }
 
 /* Hero & Base floating island glass state (unified across all pages) */
@@ -173,8 +177,8 @@ button {
   box-shadow: 0 16px 40px -10px rgba(0, 0, 0, 0.5), 0 0 0 1px rgba(201, 169, 97, 0.25);
 }
 
-/* On mobile, ticker is hidden so nav should always start at 12px */
-@media (max-width: 600px) {
+/* On tablet & mobile, ticker is stacked or hidden so nav starts at 12px */
+@media (max-width: 768px) {
   .ds-nav:not(.scrolled),
   .ds-nav.static:not(.scrolled) {
     top: 12px;
@@ -573,12 +577,16 @@ button {
     padding: 10px 16px;
     font-size: 13px;
     justify-content: flex-start;
-    color: rgba(255, 255, 255, 0.9);
+    color: rgba(255, 255, 255, 0.9) !important;
   }
-  .ds-nav.menu-open .ds-nav-links .ds-nav-link:hover,
+  .ds-nav.menu-open .ds-nav-links .ds-nav-link:hover {
+    background: rgba(201, 169, 97, 0.22) !important;
+    color: #FFFFFF !important;
+  }
   .ds-nav.menu-open .ds-nav-links .ds-nav-link.active {
-    background: rgba(201, 169, 97, 0.22);
-    color: #FFFFFF;
+    background: rgba(201, 169, 97, 0.32) !important;
+    color: #FFFFFF !important;
+    border-color: rgba(201, 169, 97, 0.55) !important;
   }
   .ds-nav-cta {
     display: none;

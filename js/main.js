@@ -90,15 +90,24 @@ function initNavbar() {
   if (!navbar) return;
 
   function handleScroll() {
-    if (window.scrollY > 40) {
+    if (window.scrollY > 30) {
       navbar.classList.add('scrolled');
     } else {
       navbar.classList.remove('scrolled');
     }
   }
 
-  window.addEventListener('scroll', handleScroll, { passive: true });
+  // Sync scroll state immediately without transition animation
   handleScroll();
+  window.addEventListener('scroll', handleScroll, { passive: true });
+  window.addEventListener('pageshow', handleScroll);
+
+  // Enable smooth CSS transitions only after initial paint finishes (prevents reload jumping)
+  requestAnimationFrame(() => {
+    requestAnimationFrame(() => {
+      navbar.classList.add('nav-transitions-ready');
+    });
+  });
 
   // Mobile menu toggle
   const toggleBtn = navbar.querySelector('#nav-toggle') || document.getElementById('nav-toggle');
