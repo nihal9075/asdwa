@@ -50,6 +50,17 @@ body { overflow-x: hidden; }
 
 img, svg, video { max-width: 100%; }
 
+/* Desktop (1024px to 1440px): Content container capped at 1200px to prevent over-stretching */
+.ds-container,
+main,
+#main-content,
+.main-content,
+.hero-content {
+  max-width: var(--max-width, 1200px);
+  margin-left: auto;
+  margin-right: auto;
+}
+
 @media (max-width: 767px) {
   .ds-container,
   .ds-container-narrow {
@@ -68,24 +79,40 @@ img, svg, video { max-width: 100%; }
 /* 3. DESIGN SYSTEM GRIDS                                       */
 /* ============================================================ */
 
-@media (max-width: 767px) {
+/* Tablet (768px to 1023px): Two-column grids where appropriate */
+@media (min-width: 481px) and (max-width: 1023px) {
   .ds-grid-2 {
-    grid-template-columns: 1fr !important;
+    grid-template-columns: repeat(2, 1fr) !important;
     gap: var(--space-xl);
   }
-  .ds-grid-3,
-  .ds-grid-4,
+  .ds-grid-3 {
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: var(--space-lg);
+  }
+  .ds-grid-3 > *:last-child:nth-child(odd) {
+    grid-column: span 2;
+  }
+  .ds-grid-4 {
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: var(--space-lg);
+  }
   .ds-grid-cards {
-    grid-template-columns: 1fr;
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: var(--space-lg);
   }
 }
 
-@media (max-width: 1023px) and (min-width: 768px) {
-  .ds-grid-3 {
-    grid-template-columns: repeat(2, 1fr);
+/* Mobile (< 480px): Single-column stack */
+@media (max-width: 480px) {
+  .ds-grid-2,
+  .ds-grid-3,
+  .ds-grid-4,
+  .ds-grid-cards {
+    grid-template-columns: 1fr !important;
+    gap: var(--space-lg);
   }
-  .ds-grid-4 {
-    grid-template-columns: repeat(2, 1fr);
+  .ds-grid-3 > *:last-child:nth-child(odd) {
+    grid-column: auto;
   }
 }
 
@@ -168,19 +195,99 @@ img, svg, video { max-width: 100%; }
 }
 
 /* ============================================================ */
-/* 7. NAVIGATION MOBILE POLISH                                  */
+/* 7. NAVIGATION RESPONSIVE SYSTEM                              */
 /* ============================================================ */
 
-@media (max-width: 479px) {
+/* Desktop (1024px to 1440px): Full horizontal navbar & max-width 1200px */
+@media (min-width: 1024px) {
+  .ds-nav {
+    max-width: 1200px !important;
+    width: min(1200px, calc(100% - 32px)) !important;
+  }
+  .ds-nav-inner {
+    max-width: 1200px !important;
+  }
+  .ds-hamburger {
+    display: none !important;
+  }
+  .ds-nav-links {
+    display: flex !important;
+  }
+  .ds-nav-actions {
+    display: flex !important;
+  }
   .ds-nav-actions a.ds-btn {
-    display: none;
+    display: inline-flex !important;
+  }
+  .ds-nav-langs {
+    display: inline-flex !important;
   }
 }
 
+/* Tablet (768px to 1023px): Navigation visible if space permits */
+@media (min-width: 768px) and (max-width: 1023px) {
+  .ds-nav {
+    width: min(1200px, calc(100% - 24px)) !important;
+    padding: 6px 12px !important;
+  }
+  .ds-nav-inner {
+    gap: 8px !important;
+  }
+  .ds-hamburger {
+    display: none !important;
+  }
+  .ds-nav-links {
+    display: flex !important;
+    gap: 2px !important;
+  }
+  .ds-nav-link {
+    font-size: 10px !important;
+    padding: 6px 6px !important;
+    letter-spacing: 0.05em !important;
+  }
+  .ds-nav-actions a.ds-btn {
+    display: none !important; /* Hide extra CTA on tablet to leave clean space for horizontal navigation */
+  }
+  .ds-nav-langs {
+    display: inline-flex !important;
+    padding: 2px !important;
+  }
+  .ds-lang-btn {
+    padding: 2px 4px !important;
+    font-size: 9.5px !important;
+  }
+}
+
+/* Mobile (< 768px & < 480px): Collapsible mobile hamburger menu */
 @media (max-width: 767px) {
+  .ds-hamburger {
+    display: flex !important;
+    width: 44px !important;
+    height: 44px !important;
+    min-width: 44px !important;
+    min-height: 44px !important;
+  }
+  .ds-nav-links {
+    display: none !important;
+  }
+  .ds-nav-actions a.ds-btn {
+    display: none !important;
+  }
+  .ds-nav-langs {
+    display: none !important;
+  }
   .ds-nav.menu-open .ds-nav-links {
     left: 0 !important;
     right: 0 !important;
+    display: flex !important;
+    flex-direction: column !important;
+  }
+  .ds-nav.menu-open .ds-nav-links .ds-nav-link {
+    width: 100% !important;
+    min-height: 48px !important;
+    padding: 12px 16px !important;
+    font-size: 14px !important;
+    touch-action: manipulation !important;
   }
 }
 
@@ -480,13 +587,43 @@ img, svg, video { max-width: 100%; }
 }
 
 /* ============================================================ */
-/* 16. BUTTONS — MOBILE SIZING                                  */
+/* 16. BUTTONS — TOUCH-FRIENDLY & MOBILE SIZING                 */
 /* ============================================================ */
 
-@media (max-width: 479px) {
+/* Touch-friendly base properties */
+.ds-btn {
+  min-height: 48px;
+  touch-action: manipulation;
+  -webkit-tap-highlight-color: transparent;
+}
+
+@media (max-width: 480px) {
   .ds-btn {
-    padding: 11px 18px;
-    font-size: 12px;
+    min-height: 48px !important;
+    padding: 12px 20px !important;
+    font-size: 13px !important;
+    touch-action: manipulation !important;
+  }
+  .hero-actions,
+  .hero-cta-bar,
+  .ds-btn-group,
+  .cta-actions {
+    display: flex !important;
+    flex-direction: column !important;
+    width: 100% !important;
+    gap: 12px !important;
+  }
+  .hero-actions .ds-btn,
+  .hero-actions a,
+  .hero-cta-bar .ds-btn,
+  .hero-cta-bar a,
+  .cta-actions .ds-btn {
+    width: 100% !important;
+    max-width: 100% !important;
+    min-height: 48px !important;
+    text-align: center !important;
+    justify-content: center !important;
+    display: flex !important;
   }
 }
 
@@ -523,18 +660,20 @@ img, svg, video { max-width: 100%; }
 /* 19. FOOTER — COLUMN STACKING                                 */
 /* ============================================================ */
 
-@media (max-width: 1023px) {
+/* Tablet (768px to 1023px): Two-column footer */
+@media (min-width: 481px) and (max-width: 1023px) {
   .ds-footer {
     padding: 72px var(--content-padding) 32px;
   }
   .ds-footer-inner,
   .ds-footer-grid {
-    grid-template-columns: 1fr 1fr !important;
+    grid-template-columns: repeat(2, 1fr) !important;
     gap: 32px !important;
   }
 }
 
-@media (max-width: 767px) {
+/* Mobile (< 480px): Single-column stack */
+@media (max-width: 480px) {
   .ds-footer {
     padding: 52px var(--content-padding) 24px;
   }
