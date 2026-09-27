@@ -68,6 +68,9 @@ const i18n = {
       const isActive = btn.dataset.lang === this.currentLang;
       btn.classList.toggle('active', isActive);
     });
+    if (typeof window.updateMobileNavLang === 'function') {
+      window.updateMobileNavLang();
+    }
   },
 
   reorderContacts() {
@@ -108,30 +111,6 @@ function initNavbar() {
       navbar.classList.add('nav-transitions-ready');
     });
   });
-
-  // Mobile menu toggle
-  const toggleBtn = navbar.querySelector('#nav-toggle') || document.getElementById('nav-toggle');
-  if (toggleBtn) {
-    toggleBtn.addEventListener('click', (e) => {
-      e.stopPropagation();
-      const isOpen = navbar.classList.toggle('menu-open');
-      toggleBtn.classList.toggle('open', isOpen);
-    });
-
-    document.querySelectorAll('.ds-nav-link').forEach(link => {
-      link.addEventListener('click', () => {
-        navbar.classList.remove('menu-open');
-        toggleBtn.classList.remove('open');
-      });
-    });
-
-    document.addEventListener('click', (e) => {
-      if (!navbar.contains(e.target)) {
-        navbar.classList.remove('menu-open');
-        toggleBtn.classList.remove('open');
-      }
-    });
-  }
 }
 
 // === Scroll Reveal Animations ===
@@ -157,27 +136,17 @@ function initScrollReveal() {
 
 // === Active Nav Item Highlight ===
 function initActiveNavHighlight() {
-  const sections = document.querySelectorAll('section[id]');
-  const navLinks = document.querySelectorAll('.ds-nav-link');
   const currentPath = window.location.pathname.split('/').pop() || 'index.html';
+  const navLinks = document.querySelectorAll('.ds-nav-link');
 
-  if (sections.length > 0 && (currentPath === 'index.html' || currentPath === '')) {
-    window.addEventListener('scroll', () => {
-      let current = 'about';
-      sections.forEach(section => {
-        if (window.scrollY >= section.offsetTop - 180) {
-          current = section.id;
-        }
-      });
-      navLinks.forEach(link => {
-        const href = link.getAttribute('href');
-        if (href && href.includes('#')) {
-          const hash = href.split('#')[1];
-          link.classList.toggle('active', hash === current);
-        }
-      });
-    }, { passive: true });
-  }
+  navLinks.forEach(link => {
+    const href = link.getAttribute('href') || '';
+    const cleanHref = href.split('#')[0].split('?')[0];
+    const isCurrent = (cleanHref === currentPath) || (currentPath === '' && cleanHref === 'index.html');
+    if (isCurrent) {
+      link.classList.add('active');
+    }
+  });
 }
 
 // === Contact Form Handler ===

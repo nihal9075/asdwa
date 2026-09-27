@@ -7,7 +7,7 @@
   <meta name="description" content="Commercial knitwear and sweater programs knitted, finished, and exported by ASDWA Fashion Ltd. for Zara, Mango, Pull&Bear, Bershka, and global fashion leaders. 1.5GG to 14GG precision.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=Outfit:wght@300;400;500;600;700&family=Cormorant+Garamond:ital,wght@0,500;0,600;1,400&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2&bull;family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=Outfit:wght@300;400;500;600;700&family=Cormorant+Garamond:ital,wght@0,500;0,600;1,400&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/design-system.css">
   <link rel="stylesheet" href="css/responsive.css">
   <style>
@@ -44,7 +44,7 @@
     }
 
     .catalog-controls-inner {
-      max-width: var(--container-max);
+      max-width: var(--max-width, 1200px);
       margin: 0 auto;
       display: flex;
       flex-direction: column;
@@ -383,13 +383,13 @@
   <aside class="top-ticker" aria-label="Announcement">
     <div class="top-ticker-left">
       <span class="ticker-pulse"></span>
-      <span><strong>LIVE:</strong> ASDWA Integrated Campus (Madhabdi, Narsingdi) â€¢ 553 Computerized Flat Knit Machines Operating</span>
+      <span><strong>LIVE:</strong> ASDWA Integrated Campus (Madhabdi, Narsingdi) &bull; 553 Computerized Flat Knit Machines Operating</span>
     </div>
     <div class="top-ticker-right">
       <span>100% Daytime Solar Energy (450 kWp)</span>
-      <span>â€¢</span>
+      <span>&bull;</span>
       <span>AQL 1.5 European QA</span>
-      <span>â€¢</span>
+      <span>&bull;</span>
       <a href="contact.html">Book Delegation Tour &rarr;</a>
     </div>
   </aside>
@@ -536,7 +536,7 @@
           </tr>
           <tr>
             <td>Quality Standard:</td>
-            <td>AQL 1.5 Major / 2.5 Minor â€¢ 100% Metal Inspected</td>
+            <td>AQL 1.5 Major / 2.5 Minor &bull; 100% Metal Inspected</td>
           </tr>
           <tr>
             <td>Commercial Dest.:</td>
@@ -608,12 +608,12 @@
           <div class="ds-footer-col">
             <h4 class="ds-footer-title">Verified Accreditations</h4>
             <ul style="list-style:none;padding:0;font-size:12.5px;line-height:1.9;color:rgba(255,255,255,0.65);">
-              <li>â€¢ GOTS Organic Standard</li>
-              <li>â€¢ GRS Recycled Standard</li>
-              <li>â€¢ RWS Responsible Wool</li>
-              <li>â€¢ OEKO-TEX Standard 100</li>
-              <li>â€¢ BSCI Social Compliance</li>
-              <li>â€¢ 100% Daytime Solar Energy (450 kWp)</li>
+              <li>&bull; GOTS Organic Standard</li>
+              <li>&bull; GRS Recycled Standard</li>
+              <li>&bull; RWS Responsible Wool</li>
+              <li>&bull; OEKO-TEX Standard 100</li>
+              <li>&bull; BSCI Social Compliance</li>
+              <li>&bull; 100% Daytime Solar Energy (450 kWp)</li>
             </ul>
           </div>
         </div>
@@ -622,7 +622,7 @@
 
     <div class="ds-footer-bottom">
       <div class="ds-container" style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:16px;">
-        <p style="font-size:12px;color:rgba(255,255,255,0.5);">Â© 2026 ASDWA Fashion Ltd. All rights reserved. Mapped in Bangladesh (MiB) Verified. BGMEA Member.</p>
+        <p style="font-size:12px;color:rgba(255,255,255,0.5);">&copy; 2026 ASDWA Fashion Ltd. All rights reserved. Mapped in Bangladesh (MiB) Verified. BGMEA Member.</p>
         <p style="font-size:12px;color:rgba(255,255,255,0.5);"><a href="index.html" style="color:var(--gold);">Back to Home</a></p>
       </div>
     </div>
@@ -656,7 +656,7 @@
         card.onclick = () => openModal(p);
 
         const imgSrc = p.imageLocal || p.image || 'images/hombre-cardigan.jpeg';
-        const brand = p.brandDisplay || (p.brand ? p.brand.toUpperCase() : 'ASDWA');
+        const brand = p.brandDisplay || (p.brand &bull; p.brand.toUpperCase() : 'ASDWA');
         const gauge = p.gauge || '7GG';
 
         card.innerHTML = `
@@ -736,10 +736,10 @@
       document.getElementById('modal-gauge').textContent = `${p.gauge || '7GG'} Multi-Structure`;
       document.getElementById('modal-comp').textContent = p.composition;
       document.getElementById('modal-machine').textContent = p.gauge === '14GG' || p.gauge === '12GG'
-        ? 'Shima Seiki SVR093 / Stoll CMS 530 HP'
-        : (p.gauge === '3GG' || p.gauge === '5GG' ? 'Shima Seiki SVR122 Chunky / Stoll CMS 530' : 'Shima Seiki SVR122 / Stoll CMS 502');
+        &bull; 'Shima Seiki SVR093 / Stoll CMS 530 HP'
+        : (p.gauge === '3GG' || p.gauge === '5GG' &bull; 'Shima Seiki SVR122 Chunky / Stoll CMS 530' : 'Shima Seiki SVR122 / Stoll CMS 502');
       document.getElementById('modal-link').href = p.productUrl || '#';
-      document.getElementById('modal-inquire-btn').href = `contact.html?style=${encodeURIComponent(p.name)}&gauge=${encodeURIComponent(p.gauge || '7GG')}`;
+      document.getElementById('modal-inquire-btn').href = `contact.html&bull;style=${encodeURIComponent(p.name)}&gauge=${encodeURIComponent(p.gauge || '7GG')}`;
       modal.classList.add('active');
       document.body.style.overflow = 'hidden';
     }
