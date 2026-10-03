@@ -151,45 +151,64 @@ function initActiveNavHighlight() {
 
 // === Contact Form Handler ===
 function initContactForm() {
-  const form = document.getElementById('contact-form') || document.querySelector('.contact-form');
-  if (!form) return;
+  const forms = document.querySelectorAll('#contact-form, #dedicated-contact-form, .contact-form');
+  if (!forms.length) return;
 
-  form.addEventListener('submit', async (e) => {
-    e.preventDefault();
-    const btn = form.querySelector('button[type="submit"]');
-    const originalText = btn ? btn.innerHTML : 'Send Message';
-    if (btn) {
-      btn.innerHTML = '<span style="display:inline-block;animation:spin 1s linear infinite;">↻</span> Sending...';
-      btn.disabled = true;
-    }
+  forms.forEach(form => {
+    if (form.dataset.initialized) return;
+    form.dataset.initialized = 'true';
 
-    try {
+    form.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      const btn = form.querySelector('button[type="submit"]') || form.querySelector('#form-btn') || form.querySelector('#contact-submit-btn');
+      const originalText = btn ? btn.innerHTML : 'Send Message';
+      if (btn) {
+        btn.innerHTML = '<span style="display:inline-block;animation:spin 1s linear infinite;">↻</span> Sending...';
+        btn.disabled = true;
+      }
+
       const existingMsg = form.querySelector('.ds-form-status');
       if (existingMsg) existingMsg.remove();
 
-      const msg = document.createElement('div');
-      msg.className = 'ds-form-status';
-      msg.style.cssText = 'margin-top:16px;padding:14px 18px;border-radius:8px;background:rgba(201,169,97,0.15);border:1px solid #C9A961;color:#152217;font-size:14px;font-weight:500;text-align:center;';
-      msg.textContent = i18n.getNestedValue('contact.form_success') || 'Thank you! Your message has been received. Our team will contact you within 24 hours.';
-      form.appendChild(msg);
-      form.reset();
-      setTimeout(() => {
-        msg.style.transition = 'opacity 0.5s ease';
-        msg.style.opacity = '0';
-        setTimeout(() => msg.remove(), 500);
-      }, 6000);
-    } catch (err) {
-      const msg = document.createElement('div');
-      msg.className = 'ds-form-status';
-      msg.style.cssText = 'margin-top:16px;padding:14px 18px;border-radius:8px;background:rgba(220,53,69,0.1);border:1px solid #dc3545;color:#dc3545;font-size:14px;font-weight:500;text-align:center;';
-      msg.textContent = i18n.getNestedValue('contact.form_error') || 'Something went wrong. Please reach out to us at info@asdwafashion.com';
-      form.appendChild(msg);
-    } finally {
-      if (btn) {
-        btn.innerHTML = originalText;
-        btn.disabled = false;
+      try {
+        if (form.action && form.action.startsWith('http')) {
+          const res = await fetch(form.action, {
+            method: 'POST',
+            body: new FormData(form),
+            headers: { 'Accept': 'application/json' }
+          });
+          if (!res.ok) throw new Error('Submission failed');
+        }
+
+        const successNotice = document.getElementById('form-success') || document.getElementById('contact-success');
+        if (successNotice) {
+          successNotice.style.display = 'block';
+          if (btn) btn.style.display = 'none';
+        } else {
+          const msg = document.createElement('div');
+          msg.className = 'ds-form-status';
+          msg.style.cssText = 'margin-top:16px;padding:14px 18px;border-radius:10px;background:rgba(201,169,97,0.15);border:1px solid #C9A961;color:#152217;font-size:14px;font-weight:500;text-align:center;transition:all 0.35s ease;';
+          msg.textContent = (typeof i18n !== 'undefined' && i18n.getNestedValue('contact.form_success')) || 'Thank you! Your message has been received. Our team will contact you within 24 hours.';
+          form.appendChild(msg);
+          setTimeout(() => {
+            msg.style.opacity = '0';
+            setTimeout(() => msg.remove(), 400);
+          }, 6000);
+        }
+        form.reset();
+      } catch (err) {
+        const msg = document.createElement('div');
+        msg.className = 'ds-form-status';
+        msg.style.cssText = 'margin-top:16px;padding:14px 18px;border-radius:10px;background:rgba(220,53,69,0.1);border:1px solid #dc3545;color:#dc3545;font-size:14px;font-weight:500;text-align:center;transition:all 0.35s ease;';
+        msg.textContent = (typeof i18n !== 'undefined' && i18n.getNestedValue('contact.form_error')) || 'Something went wrong. Please reach out to us directly at info@asdwafashion.com';
+        form.appendChild(msg);
+      } finally {
+        if (btn && (!document.getElementById('form-success') || document.getElementById('form-success').style.display !== 'block') && (!document.getElementById('contact-success') || document.getElementById('contact-success').style.display !== 'block')) {
+          btn.innerHTML = originalText;
+          btn.disabled = false;
+        }
       }
-    }
+    });
   });
 }
 

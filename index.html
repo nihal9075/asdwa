@@ -475,6 +475,12 @@
       grid-template-columns: 1fr 1fr;
       box-shadow: 0 25px 60px rgba(0, 0, 0, 0.4);
       position: relative;
+      transform: scale(0.95) translateY(12px);
+      transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    .product-modal.active .product-modal-content {
+      transform: scale(1) translateY(0);
     }
 
     @media (max-width: 768px) {
@@ -581,7 +587,7 @@
   <!-- ============================================================ -->
   <section id="hero">
     <div class="hero-video-container">
-      <video class="hero-video" id="hero-video" autoplay muted loop playsinline
+      <video class="hero-video" id="hero-video-player" autoplay muted loop playsinline
         poster="images/Factory-Interior-Production-floor.jpg">
         <source src="media/hero-knitting-web.mp4" type="video/mp4">
         <source src="media/0_Ai_generated_Knitted.mp4" type="video/mp4">
@@ -1235,7 +1241,7 @@
   <!-- ============================================================ -->
   <!-- PRODUCT TECHNICAL MODAL                                      -->
   <!-- ============================================================ -->
-  <div class="product-modal" id="product-modal" role="dialog" aria-modal="true">
+  <div class="product-modal" id="product-quickview-modal" role="dialog" aria-modal="true">
     <div class="product-modal-content">
       <button class="product-modal-close" onclick="closeProductModal()" aria-label="Close modal">&times;</button>
       <div style="background:var(--bg-stone);height:100%;min-height:360px;">
@@ -1376,7 +1382,7 @@
 
     // Video Switcher
     function switchHeroVideo(src, btn) {
-      const video = document.getElementById('hero-video');
+      const video = document.getElementById('hero-video-player');
       if (!video) return;
       document.querySelectorAll('.video-switch-btn').forEach(b => b.classList.remove('active'));
       btn.classList.add('active');
@@ -1389,7 +1395,7 @@
     }
 
     function toggleHeroPlay() {
-      const video = document.getElementById('hero-video');
+      const video = document.getElementById('hero-video-player');
       const btn = document.getElementById('video-toggle-play');
       if (video.paused) {
         video.play();
@@ -1548,12 +1554,14 @@
       document.getElementById('modal-gauge').textContent = p.gauge;
       document.getElementById('modal-comp').textContent = p.composition;
       document.getElementById('modal-link').href = p.productUrl;
-
-      document.getElementById('product-modal').classList.add('active');
+      document.getElementById('product-quickview-modal').classList.add('active');
+      document.body.style.overflow = 'hidden';
     }
 
     function closeProductModal() {
-      document.getElementById('product-modal').classList.remove('active');
+      const modal = document.getElementById('product-quickview-modal');
+      if (modal) modal.classList.remove('active');
+      document.body.style.overflow = '';
     }
 
     function requestThisGarment() {
@@ -1599,33 +1607,21 @@
       });
     }
 
-    // Contact Form submission
+    // Initialize interactive features on load
     document.addEventListener('DOMContentLoaded', () => {
       loadHomeProducts();
       initCounters();
 
-      const form = document.getElementById('contact-form');
-      if (form) {
-        form.addEventListener('submit', function (e) {
-          e.preventDefault();
-          const btn = document.getElementById('form-btn');
-          btn.textContent = 'Transmitting to Factory...';
-          btn.disabled = true;
-
-          fetch(form.action, {
-            method: 'POST',
-            body: new FormData(form),
-            headers: { 'Accept': 'application/json' }
-          }).then(res => {
-            btn.style.display = 'none';
-            document.getElementById('form-success').style.display = 'block';
-            form.reset();
-          }).catch(err => {
-            btn.textContent = 'Error. Try Again or Email Directly';
-            btn.disabled = false;
-          });
+      // Smooth backdrop click and escape key to close quickview modal
+      const quickModal = document.getElementById('product-quickview-modal');
+      if (quickModal) {
+        quickModal.addEventListener('click', (e) => {
+          if (e.target === quickModal) closeProductModal();
         });
       }
+      document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape') closeProductModal();
+      });
     });
   </script>
 </body>

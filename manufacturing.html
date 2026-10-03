@@ -167,6 +167,7 @@
       grid-template-columns: 1fr 1fr;
       gap: 40px;
       align-items: center;
+      transition: opacity 0.25s cubic-bezier(0.16, 1, 0.3, 1);
     }
 
     @media (max-width: 860px) {
@@ -470,7 +471,7 @@
           </button>
         </div>
 
-        <div class="dept-content-grid" id="dept-content-grid">
+        <div class="dept-content-grid" id="dept-grid-container">
           <div class="dept-media-box">
             <img id="dept-img" src="images/Knitting-machines-Close-up detail.jpg" alt="Shima Seiki & Stoll computerized knitting machines at ASDWA Fashion Ltd.">
             <div class="dept-spec-pill" id="dept-pill">553 Units &bull; 1.5GG to 14GG &bull; Shima Seiki &amp; Stoll</div>
@@ -644,7 +645,7 @@
           </p>
           <ul style="list-style:none;display:flex;flex-direction:column;gap:12px;font-size:14px;color:var(--text-secondary);">
             <li style="display:flex;align-items:flex-start;gap:10px;"><strong style="color:var(--gold-dark);">&#10003;</strong> <strong>Free Medical Clinic:</strong> Full-time registered physicians and nurses providing preventive care, first aid, and prescription medicines.</li>
-            <li style="display:flex;align-items:flex-start;gap:10px;"><strong style="color:var(--gold-dark);">&#10003;</strong> <strong>Childcare CrÃ¨che:</strong> Safe, clean on-site daycare staffed by trained caregivers for children of artisan mothers.</li>
+            <li style="display:flex;align-items:flex-start;gap:10px;"><strong style="color:var(--gold-dark);">&#10003;</strong> <strong>Childcare Crèche:</strong> Safe, clean on-site daycare staffed by trained caregivers for children of artisan mothers.</li>
             <li style="display:flex;align-items:flex-start;gap:10px;"><strong style="color:var(--gold-dark);">&#10003;</strong> <strong>Women Leadership:</strong> Over 60% of linking, inspection, and line supervisor roles are held by women.</li>
             <li style="display:flex;align-items:flex-start;gap:10px;"><strong style="color:var(--gold-dark);">&#10003;</strong> <strong>Audited Safety:</strong> BSCI, Sedex SMETA, and DIFE certified with regular unannounced inspections.</li>
           </ul>
@@ -832,7 +833,7 @@
       const data = deptData[deptKey];
       if (!data) return;
 
-      const container = document.getElementById('dept-content-grid');
+      const container = document.getElementById('dept-grid-container');
       container.style.opacity = '0.35';
 
       setTimeout(() => {

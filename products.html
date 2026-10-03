@@ -493,7 +493,7 @@
   <!-- PRODUCT GRID -->
   <section class="catalog-section">
     <div class="ds-container">
-      <div class="product-grid" id="product-grid">
+      <div class="product-grid" id="product-catalog-grid">
         <!-- Rendered dynamically -->
       </div>
 
@@ -507,7 +507,7 @@
   </section>
 
   <!-- PRODUCT INSPECTION MODAL -->
-  <div class="product-modal" id="product-modal">
+  <div class="product-modal" id="product-details-modal">
     <div class="product-modal-dialog">
       <button class="product-modal-close" onclick="closeModal()" aria-label="Close Modal">&times;</button>
       <div class="modal-img-col">
@@ -636,7 +636,7 @@
     let currentGauge = 'all';
     let searchQuery = '';
 
-    const grid = document.getElementById('product-grid');
+    const grid = document.getElementById('product-catalog-grid');
     const emptyMsg = document.getElementById('catalog-empty');
     const counterEl = document.getElementById('product-counter');
 
@@ -729,7 +729,7 @@
     }
 
     function openModal(p) {
-      const modal = document.getElementById('product-modal');
+      const modal = document.getElementById('product-details-modal');
       document.getElementById('modal-img').src = p.imageLocal || p.image;
       document.getElementById('modal-brand').textContent = p.brandDisplay || p.brand.toUpperCase();
       document.getElementById('modal-title').textContent = p.name;
@@ -745,13 +745,13 @@
     }
 
     function closeModal() {
-      const modal = document.getElementById('product-modal');
+      const modal = document.getElementById('product-details-modal');
       modal.classList.remove('active');
       document.body.style.overflow = '';
     }
 
-    document.getElementById('product-modal').addEventListener('click', (e) => {
-      if (e.target.id === 'product-modal') closeModal();
+    document.getElementById('product-details-modal').addEventListener('click', (e) => {
+      if (e.target.id === 'product-details-modal') closeModal();
     });
 
     document.addEventListener('keydown', (e) => {
