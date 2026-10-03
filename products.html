@@ -7,7 +7,7 @@
   <meta name="description" content="Commercial knitwear and sweater programs knitted, finished, and exported by ASDWA Fashion Ltd. for Zara, Mango, Pull&Bear, Bershka, and global fashion leaders. 1.5GG to 14GG precision.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
-  <link href="https://fonts.googleapis.com/css2&bull;family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=Outfit:wght@300;400;500;600;700&family=Cormorant+Garamond:ital,wght@0,500;0,600;1,400&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=Outfit:wght@300;400;500;600;700&family=Cormorant+Garamond:ital,wght@0,500;0,600;1,400&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/design-system.css">
   <link rel="stylesheet" href="css/responsive.css">
   <style>
@@ -656,7 +656,7 @@
         card.onclick = () => openModal(p);
 
         const imgSrc = p.imageLocal || p.image || 'images/hombre-cardigan.jpeg';
-        const brand = p.brandDisplay || (p.brand &bull; p.brand.toUpperCase() : 'ASDWA');
+        const brand = p.brandDisplay || (p.brand ? p.brand.toUpperCase() : 'ASDWA');
         const gauge = p.gauge || '7GG';
 
         card.innerHTML = `
@@ -736,10 +736,10 @@
       document.getElementById('modal-gauge').textContent = `${p.gauge || '7GG'} Multi-Structure`;
       document.getElementById('modal-comp').textContent = p.composition;
       document.getElementById('modal-machine').textContent = p.gauge === '14GG' || p.gauge === '12GG'
-        &bull; 'Shima Seiki SVR093 / Stoll CMS 530 HP'
-        : (p.gauge === '3GG' || p.gauge === '5GG' &bull; 'Shima Seiki SVR122 Chunky / Stoll CMS 530' : 'Shima Seiki SVR122 / Stoll CMS 502');
+        ? 'Shima Seiki SVR093 / Stoll CMS 530 HP'
+        : (p.gauge === '3GG' || p.gauge === '5GG' ? 'Shima Seiki SVR122 Chunky / Stoll CMS 530' : 'Shima Seiki SVR122 / Stoll CMS 502');
       document.getElementById('modal-link').href = p.productUrl || '#';
-      document.getElementById('modal-inquire-btn').href = `contact.html&bull;style=${encodeURIComponent(p.name)}&gauge=${encodeURIComponent(p.gauge || '7GG')}`;
+      document.getElementById('modal-inquire-btn').href = `contact.html?style=${encodeURIComponent(p.name)}&gauge=${encodeURIComponent(p.gauge || '7GG')}`;
       modal.classList.add('active');
       document.body.style.overflow = 'hidden';
     }
