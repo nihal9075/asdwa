@@ -1,0 +1,9 @@
+# Netlify redirects and header rules for static multi-page site
+/about               /index.html#about        301
+/manufacturing       /manufacturing.html       200
+/products            /products.html            200
+/responsibility      /responsibility.html      200
+/history             /our-history.html         200
+/our-history         /our-history.html         200
+/lyk                 /lyk.html                 200
+/contact             /contact.html             200

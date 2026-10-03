@@ -30,7 +30,8 @@
 
     // Detect current page
     var currentFile = window.location.pathname.split('/').pop() || 'index.html';
-    if (currentFile === '') currentFile = 'index.html';
+    if (!currentFile || currentFile === '' || currentFile === 'asdwa') currentFile = 'index.html';
+    if (currentFile && !currentFile.includes('.')) currentFile += '.html';
 
     // Navigation links
     var links = [
@@ -216,9 +217,9 @@
       }
     });
 
-    // Close drawer if resized to desktop (>= 1024px)
+    // Close drawer if resized to desktop (>= 1140px)
     window.addEventListener('resize', function() {
-      if (window.innerWidth >= 1024 && isOpen) {
+      if (window.innerWidth >= 1140 && isOpen) {
         closeDrawer();
       }
     });

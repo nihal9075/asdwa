@@ -182,14 +182,14 @@ button {
   box-shadow: 0 20px 48px -8px rgba(0, 0, 0, 0.8), 0 0 0 1px rgba(201, 169, 97, 0.22);
 }
 
-@media (max-width: 768px) {
-  .ds-nav,
-  .ds-nav:not(.scrolled),
-  .ds-nav.static:not(.scrolled),
-  .ds-nav.scrolled {
-    top: 12px !important;
-    width: calc(100% - 20px);
+@media (max-width: 1139px) {
+  .ds-nav {
+    top: 42px;
+    width: min(calc(100% - 20px), 720px);
     padding: 7px 14px;
+  }
+  .ds-nav.scrolled {
+    top: 8px !important;
   }
 }
 
@@ -440,16 +440,30 @@ button {
 /* ------------------------------------------------------------ */
 /* NAVBAR RESPONSIVE BEHAVIOR                                   */
 /* ------------------------------------------------------------ */
-/* Desktop (1024px to 1440px): Full horizontal navbar */
-@media (min-width: 1024px) {
+
+/* Desktop (>= 1140px): Full horizontal luxury navbar */
+@media (min-width: 1140px) {
   .ds-hamburger {
     display: none !important;
   }
   .ds-nav-links {
     display: flex !important;
+    align-items: center !important;
+    gap: 2px !important;
+    flex-wrap: nowrap !important;
+  }
+  .ds-nav-link {
+    font-size: 11px !important;
+    padding: 6px 11px !important;
+    letter-spacing: 0.08em !important;
+    white-space: nowrap !important;
+    flex-shrink: 0 !important;
   }
   .ds-nav-actions {
     display: flex !important;
+    align-items: center !important;
+    gap: 10px !important;
+    flex-shrink: 0 !important;
   }
   .ds-nav-actions a.ds-btn,
   .ds-nav-cta {
@@ -460,14 +474,33 @@ button {
   }
 }
 
-/* Tablet (768px to 1023px): Navigation visible if space permits */
-@media (min-width: 768px) and (max-width: 1023px) {
-  .ds-nav {
-    width: min(var(--max-width, 1200px), calc(100% - 24px));
-    padding: 6px 12px;
+/* Tablet & Mobile (< 1140px): Compact luxury capsule with hamburger drawer */
+@media (max-width: 1139px) {
+  .ds-hamburger {
+    display: flex !important;
+    width: 40px !important;
+    height: 40px !important;
+    min-width: 40px !important;
+    min-height: 40px !important;
+  }
+  .ds-nav-links {
+    display: none !important;
+  }
+  .ds-nav-actions a.ds-btn,
+  .ds-nav-cta {
+    display: none !important;
+  }
+  .ds-nav-langs {
+    display: inline-flex !important;
   }
   .ds-nav-inner {
-    gap: 8px;
+    gap: 12px;
+  }
+}
+
+@media (max-width: 600px) {
+  .ds-nav-langs {
+    display: none !important; /* Managed inside the luxury mobile drawer on mobile phones */
   }
   .ds-nav-logo {
     font-size: 16px;
@@ -475,112 +508,9 @@ button {
   }
   .ds-nav-title {
     font-size: 15px;
-    letter-spacing: 0.12em;
   }
   .ds-nav-sub {
     font-size: 7px;
-  }
-  .ds-hamburger {
-    display: none !important;
-  }
-  .ds-nav-links {
-    display: flex !important;
-    gap: 2px;
-  }
-  .ds-nav-link {
-    font-size: 10px;
-    padding: 6px 6px;
-    letter-spacing: 0.05em;
-  }
-  .ds-nav-actions a.ds-btn,
-  .ds-nav-cta {
-    display: none !important; /* Hide extra CTA button on tablet to leave clean space for horizontal navigation */
-  }
-  .ds-nav-langs {
-    display: inline-flex !important;
-    padding: 2px;
-  }
-  .ds-lang-btn {
-    padding: 2px 4px;
-    font-size: 9.5px;
-  }
-}
-
-/* Mobile (< 768px, including < 480px): Collapsible mobile hamburger menu */
-@media (max-width: 767px) {
-  .ds-hamburger {
-    display: flex !important;
-    width: 44px;
-    height: 44px;
-    min-width: 44px;
-    min-height: 44px;
-  }
-  .ds-nav-links {
-    display: none !important;
-  }
-  .ds-nav-actions a.ds-btn,
-  .ds-nav-cta {
-    display: none !important;
-  }
-  .ds-nav-langs {
-    display: none !important;
-  }
-  .ds-nav,
-  .ds-nav:not(.scrolled),
-  .ds-nav.static:not(.scrolled),
-  .ds-nav.scrolled {
-    top: 12px !important;
-    width: calc(100% - 20px) !important;
-    padding: 7px 14px;
-    border-radius: 24px;
-  }
-  .ds-nav-logo {
-    font-size: 17px;
-  }
-  .ds-nav-title {
-    font-size: 16px;
-  }
-  .ds-nav-sub {
-    font-size: 7.5px;
-  }
-  .ds-nav.menu-open .ds-nav-links {
-    display: flex !important;
-    flex-direction: column;
-    position: absolute;
-    top: calc(100% + 10px);
-    left: 0;
-    right: 0;
-    background: rgba(14, 25, 17, 0.98);
-    backdrop-filter: blur(24px);
-    -webkit-backdrop-filter: blur(24px);
-    border: 1px solid rgba(201, 169, 97, 0.35);
-    border-radius: 20px;
-    padding: 16px;
-    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.65);
-    gap: 6px;
-    z-index: 1001;
-    max-height: calc(85vh - 70px);
-    overflow-y: auto;
-  }
-  .ds-nav.menu-open .ds-nav-links .ds-nav-link {
-    width: 100%;
-    min-height: 48px;
-    padding: 12px 16px;
-    font-size: 14px;
-    justify-content: flex-start;
-    color: rgba(255, 255, 255, 0.9) !important;
-    border-radius: 10px;
-    touch-action: manipulation;
-  }
-  .ds-nav.menu-open .ds-nav-links .ds-nav-link:hover,
-  .ds-nav.menu-open .ds-nav-links .ds-nav-link:active {
-    background: rgba(201, 169, 97, 0.22) !important;
-    color: #FFFFFF !important;
-  }
-  .ds-nav.menu-open .ds-nav-links .ds-nav-link.active {
-    background: rgba(201, 169, 97, 0.32) !important;
-    color: #FFFFFF !important;
-    border-color: rgba(201, 169, 97, 0.55) !important;
   }
 }
 

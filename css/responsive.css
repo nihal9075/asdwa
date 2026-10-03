@@ -229,23 +229,44 @@ main,
 /* 7. NAVIGATION RESPONSIVE SYSTEM                              */
 /* ============================================================ */
 
-/* Desktop (1024px to 1440px): Full horizontal navbar & max-width 1200px */
-@media (min-width: 1024px) {
+/* Desktop (>= 1140px): Full horizontal luxury navbar */
+@media (min-width: 1140px) {
   .ds-nav {
     max-width: 1200px !important;
     width: min(1200px, calc(100% - 32px)) !important;
+    top: 44px;
+  }
+  .ds-nav.scrolled {
+    top: 12px !important;
   }
   .ds-nav-inner {
     max-width: 1200px !important;
+    display: flex !important;
+    justify-content: space-between !important;
+    align-items: center !important;
+    gap: 12px !important;
   }
   .ds-hamburger {
     display: none !important;
   }
   .ds-nav-links {
     display: flex !important;
+    align-items: center !important;
+    gap: 2px !important;
+    flex-wrap: nowrap !important;
+  }
+  .ds-nav-link {
+    font-size: 11px !important;
+    padding: 6px 11px !important;
+    letter-spacing: 0.08em !important;
+    white-space: nowrap !important;
+    flex-shrink: 0 !important;
   }
   .ds-nav-actions {
     display: flex !important;
+    align-items: center !important;
+    gap: 10px !important;
+    flex-shrink: 0 !important;
   }
   .ds-nav-actions a.ds-btn {
     display: inline-flex !important;
@@ -255,70 +276,58 @@ main,
   }
 }
 
-/* Tablet (768px to 1023px): Navigation visible if space permits */
-@media (min-width: 768px) and (max-width: 1023px) {
+/* Tablet & Mobile (< 1140px): Compact luxury capsule with hamburger drawer */
+@media (max-width: 1139px) {
   .ds-nav {
-    width: min(1200px, calc(100% - 24px)) !important;
-    padding: 6px 12px !important;
+    width: min(calc(100% - 20px), 720px) !important;
+    padding: 7px 14px !important;
+    top: 42px;
+  }
+  .ds-nav.scrolled {
+    top: 8px !important;
   }
   .ds-nav-inner {
-    gap: 8px !important;
+    display: flex !important;
+    justify-content: space-between !important;
+    align-items: center !important;
+    width: 100% !important;
+    gap: 12px !important;
   }
   .ds-hamburger {
-    display: none !important;
+    display: flex !important;
+    width: 40px !important;
+    height: 40px !important;
+    min-width: 40px !important;
+    min-height: 40px !important;
   }
   .ds-nav-links {
-    display: flex !important;
-    gap: 2px !important;
-  }
-  .ds-nav-link {
-    font-size: 10px !important;
-    padding: 6px 6px !important;
-    letter-spacing: 0.05em !important;
+    display: none !important;
   }
   .ds-nav-actions a.ds-btn {
-    display: none !important; /* Hide extra CTA on tablet to leave clean space for horizontal navigation */
+    display: none !important;
   }
   .ds-nav-langs {
     display: inline-flex !important;
-    padding: 2px !important;
-  }
-  .ds-lang-btn {
-    padding: 2px 4px !important;
-    font-size: 9.5px !important;
   }
 }
 
-/* Mobile (< 768px & < 480px): Collapsible mobile hamburger menu */
-@media (max-width: 767px) {
-  .ds-hamburger {
-    display: flex !important;
-    width: 44px !important;
-    height: 44px !important;
-    min-width: 44px !important;
-    min-height: 44px !important;
-  }
-  .ds-nav-links {
-    display: none !important;
-  }
-  .ds-nav-actions a.ds-btn {
-    display: none !important;
+@media (max-width: 600px) {
+  .ds-nav {
+    width: calc(100% - 16px) !important;
+    padding: 6px 12px !important;
   }
   .ds-nav-langs {
-    display: none !important;
+    display: none !important; /* Handled inside mobile drawer on small phones for ultra-clean pill */
   }
-  .ds-nav.menu-open .ds-nav-links {
-    left: 0 !important;
-    right: 0 !important;
-    display: flex !important;
-    flex-direction: column !important;
+  .ds-nav-logo {
+    font-size: 16px !important;
+    gap: 8px !important;
   }
-  .ds-nav.menu-open .ds-nav-links .ds-nav-link {
-    width: 100% !important;
-    min-height: 48px !important;
-    padding: 12px 16px !important;
-    font-size: 14px !important;
-    touch-action: manipulation !important;
+  .ds-nav-title {
+    font-size: 15px !important;
+  }
+  .ds-nav-sub {
+    font-size: 7px !important;
   }
 }
 

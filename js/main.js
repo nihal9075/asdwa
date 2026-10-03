@@ -136,13 +136,16 @@ function initScrollReveal() {
 
 // === Active Nav Item Highlight ===
 function initActiveNavHighlight() {
-  const currentPath = window.location.pathname.split('/').pop() || 'index.html';
+  let currentPath = window.location.pathname.split('/').pop() || 'index.html';
+  if (!currentPath || currentPath === '' || currentPath === 'asdwa') currentPath = 'index.html';
+  if (currentPath && !currentPath.includes('.')) currentPath += '.html';
+
   const navLinks = document.querySelectorAll('.ds-nav-link');
 
   navLinks.forEach(link => {
     const href = link.getAttribute('href') || '';
     const cleanHref = href.split('#')[0].split('?')[0];
-    const isCurrent = (cleanHref === currentPath) || (currentPath === '' && cleanHref === 'index.html');
+    const isCurrent = (cleanHref === currentPath) || (currentPath === 'index.html' && cleanHref === 'index.html' && !window.location.hash);
     if (isCurrent) {
       link.classList.add('active');
     }
@@ -223,8 +226,11 @@ function initSmoothScroll() {
       const path = href.substring(0, hashIndex);
       const hash = href.substring(hashIndex);
 
-      const currentFile = window.location.pathname.split('/').pop() || 'index.html';
-      const isHome = currentFile === 'index.html' || currentFile === '';
+      let currentFile = window.location.pathname.split('/').pop() || 'index.html';
+      if (!currentFile || currentFile === '' || currentFile === 'asdwa') currentFile = 'index.html';
+      if (currentFile && !currentFile.includes('.')) currentFile += '.html';
+
+      const isHome = currentFile === 'index.html';
       const targetIsHome = path === '' || path === 'index.html' || path.endsWith('index.html');
 
       if (isHome && targetIsHome) {
